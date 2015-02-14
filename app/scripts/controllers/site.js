@@ -2,10 +2,13 @@
 
 /**
  * @ngdoc function
- * @name gpwebApp.controller:ToolsCtrl
+ * @name gpwebApp.controller:SiteCtrl
  * @description
- * # ToolsCtrl
+ * # SiteCtrl
  * Controller of the gpwebApp
  */
-angular.module('gpwebApp').controller('ToolsCtrl', function ($scope) {
+angular.module('gpwebApp').controller('SiteCtrl', function ($scope) {
+  $scope.wheight = {
+    'height': $(window).height() + "px"
+  };
 });

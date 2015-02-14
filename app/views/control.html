@@ -1,23 +1,13 @@
-<div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
+<div class="container-fluid" id="control-head">
+  <h2 class="pull-left" ng-hide="showControl()">Control</h2>
+  <div class="show-button pull-right">
+    <button ng-click="on()" ng-hide="showControl()"><span class="glyphicon glyphicon-arrow-left"></span></button>
+    <button ng-click="off()" ng-show="showControl()"><span class="glyphicon glyphicon-arrow-right"></span></button>
+  </div>
 </div>
-
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
-
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
-
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
+<div class="show-button" id="control-content" ng-hide="showControl()">
+  <h3>Des trucs</h3>
+  <h3>Des trucs</h3>
+  <h3>Des trucs</h3>
+  <h3>Des trucs encore !</h3>
 </div>

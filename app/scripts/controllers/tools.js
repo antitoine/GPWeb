@@ -1,3 +1,12 @@
+'use strict';
+
 /**
- * Created by antitoine on 14/02/15.
+ * @ngdoc function
+ * @name gpwebApp.controller:ToolsCtrl
+ * @description
+ * # ToolsCtrl
+ * Controller of the gpwebApp
  */
+angular.module('gpwebApp').controller('ToolsCtrl', function ($scope) {
+
+});
