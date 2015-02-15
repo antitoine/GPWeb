@@ -1,13 +1,24 @@
-<div class="container-fluid" id="control-head">
-  <h2 class="pull-left" ng-hide="showControl()">Control</h2>
-  <div class="show-button pull-right">
-    <button ng-click="on()" ng-hide="showControl()"><span class="glyphicon glyphicon-arrow-left"></span></button>
-    <button ng-click="off()" ng-show="showControl()"><span class="glyphicon glyphicon-arrow-right"></span></button>
+<button class="control-collapse btn btn-default pull-right" ng-click="isCollapsed = !isCollapsed">
+  <div ng-switch on="isCollapsed">
+    <div ng-switch-when="true">
+      <span class="glyphicon glyphicon-arrow-right"></span>
+    </div>
+    <div ng-switch-default>
+      <span class="glyphicon glyphicon-arrow-left"></span>
+    </div>
   </div>
+</button>
+<div class="clearfix" collapse="isCollapsed">
+  <accordion>
+    <accordion-group heading="Pages" is-open="true">
+      <h4>Home</h4>
+      <h4>Gallery</h4>
+      <h4>Catalog</h4>
+      <h4>About</h4>
+    </accordion-group>
+    <accordion-group heading="Configuration" is-disabled="!config">
+      {{config.content}}
+    </accordion-group>
+  </accordion>
 </div>
-<div class="show-button" id="control-content" ng-hide="showControl()">
-  <h3>Des trucs</h3>
-  <h3>Des trucs</h3>
-  <h3>Des trucs</h3>
-  <h3>Des trucs encore !</h3>
-</div>
+

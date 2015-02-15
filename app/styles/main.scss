@@ -1,10 +1,21 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+// bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+// endbower
 
 // Variables
 $tools-bg: #d3d3d2;
 $control-bg: #d3d3d2;
 $separator: #9b9b9b;
+
+.clearfix {
+  clear: both;
+}
+
+.title-control {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
 
 #site {
   padding: 0;
@@ -13,24 +24,14 @@ $separator: #9b9b9b;
 #control {
   background: $control-bg;
   border-right: 2px solid $separator;
-}
-
-#control-head {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-#control-content {
-  margin-right: 20px;
-}
-
-.show-button {
-  margin: 20px 5px 5px 10px;
+  padding-top: 5px;
+  padding-right: 2px;
 }
 
 #tools {
   background: $tools-bg;
   border-left: 2px solid $separator;
+  padding-top: 5px;
 }
 
 #footer {

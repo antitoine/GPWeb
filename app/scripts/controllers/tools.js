@@ -7,6 +7,11 @@
  * # ToolsCtrl
  * Controller of the gpwebApp
  */
-angular.module('gpwebApp').controller('ToolsCtrl', function ($scope) {
-
-});
+angular.module('gpwebApp')
+  .controller('ToolsCtrl', function ($scope) {
+    $scope.awesomeThings = [
+      'HTML5 Boilerplate',
+      'AngularJS',
+      'Karma'
+    ];
+  });
