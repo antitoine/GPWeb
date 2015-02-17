@@ -9,5 +9,5 @@
  */
 angular.module('gpwebApp')
   .controller('SiteCtrl', function ($scope) {
-    $scope.style = {'height': $(window).height() + "px"};
+    $scope.style = {'height': $(window).height() + 'px'};
   });

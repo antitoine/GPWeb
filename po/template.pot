@@ -1,0 +1,25 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Project-Id-Version: \n"
+
+#: app/views/control.html:17
+msgid "About"
+msgstr ""
+
+#: app/views/control.html:16
+msgid "Catalog"
+msgstr ""
+
+#: app/views/control.html:15
+msgid "Gallery"
+msgstr ""
+
+#: app/views/control.html:14
+msgid "Home"
+msgstr ""
+
+#: app/views/control.html:13
+msgid "Pages"
+msgstr ""

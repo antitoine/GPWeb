@@ -15,6 +15,8 @@ module.exports = function (grunt) {
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
+  grunt.loadNpmTasks('grunt-angular-gettext');
+
   // Configurable paths for the application
   var appConfig = {
     app: require('./bower.json').appPath || 'app',
@@ -114,7 +116,8 @@ module.exports = function (grunt) {
     jshint: {
       options: {
         jshintrc: '.jshintrc',
-        reporter: require('jshint-stylish')
+        reporter: require('jshint-stylish'),
+        ignores: ['app/scripts/translations.js']
       },
       all: {
         src: [
@@ -403,6 +406,22 @@ module.exports = function (grunt) {
       unit: {
         configFile: 'test/karma.conf.js',
         singleRun: true
+      }
+    },
+
+    // Translation
+    gettextExtract: {
+      pot: {
+        files: {
+          'po/template.pot': ['app/views/*.html']
+        }
+      },
+    },
+    gettextCompile: {
+      all: {
+        files: {
+          'app/scripts/translations.js': ['po/*.po'] //we want this task to load all po files in the subfolder po of the current directory and compile them into a resulting file translations.js located in the current directory.
+        }
       }
     }
   });
