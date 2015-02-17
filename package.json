@@ -1,7 +1,9 @@
 {
   "name": "gpweb",
   "version": "0.0.0",
-  "dependencies": {},
+  "dependencies": {
+    "sqlite3": "^3.0.5"
+  },
   "repository": {},
   "devDependencies": {
     "grunt": "^0.4.5",
