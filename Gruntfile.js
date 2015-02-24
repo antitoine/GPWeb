@@ -413,9 +413,9 @@ module.exports = function (grunt) {
     gettextExtract: {
       pot: {
         files: {
-          'po/template.pot': ['app/views/*.html']
+          'po/template.pot': ['app/views/*.html', 'app/controllers/*.js']
         }
-      },
+      }
     },
     gettextCompile: {
       all: {
