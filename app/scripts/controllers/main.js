@@ -1,4 +1,5 @@
 'use strict';
+/*global $ */
 
 /**
  * @ngdoc function
@@ -9,9 +10,5 @@
  */
 angular.module('gpwebApp')
   .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    $scope.style = {'height': $(window).height() + 'px'};
   });

@@ -19,10 +19,10 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div id="site" ng-controller="SiteCtrl">
-      <div id="control" class="pull-left" ng-include="'views/control.html'" ng-controller="ControlCtrl" ng-style="style"></div>
-      <div id="main" class="pull-left" ng-include="'views/main.html'" ng-controller="MainCtrl" ng-style="style"></div>
-      <div id="tools" class="pull-right container-fluid" ng-include="'views/tools.html'" ng-controller="ToolsCtrl" ng-style="style"></div>
+    <div id="site">
+      <div ng-include="'views/control.html'" ng-controller="ControlCtrl"></div>
+      <div ng-include="'views/main.html'" ng-controller="MainCtrl"></div>
+      <div ng-include="'views/tools.html'" ng-controller="ToolsCtrl"></div>
     </div>
 
     <!-- build:js(.) scripts/vendor.js -->
@@ -43,7 +43,6 @@
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/control.js"></script>
         <script src="scripts/controllers/tools.js"></script>
-        <script src="scripts/controllers/site.js"></script>
         <script src="scripts/translations.js"></script>
         <!-- endbuild -->
 </body>
