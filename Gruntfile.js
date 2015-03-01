@@ -410,14 +410,14 @@ module.exports = function (grunt) {
     },
 
     // Translation
-    gettextExtract: {
+    nggettext_extract: {
       pot: {
         files: {
           'po/template.pot': ['app/views/*.html', 'app/controllers/*.js']
         }
       }
     },
-    gettextCompile: {
+    nggettext_compile: {
       all: {
         files: {
           'app/scripts/translations.js': ['po/*.po'] //we want this task to load all po files in the subfolder po of the current directory and compile them into a resulting file translations.js located in the current directory.

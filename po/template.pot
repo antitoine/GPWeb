@@ -4,22 +4,26 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 
-#: app/views/control.html:17
+#: app/views/control.html:20
 msgid "About"
 msgstr ""
 
-#: app/views/control.html:16
+#: app/views/control.html:19
 msgid "Catalog"
 msgstr ""
 
-#: app/views/control.html:15
+#: app/views/control.html:3
+msgid "close/open"
+msgstr ""
+
+#: app/views/control.html:18
 msgid "Gallery"
 msgstr ""
 
-#: app/views/control.html:14
+#: app/views/control.html:17
 msgid "Home"
 msgstr ""
 
-#: app/views/control.html:13
+#: app/views/control.html:16
 msgid "Pages"
 msgstr ""
