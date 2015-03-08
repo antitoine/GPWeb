@@ -1,25 +1,27 @@
 <div
+  class="zone text"
   ng-attr-id="{{zone.id}}"
   ng-attr-title="{{zone.name}}"
-  ng-style="
-    width: '{{zone.width}}';
-    length: '{{zone.length}}';
-    top: '{{zone.y}}';
-    left: '{{zone.x}}';
-    background-color: '{{zone.backgroundColor}}';
-    background-image: url('backgroundImage');
-    border: '{{zone.border}}';
-  "
+  ng-style="{
+    'position': 'relative',
+    'width': zone.width,
+    'height': zone.height,
+    'top': zone.top,
+    'left': zone.left,
+    'background-color': zone.backgroundColor,
+    'background-image': url(zone.backgroundImage),
+    'border': zone.border
+  }"
 >
   <p
-    ng-style="
-      font-family: '{{zone.font}}';
-      color: '{{zone.color}}';
-      font-size: '{{zone.size}}';
-      font-style: '{{zone.style}}';
-      text-decoration: '{{zone.decoration}}';
-      text-align: '{{zone.align}}';
-    "
+    ng-style="{
+      'font-family': zone.font,
+      'color': zone.color,
+      'font-size': zone.size,
+      'font-style': zone.style,
+      'text-decoration': zone.decoration,
+      'text-align': zone.align
+    }"
   >
     {{zone.text}}
   </p>

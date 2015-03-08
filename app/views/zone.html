@@ -1,13 +1,15 @@
 <div
+  class="zone"
   ng-attr-id="{{zone.id}}"
 	ng-attr-title="{{zone.name}}"
-	style="
+	ng-style="
+    position: 'relative';
     width: '{{zone.width}}';
-    length: '{{zone.length}}';
+    height: '{{zone.height}}';
     top: '{{zone.y}}';
     left: '{{zone.x}}';
     background-color: '{{zone.backgroundColor}}';
-		background-image: url('backgroundImage');
+    background-image: url('{{backgroundImage}}');
     border: '{{zone.border}}';
   "
 >
