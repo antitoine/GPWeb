@@ -1,1 +1,18 @@
-<p>This is the zoneImage view.</p>
+<div
+  ng-attr-id="{{zone.id}}"
+  ng-attr-title="{{zone.name}}"
+  style="
+    width: '{{zone.width}}';
+    length: '{{zone.length}}';
+    top: '{{zone.y}}';
+    left: '{{zone.x}}';
+    background-color: '{{zone.backgroundColor}}';
+    background-image: url('backgroundImage');
+    border: '{{zone.border}}';
+  "
+>
+  <img
+    ng-src="{{zone.image}}"
+    ng-attr-alt="{{zone.description}}"
+  />
+</div>
