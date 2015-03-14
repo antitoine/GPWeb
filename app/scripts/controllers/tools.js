@@ -17,4 +17,28 @@ angular.module('gpwebApp')
         at: "right center"
       }
     });
+    $scope.saveHandler = function() {
+      console.log("Save Handler");
+      //TODO
+    };
+    $scope.addZoneHandler = function() {
+      console.log("Add zone Handler");
+      //TODO
+    };
+    $scope.addZoneTextHandler = function() {
+      console.log("Add zone text Handler");
+      //TODO
+    };
+    $scope.addPictureHandler = function() {
+      console.log("Add picture Handler");
+      //TODO
+    };
+    $scope.addLinkHandler = function() {
+      console.log("Add link Handler");
+      //TODO
+    };
+    $scope.downloadHandler = function() {
+      console.log("Download Handler");
+      //TODO
+    };
   });
