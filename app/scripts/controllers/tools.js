@@ -9,7 +9,7 @@
  * Controller of the gpwebApp
  */
 angular.module('gpwebApp')
-  .controller('ToolsCtrl', function ($scope) {
+  .controller('ToolsCtrl', ['pageData',function ($scope) {
     $scope.style = {'height': $(window).height() + 'px'};
     angular.element(document).tooltip({
       position: {
@@ -28,6 +28,7 @@ angular.module('gpwebApp')
     $scope.addZoneTextHandler = function() {
       console.log("Add zone text Handler");
       //TODO
+      pageData.addZone('text');
     };
     $scope.addPictureHandler = function() {
       console.log("Add picture Handler");
@@ -41,4 +42,4 @@ angular.module('gpwebApp')
       console.log("Download Handler");
       //TODO
     };
-  });
+  }]);
