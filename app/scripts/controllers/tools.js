@@ -9,7 +9,7 @@
  * Controller of the gpwebApp
  */
 angular.module('gpwebApp')
-  .controller('ToolsCtrl', ['pageData',function ($scope) {
+  .controller('ToolsCtrl', ['$scope', 'pageData',function ($scope,pageData) {
     $scope.style = {'height': $(window).height() + 'px'};
     angular.element(document).tooltip({
       position: {
