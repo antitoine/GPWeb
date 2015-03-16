@@ -11,5 +11,5 @@ angular.module('gpwebApp')
     return {
       templateUrl: 'views/zonetext.html',
       restrict: 'E'
-    }
+    };
   });

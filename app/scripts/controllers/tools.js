@@ -9,36 +9,35 @@
  * Controller of the gpwebApp
  */
 angular.module('gpwebApp')
-  .controller('ToolsCtrl', ['$scope', 'pageData',function ($scope,pageData) {
-    $scope.style = {'height': $(window).height() + 'px'};
+  .controller('ToolsCtrl', ['$scope', 'pageData', function ($scope, pageData) {
     angular.element(document).tooltip({
       position: {
         my: "left center",
         at: "right center"
       }
     });
-    $scope.saveHandler = function() {
+    $scope.saveHandler = function () {
       console.log("Save Handler");
       //TODO
     };
-    $scope.addZoneHandler = function() {
+    $scope.addZoneHandler = function () {
       console.log("Add zone Handler");
       //TODO
     };
-    $scope.addZoneTextHandler = function() {
+    $scope.addZoneTextHandler = function () {
       console.log("Add zone text Handler");
       //TODO
       pageData.addZone('text');
     };
-    $scope.addPictureHandler = function() {
+    $scope.addPictureHandler = function () {
       console.log("Add picture Handler");
       //TODO
     };
-    $scope.addLinkHandler = function() {
+    $scope.addLinkHandler = function () {
       console.log("Add link Handler");
       //TODO
     };
-    $scope.downloadHandler = function() {
+    $scope.downloadHandler = function () {
       console.log("Download Handler");
       //TODO
     };

@@ -11,7 +11,7 @@ angular.module('gpwebApp')
     return {
       templateUrl: 'views/page.html',
       restrict: 'E',
-      controller: function() {
+      controller: function () {
         this.zones = pageData.getZones();
       },
       controllerAs: 'page'

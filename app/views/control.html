@@ -1,28 +1,12 @@
-<div id="control" class="pull-left" ng-style="style">
-  <div class="heading">
-    <button class="btn btn-default" ng-click="collapseControl()"><span class="hidden" translate>close/open</span>
-      <div ng-switch on="isCollapsed">
-        <div ng-switch-when="true">
-          <span class="glyphicon glyphicon-arrow-right"></span>
-        </div>
-        <div ng-switch-default>
-          <span class="glyphicon glyphicon-arrow-left"></span>
-        </div>
-      </div>
-    </button>
-  </div>
-  <div class="clearfix" collapse="isCollapsed">
-    <accordion>
-      <accordion-group heading="{{'Pages'|translate}}" is-open="true">
-        <h4 translate>Home</h4>
-        <h4 translate>Gallery</h4>
-        <h4 translate>Catalog</h4>
-        <h4 translate>About</h4>
-      </accordion-group>
-      <accordion-group heading="Configuration" is-disabled="!config">
-        {{config.content}}
-      </accordion-group>
-    </accordion>
-  </div>
-</div>
+<accordion>
+  <accordion-group heading="{{'Pages'|translate}}" is-open="true">
+    <h4 translate>Home</h4>
+    <h4 translate>Gallery</h4>
+    <h4 translate>Catalog</h4>
+    <h4 translate>About</h4>
+  </accordion-group>
+  <accordion-group heading="Configuration" is-disabled="!config">
+    {{config.content}}
+  </accordion-group>
+</accordion>
 
