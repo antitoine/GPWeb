@@ -167,8 +167,7 @@ module.exports = function (grunt) {
     wiredep: {
       app: {
         src: ['<%= yeoman.app %>/index.html'],
-        ignorePath:  /\.\.\//,
-        exclude: [/jquery-ui.css/]
+        ignorePath:  /\.\.\//
       },
       test: {
         devDependencies: true,
