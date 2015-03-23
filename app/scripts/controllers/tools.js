@@ -23,6 +23,7 @@ angular.module('gpwebApp')
     $scope.addZoneHandler = function () {
       console.log("Add zone Handler");
       //TODO
+      //pageData.addZone('zone');
     };
     $scope.addZoneTextHandler = function () {
       console.log("Add zone text Handler");
@@ -32,6 +33,7 @@ angular.module('gpwebApp')
     $scope.addPictureHandler = function () {
       console.log("Add picture Handler");
       //TODO
+      pageData.addZone('image','/images/yeoman.png', 'Yeoman');
     };
     $scope.addLinkHandler = function () {
       console.log("Add link Handler");
