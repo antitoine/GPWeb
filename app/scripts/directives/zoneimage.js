@@ -9,7 +9,7 @@
 angular.module('gpwebApp')
   .directive('zoneImage', function () {
     return {
-      templateUrl: "zoneimage.html",
+      templateUrl: 'views/zoneimage.html',
       restrict: 'E'
     };
   });

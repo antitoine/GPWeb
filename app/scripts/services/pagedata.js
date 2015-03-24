@@ -50,7 +50,7 @@ angular.module('gpwebApp')
 			  text: 'O'
 		   }
       ],
-      image: 
+      image:
       [
 		{
 			id: '2',
@@ -61,11 +61,11 @@ angular.module('gpwebApp')
 			left: '100px',
 			backgroundColor: 'purple',
 			border: '2px solid red',
-			//imageFile: '/images/yeoman.png',
+			imageFile: 'images/yeoman.png',
 			description: 'Yeoman'
 		}
 	  ],
-      zone: 
+      zone:
       [
 		{
 			id: '3',
@@ -76,7 +76,7 @@ angular.module('gpwebApp')
 			left: '100px',
 			backgroundColor: 'purple',
 			border: '2px solid red',
-			backgroundImage: '/images/yeoman.png',
+			backgroundImage: 'images/yeoman.png',
 			description: 'Yeoman'
 		}
 	  ]
