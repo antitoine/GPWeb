@@ -21,18 +21,12 @@ angular.module('gpwebApp')
       //TODO
     };
     $scope.addZoneHandler = function () {
-      console.log("Add zone Handler");
-      //TODO
-      //pageData.addZone('zone');
+      pageData.addZone();
     };
     $scope.addZoneTextHandler = function () {
-      console.log("Add zone text Handler");
-      //TODO
       pageData.addZone('text');
     };
     $scope.addPictureHandler = function () {
-      console.log("Add picture Handler");
-      //TODO
       pageData.addZone('image','/images/yeoman.png', 'Yeoman');
     };
     $scope.addLinkHandler = function () {

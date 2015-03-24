@@ -9,5 +9,5 @@
  */
 angular.module('gpwebApp')
   .controller('ControlCtrl', function ($scope) {
-  $scope.config = false;
+  $scope.config = true;
   });

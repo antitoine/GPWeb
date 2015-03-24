@@ -13,73 +13,72 @@ angular.module('gpwebApp')
     // ...
     var zones = {
       text: [
-		  {
-			id: '0',
-			name: 'zoneTest',
-			width: '200px',
-			height: '50px',
-			top: '100px',
-			left: '100px',
-			backgroundColor: 'green',
-			backgroundImage: 'auto',
-			border: '2px solid red',
-			font: 'auto',
-			color: 'blue',
-			size: '20pt',
-			style: 'auto',
-			decoration: 'auto',
-			align: 'center',
-			text: 'Hello world !'
-		  },
-		  {
-			  id: '1',
-			  name: 'zoneTest2',
-			  width: '100px',
-			  height: '50px',
-			  top: '200px',
-			  left: '500px',
-			  backgroundColor: 'yellow',
-			  backgroundImage: 'auto',
-			  border: '2px solid purple',
-			  font: 'auto',
-			  color: 'blue',
-			  size: '20pt',
-			  style: 'auto',
-			  decoration: 'auto',
-			  align: 'center',
-			  text: 'O'
-		   }
+        {
+          id: '0',
+          name: 'zoneTest',
+          width: '200px',
+          height: '50px',
+          top: '100px',
+          left: '100px',
+          backgroundColor: 'green',
+          backgroundImage: 'auto',
+          border: '2px solid red',
+          font: 'auto',
+          color: 'blue',
+          size: '20pt',
+          style: 'auto',
+          decoration: 'auto',
+          align: 'center',
+          text: 'Hello world !'
+        },
+        {
+          id: '1',
+          name: 'zoneTest2',
+          width: '100px',
+          height: '50px',
+          top: '200px',
+          left: '500px',
+          backgroundColor: 'yellow',
+          backgroundImage: 'auto',
+          border: '2px solid purple',
+          font: 'auto',
+          color: 'blue',
+          size: '20pt',
+          style: 'auto',
+          decoration: 'auto',
+          align: 'center',
+          text: 'O'
+        }
       ],
-      image:
-      [
-		{
-			id: '2',
-			name: 'zoneImageTest',
-			width: '200px',
-			height: '50px',
-			top: '100px',
-			left: '100px',
-			backgroundColor: 'purple',
-			border: '2px solid red',
-			imageFile: 'images/yeoman.png',
-			description: 'Yeoman'
-		}
-	  ],
-      zone:
-      [
-		{
-			id: '3',
-			name: 'zoneTest3',
-			width: '200px',
-			height: '50px',
-			top: '100px',
-			left: '100px',
-			backgroundColor: 'purple',
-			border: '2px solid red',
-			backgroundImage: 'images/yeoman.png',
-			description: 'Yeoman'
-		}
-	  ]
+      image: [
+        {
+          id: '2',
+          name: 'zoneImageTest',
+          width: '200px',
+          height: '50px',
+          top: '100px',
+          left: '100px',
+          backgroundColor: 'purple',
+          border: '2px solid red',
+          imageFile: 'images/yeoman.png',
+          description: 'Yeoman'
+        }
+      ],
+      zone: [
+        {
+          id: '3',
+          name: 'zoneTest3',
+          width: '200px',
+          height: '50px',
+          top: '100px',
+          left: '100px',
+          backgroundColor: 'purple',
+          border: '2px solid red',
+          backgroundImage: 'images/yeoman.png',
+          backgroundRepeat: 'no-repeat',
+          description: 'Yeoman'
+        }
+      ]
     };
 
     // Public API here
@@ -103,6 +102,7 @@ angular.module('gpwebApp')
           left: '100px',
           backgroundColor: 'auto',
           backgroundImage: 'auto',
+          backgroundRepeat: 'auto',
           border: '1px solid black'
         };
         if (type === 'text') {
@@ -118,6 +118,8 @@ angular.module('gpwebApp')
           zone.imageFile = img;
           zone.description = desc;
           zones.image.push(zone);
+        } else {
+          zones.zone.push(zone);
         }
       },
       changeImage: function (file, zone) {
