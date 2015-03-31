@@ -5,8 +5,13 @@
     <h4 translate>Catalog</h4>
     <h4 translate>About</h4>
   </accordion-group>
-  <accordion-group heading="Configuration" is-disabled="!config">
+  <accordion-group heading="Configuration" is-disabled="!config.value">
     {{config.content}}
+    <input type="text" name="longueur"/> <!-- longueur -->
+    <input type="text" name="largeur"/> <!-- largeur -->
+    <input type="text" name="abscisse"/> <!-- position x -->
+    <input type="text" name="ordonnée"/> <!-- position y -->
+    <button ng-show="zone"></button>
   </accordion-group>
 </accordion>
 
