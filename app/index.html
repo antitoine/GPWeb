@@ -22,17 +22,15 @@
     <![endif]-->
 
     <div ui-layout id="site">
-      <div ui-layout-container>
-        <div ui-layout="{flow : 'column'}" >
-          <div ui-layout-container size="200px">
-            <div id="control" ng-include="'views/control.html'" ng-controller="ControlCtrl"></div>
-          </div>
-          <div ui-layout-container>
-            <div id="main" ng-include="'views/main.html'" ng-controller="MainCtrl"></div>
-          </div>
-          <div ui-layout-container size="50px" min-size="50px">
-            <div id="tools" ng-include="'views/tools.html'" ng-controller="ToolsCtrl"></div>
-          </div>
+      <div ui-layout="{flow : 'column', dividerSize : 5}" >
+        <div ui-layout-container size="200px">
+          <div id="control" ng-include="'views/control.html'" ng-controller="ControlCtrl"></div>
+        </div>
+        <div ui-layout-container>
+          <div id="main" ng-include="'views/main.html'" ng-controller="MainCtrl"></div>
+        </div>
+        <div ui-layout-container size="50px" max-size="54px">
+          <div id="tools" ng-include="'views/tools.html'" ng-controller="ToolsCtrl"></div>
         </div>
       </div>
     </div>

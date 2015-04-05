@@ -21,6 +21,9 @@ $split-color: #f3f3f3;
 .ui-splitbar {
   @include box-shadow(0px 0px 5px 0px rgba(50, 50, 50, 0.75));
   background: $split-color;
+  & a {
+    display: none;
+  }
 }
 
 .clearfix {
