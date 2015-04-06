@@ -7,10 +7,121 @@
   </accordion-group>
   <accordion-group heading="Configuration" is-disabled="!config.value">
     {{config.content}}
-    <input type="text" name="longueur"/> <!-- longueur -->
-    <input type="text" name="largeur"/> <!-- largeur -->
-    <input type="text" name="abscisse"/> <!-- position x -->
-    <input type="text" name="ordonnée"/> <!-- position y -->
+    <!-- trouver le ng adapté -->
+    <div class="row">
+		<label for="widthInput">Width</label>
+		<input type="text" name="width" id="widthInput" ng-click="addWidthHandler()" translate/>
+    </div>
+    
+    <div class="separator"></div>
+    
+    <div class="row">
+		<label for="heightInput">Height</label>
+		<input type="text" name="height" id="heightInput" ng-click="addHeightHandler()" translate/>
+    </div>
+    
+    <div class="separator"></div>
+    
+    <div class="row">
+		<label for="leftInput">Left</label>
+		<input type="text" name="left" id="leftInput" ng-click="addLinkHandler()" translate/>
+    </div>
+    
+    <div class="separator"></div>
+    
+    <div class="row">
+		<label for="topInput">Top</label>
+		<input type="text" name="top" id="topInput" ng-click="addTopHandler()" translate/>
+    </div>
+    
+    <div class="separator"></div>
+    
+    <div class="row">
+		<label for="borderWidthInput">Border Width</label>
+		<input type="number" name="borderWidth" id="borderWidthInput" ng-click="addBorderWidthHandler()" translate/>
+    </div>
+    
+    <div class="separator"></div>
+    
+    <div class="row">
+		<label for="bordureInput">Bordure Style</label>
+    <!-- idem -->
+		<select name="bordure" id="bordureInput" ng-click="addBordureHandler()" translate>
+			<option value="none" id="bordureNone" >None</option>
+			<option value="solid" id="bordureSolid">Solid</option>
+			<option value="dotted" id="bordureDotted">Dotted</option>
+			<option value="dashed" id="bordureDashed">Dashed</option>
+			<option value="double" id="bordureDouble">Double</option>
+			<option value="groove" id="bordureGroovee">Groove</option>
+			<option value="ridge" id="bordureRidge">Ridge</option>
+			<option value="inset" id="bordureInset">Inset</option>
+			<option value="outset" id="bordureOutset">Outset</option>
+		</select>
+    </div>
+    <!-- manque police + couleurs (background + text + bordure) + background image + image-->
+    <div class="separator"></div>
+    
+    <div class="row">
+		<label for="textInput" ng-show="text">Text</label>
+		<!-- idem-->
+		<input type="text" name="text" ng-show="text" id="textInput" ng-click="addTextHandler()" translate/>
+	</div>
+	
+	<div class="separator"></div>
+	
+    <div class="row">
+		<label for="textSizeInput" ng-show="text">Text Size</label>
+		<input type="number" name="textSize" ng-show="text" id="textSizeInput" ng-click="addTextSizeHandler()" translate/>
+    </div>
+    
+    <div class="separator"></div>
+    
+    <div class="row">
+		<label for="textStyleInput" ng-show="text">Text Style</label>
+		<div ng-show="text">
+			<input type="checkbox" name="bold" id="textStyleBold" ng-click="addTextStyleHandler()" translate/>
+			<label for="textStyleBold" id="textStyleBoldLabel">Bold</label>
+			<input type="checkbox" name="italic" id="textStyleItalic" ng-click="addTextStyleHandler()" translate/>
+			<label for="textStyleItalic" id="textStyleItalicLabel">Italic</label>
+			<input type="checkbox" name="oblique" id="textStyleOblique" ng-click="addTextStyleHandler()" translate/>
+			<label for="textStyleOblique" id="textStyleObliqueLabel">Oblique</label>
+		</div>
+    </div>
+    
+    <div class="separator"></div>
+    
+    <div class="row">
+		<label for="textDecorationInput" ng-show="text">Text Decoration</label>
+		<select name="textDecoration" ng-show="text" id="textDecorationInput" ng-click="addTextDecorationHandler()" translate>
+			<option value="none" id="textDecorationNone">None</option>
+			<option value="inherit" id="textDecorationInherit">Inherit</option>
+			<option value="underline" id="textDecorationUnderline">Underline</option>
+			<option value="line-through" id="textDecorationLine-through">Line-Through</option>
+			<option value="overline" id="textDecorationOverline">Overline</option>
+			<option value="blink" id="textDecorationBlink">Blink</option>
+		</select>
+	</div>
+	
+	<div class="separator"></div>
+	
+	<div class="row">
+		<label for="alignInput" ng-show="text">Align</label>
+		<select name="align" id="alignInput" ng-show="text" ng-click="addTextAlignHandler()" translate>
+			<option value="left" id="alignLeft">Left</option>
+			<option value="center" id="alignCenter">Center</option>
+			<option value="right" id="alignRight">Right</option>
+			<option value="justify" id="alignJusify">Justify</option>
+		</select>
+	</div>
+	
+	<div class="separator"></div>
+	
+	<!-- manque image file -->
+	<div class="row">
+		<label for="descriptionInput" ng-show="image">Description</label>
+		<input type="text" name="description" id="descriptionInput" ng-show="image" ng-click="addDescriptionHandler()" translate />
+	</div>
+	
     <button ng-show="zone"></button>
   </accordion-group>
 </accordion>
