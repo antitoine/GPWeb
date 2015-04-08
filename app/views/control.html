@@ -5,41 +5,40 @@
     <h4 translate>Catalog</h4>
     <h4 translate>About</h4>
   </accordion-group>
-  <accordion-group heading="Configuration" is-disabled="!config.value">
-    {{config.content}}
+  <accordion-group heading="Configuration" is-disabled="!zone">
     <div class="container-fluid">
       <!-- trouver le ng adapté -->
       <div class="row">
-        <label for="widthInput">Width</label>
-        <input type="text" name="width" id="widthInput" ng-click="addWidthHandler()" translate/>
+        <label for="widthInput" translate>Width</label>
+        <input type="text" name="width" id="widthInput" ng-model="zone.width"/>
       </div>
 
       <div class="separator"></div>
 
       <div class="row">
-        <label for="heightInput">Height</label>
-        <input type="text" name="height" id="heightInput" ng-click="addHeightHandler()" translate/>
+        <label for="heightInput" translate>Height</label>
+        <input type="text" name="height" id="heightInput" ng-model="zone.height" />
       </div>
 
       <div class="separator"></div>
 
       <div class="row">
-        <label for="leftInput">Left</label>
-        <input type="text" name="left" id="leftInput" ng-click="addLinkHandler()" translate/>
+        <label for="leftInput" translate>Left</label>
+        <input type="text" name="left" id="leftInput" ng-model="zone.left"/>
       </div>
 
       <div class="separator"></div>
 
       <div class="row">
-        <label for="topInput">Top</label>
-        <input type="text" name="top" id="topInput" ng-click="addTopHandler()" translate/>
+        <label for="topInput" translate>Top</label>
+        <input type="text" name="top" id="topInput" ng-model="zone.top"/>
       </div>
 
       <div class="separator"></div>
 
       <div class="row">
-        <label for="borderWidthInput">Border Width</label>
-        <input type="number" name="borderWidth" id="borderWidthInput" ng-click="addBorderWidthHandler()" translate/>
+        <label for="borderInput" translate>Border</label>
+        <input type="text" name="border" id="borderInput" ng-model="zone.border"/>
       </div>
 
       <div class="separator"></div>
@@ -62,24 +61,24 @@
       <!-- manque police + couleurs (background + text + bordure) + background image + image-->
       <div class="separator"></div>
 
-      <div class="row">
-        <label for="textInput" ng-show="text">Text</label>
+      <div class="row" ng-show="zone.text">
+        <label for="textInput" translate>Text</label>
         <!-- idem-->
-        <input type="text" name="text" ng-show="text" id="textInput" ng-click="addTextHandler()" translate/>
+        <input type="text" name="text" id="textInput" ng-model="zone.text"/>
       </div>
 
       <div class="separator"></div>
 
-      <div class="row">
-        <label for="textSizeInput" ng-show="text">Text Size</label>
-        <input type="number" name="textSize" ng-show="text" id="textSizeInput" ng-click="addTextSizeHandler()" translate/>
+      <div class="row" ng-show="zone.text">
+        <label for="textSizeInput" translate>Text Size</label>
+        <input type="text" name="textSize" id="textSizeInput" ng-model="zone.size"/>
       </div>
 
       <div class="separator"></div>
 
       <div class="row">
         <label for="textStyleInput" ng-show="text">Text Style</label>
-        <div ng-show="text">
+        <div id="textStyleinput" ng-show="text">
           <input type="checkbox" name="bold" id="textStyleBold" ng-click="addTextStyleHandler()" translate/>
           <label for="textStyleBold" id="textStyleBoldLabel">Bold</label>
           <input type="checkbox" name="italic" id="textStyleItalic" ng-click="addTextStyleHandler()" translate/>

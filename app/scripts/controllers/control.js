@@ -32,6 +32,7 @@ angular.module('gpwebApp')
      content:"Essai"
      };
      }*/
+    $scope.zone = pageData.getSelected();
 
     // $scope.config.content = { "<h4> Essai </h4>"};
     $scope.addWidthHandler = function () {

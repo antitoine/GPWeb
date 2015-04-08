@@ -81,6 +81,8 @@ angular.module('gpwebApp')
       ]
     };
 
+    var selected = zones.text[1];
+
     // Public API here
     return {
       getZones: function (type) {
@@ -127,92 +129,8 @@ angular.module('gpwebApp')
           zone.imageFile(file);
         }
       },
-      changeDescription: function (description, zone) {
-        if (typeof description !== 'undefined' && zone.type === 'image') {
-          zone.description = description.toString();
-        }
-      },
-      changeDimension: function (length, width, zone) {
-        if (typeof length !== 'undefined') {
-          zone.length(parseFloat(length));
-        }
-        if (typeof width !== 'undefined') {
-          zone.width(parseFloat(width));
-        }
-      },
-      changeTitle: function (title, zone) {
-        if (typeof title !== 'undefined') {
-          zone.title = title.toString();
-        }
-      },
-      move: function (dx, dy, zone) {
-        if (typeof dx !== 'undefined') {
-          zone.length(parseFloat(dx));
-        }
-        if (typeof dy !== 'undefined') {
-          zone.width(parseFloat(dy));
-        }
-      },
-      changeImBackground: function (image, zone) {
-        if (typeof image !== 'undefined') {
-          zone.imageBackground = image.toString();
-        }
-      },
-      changeColorBackground: function (color, zone) {
-        if (typeof color !== 'undefined') {
-          zone.colorBackground = color.toString();
-        }
-      },
-      changeBorder: function (border, zone) {
-        if (typeof border !== 'undefined') {
-          zone.border = border.toString();
-        }
-      },
-      changeDepth: function (depth, zone) {
-        if (typeof depth !== 'undefined') {
-          zone.depth(parseInt(depth));
-        }
-      },
-      changeFont: function (textFont, zone) {
-        if (typeof textFont !== 'undefined' && zone.type === 'text') {
-          zone.textFont(textFont);
-        }
-      },
-
-      changeText: function (text, zone) {
-        if (typeof text !== 'undefined' && zone.type === 'text') {
-          zone.text = text.toString();
-        }
-      },
-
-      changeStyle: function (style, zone) {
-        if (typeof style !== 'undefined' && zone.type === 'text') {
-          zone.textStyle = style.toString();
-        }
-      },
-
-      changeDecoration: function (deco, zone) {
-        if (typeof deco !== 'undefined') {
-          zone.textDecoration = deco.toString();
-        }
-      },
-
-      changeAlignment: function (align, zone) {
-        if (typeof align !== 'undefined' && zone.type === 'text') {
-          zone.textAlign = align.toString();
-        }
-      },
-
-      changeColor: function (color, zone) {
-        if (typeof color !== 'undefined' && zone.type === 'text') {
-          zone.color = color.toString();
-        }
-      },
-
-      changeSize: function (textSize, zone) {
-        if (typeof textSize !== 'undefined' && zone.type === 'text') {
-          zone.size(parseFloat(textSize));
-        }
+      getSelected: function () {
+        return selected;
       }
     };
   })
