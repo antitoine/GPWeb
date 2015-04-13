@@ -20,6 +20,7 @@ angular.module('gpwebApp')
           height: '50px',
           top: '100px',
           left: '100px',
+          depth: '5',
           backgroundColor: 'green',
           backgroundImage: 'auto',
           border: '2px solid red',
@@ -27,6 +28,7 @@ angular.module('gpwebApp')
           color: 'blue',
           size: '20pt',
           style: 'auto',
+          weight: 'auto',
           decoration: 'auto',
           align: 'center',
           text: 'Hello world !'
@@ -38,6 +40,7 @@ angular.module('gpwebApp')
           height: '50px',
           top: '200px',
           left: '500px',
+          depth: '6',
           backgroundColor: 'yellow',
           backgroundImage: 'auto',
           border: '2px solid purple',
@@ -45,6 +48,7 @@ angular.module('gpwebApp')
           color: 'blue',
           size: '20pt',
           style: 'auto',
+          weight: 'auto',
           decoration: 'auto',
           align: 'center',
           text: 'O'
@@ -58,6 +62,7 @@ angular.module('gpwebApp')
           height: '50px',
           top: '100px',
           left: '100px',
+          depth:'7',
           backgroundColor: 'purple',
           border: '2px solid red',
           imageFile: 'images/yeoman.png',
@@ -72,6 +77,7 @@ angular.module('gpwebApp')
           height: '50px',
           top: '100px',
           left: '100px',
+          depth: '9',
           backgroundColor: 'purple',
           border: '2px solid red',
           backgroundImage: 'images/yeoman.png',
@@ -102,6 +108,7 @@ angular.module('gpwebApp')
           height: '100px',
           top: '100px',
           left: '100px',
+          depth: 'auto',
           backgroundColor: 'auto',
           backgroundImage: 'auto',
           backgroundRepeat: 'auto',
@@ -112,6 +119,7 @@ angular.module('gpwebApp')
           zone.color = 'auto';
           zone.size = 'auto';
           zone.style = 'auto';
+          zone.weight = 'auto';
           zone.decoration = 'auto';
           zone.align = 'auto';
           zone.text = '';

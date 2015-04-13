@@ -35,6 +35,21 @@
       </div>
 
       <div class="separator"></div>
+      
+      <div class="row">
+        <label for="depthInput" translate>Depth</label>
+        <input type="text" name="depth" id="depthInput" ng-model="zone.depth"/>
+      </div>
+
+      <div class="separator"></div>
+      
+      <div class="row">
+        <label for="backgroundColor" translate>Background Color</label>
+       <input type="color" name="backgroundColor" id="backgroundColor" ng-model="zone.backgroundColor" />
+      </div>
+
+	
+	<div class="separator"></div>
 
       <div class="row">
         <label for="borderInput" translate>Border</label>
@@ -44,7 +59,7 @@
       <div class="separator"></div>
 
       <div class="row">
-        <label for="bordureInput">Bordure Style</label>
+        <label for="bordureInput">Border Style</label>
         <!-- idem -->
         <select name="bordure" id="bordureInput" ng-click="addBordureHandler()" translate>
           <option value="none" id="bordureNone" >None</option>
@@ -77,22 +92,27 @@
       <div class="separator"></div>
 
       <div class="row">
-        <label for="textStyleInput" ng-show="text">Text Style</label>
-        <div id="textStyleinput" ng-show="text">
-          <input type="checkbox" name="bold" id="textStyleBold" ng-click="addTextStyleHandler()" translate/>
-          <label for="textStyleBold" id="textStyleBoldLabel">Bold</label>
-          <input type="checkbox" name="italic" id="textStyleItalic" ng-click="addTextStyleHandler()" translate/>
-          <label for="textStyleItalic" id="textStyleItalicLabel">Italic</label>
-          <input type="checkbox" name="oblique" id="textStyleOblique" ng-click="addTextStyleHandler()" translate/>
-          <label for="textStyleOblique" id="textStyleObliqueLabel">Oblique</label>
+        <label for="textStyleInput" ng-show="zone.text">Text Style</label>
+        <div id="textStyleInput" ng-show="zone.text" ng-model="zone.style">
+			<input type="radio" name="style" value="italic" id="italic" translate/> <label for="italic">Italic</label><br />
+			<input type="radio" name="style" value="oblique" id="oblique" translate/> <label for="oblique">Oblique</label><br />
+			<input type="radio" name="style" value="normal" id="normalStyle" translate/> <label for="normalStyle">Normal</label><br />
         </div>
       </div>
+      
+      <div class="row">
+        <label for="textWeightInput" ng-show="zone.text">Text weight</label>
+        <div id="textWeightInput" ng-show="zone.text" ng-model="zone.weight">
+			<input type="radio" name="weight" value="bold" id="bold" translate/> <label for="bold">Bold</label><br />
+			<input type="radio" name="weight" value="normal" id="normalStyle" translate/> <label for="normalStyle">Normal</label><br />
+      </div>
+
 
       <div class="separator"></div>
 
       <div class="row">
-        <label for="textDecorationInput" ng-show="text">Text Decoration</label>
-        <select name="textDecoration" ng-show="text" id="textDecorationInput" ng-click="addTextDecorationHandler()" translate>
+        <label for="textDecorationInput" ng-show="zone.text" ng-model="zone.decoration">Text Decoration</label>
+        <select name="textDecoration" ng-show="zone.text" id="textDecorationInput" ng-click="addTextDecorationHandler()" translate>
           <option value="none" id="textDecorationNone">None</option>
           <option value="inherit" id="textDecorationInherit">Inherit</option>
           <option value="underline" id="textDecorationUnderline">Underline</option>
@@ -105,12 +125,12 @@
       <div class="separator"></div>
 
       <div class="row">
-        <label for="alignInput" ng-show="text">Align</label>
-        <select name="align" id="alignInput" ng-show="text" ng-click="addTextAlignHandler()" translate>
-          <option value="left" id="alignLeft">Left</option>
-          <option value="center" id="alignCenter">Center</option>
-          <option value="right" id="alignRight">Right</option>
-          <option value="justify" id="alignJusify">Justify</option>
+        <label for="alignInput" ng-show="zone.text" ng-model="zone.align">Align</label>
+        <select name="align" id="alignInput" ng-show="zone.text" ng-click="addTextAlignHandler()" translate>
+          <option value="left" id="alignLeft"><span class="glyphicons glyphicons-align-left"></span>Left</option>
+          <option value="center" id="alignCenter"><span class="glyphicons glyphicons-align-center"></span>Center</option>
+          <option value="right" id="alignRight"><span class="glyphicons glyphicons-align-right"></span>Right</option>
+          <option value="justify" id="alignJusify"><span class="glyphicons glyphicons-justify"></span>Justify</option>
         </select>
       </div>
 
@@ -118,7 +138,7 @@
 
       <!-- manque image file -->
       <div class="row">
-        <label for="descriptionInput" ng-show="image">Description</label>
+        <label for="descriptionInput" ng-show="zone.image">Description</label>
         <input type="text" name="description" id="descriptionInput" ng-show="image" ng-click="addDescriptionHandler()" translate />
       </div>
 
