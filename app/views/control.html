@@ -52,8 +52,8 @@
 	<div class="separator"></div>
 
       <div class="row">
-        <label for="borderInput" translate>Border</label>
-        <input type="text" name="border" id="borderInput" ng-model="zone.border"/>
+        <label for="borderInput" translate>Border Weight</label>
+        <input type="number" name="border" id="borderInput" ng-model="bord.weight"/>
       </div>
 
       <div class="separator"></div>
@@ -61,7 +61,7 @@
       <div class="row">
         <label for="borderStyle" translate>Border Style</label>
         <!-- idem -->
-        <select name="border" id="borderStyle" ng-click="addBordureHandler()" ng-model="zone.border" translate>
+        <select name="border" id="borderStyle" ng-model="bord.style" translate>
           <option value="none" id="bordureNone" >None</option>
           <option value="solid" id="bordureSolid">Solid</option>
           <option value="dotted" id="bordureDotted">Dotted</option>
@@ -77,10 +77,11 @@
       <div class="separator"></div>
 
       <div class="row">
-        <label for="borderColor" translate>Border Style</label>
-       <input type="color" name="borderColor" id="borderColor" ng-model="zone.border" />
+        <label for="borderColor" translate>Border Color</label>
+       <input type="color" name="borderColor" id="borderColor" ng-model="bord.color" />
       </div>
       
+      <div> <label ng-model="zone.border">{{total()}}</label></div>
       
       <div class="separator"></div>
 
@@ -93,7 +94,7 @@
 
       <div class="row" ng-show="zone.text">
         <label for="textSizeInput" translate>Text Size</label>
-        <input type="text" name="textSize" id="textSizeInput" ng-model="zone.size"/>
+        <input type="number" name="textSize" id="textSizeInput" ng-model="zone.size"/>
       </div>
       
       <div class="separator"></div>

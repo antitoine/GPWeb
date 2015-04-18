@@ -13,6 +13,11 @@ angular.module('gpwebApp')
     $scope.config = {
       value: true
     };
+    $scope.bord = {"weight": "1", "color": "black", "style": "solid"};
+    $scope.total = function(){
+		var total = $scope.bord.weight + "px " + $scope.bord.color + " " + $scope.bord.style;
+		return total;
+	}
     /* if(selectedItem.type === 'text')
      {
      $scope.config = {
