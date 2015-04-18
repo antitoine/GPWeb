@@ -23,7 +23,7 @@ angular.module('gpwebApp')
           depth: '5',
           backgroundColor: 'green',
           backgroundImage: 'auto',
-          border: '2px solid red',
+          border: '2px red solid',
           font: 'auto',
           color: 'blue',
           size: '20pt',
@@ -64,7 +64,7 @@ angular.module('gpwebApp')
           left: '100px',
           depth:'7',
           backgroundColor: 'purple',
-          border: '2px solid red',
+          border: '2px red solid',
           imageFile: 'images/yeoman.png',
           description: 'Yeoman'
         }
@@ -79,7 +79,7 @@ angular.module('gpwebApp')
           left: '100px',
           depth: '9',
           backgroundColor: 'purple',
-          border: '2px solid red',
+          border: '2px red solid',
           backgroundImage: 'images/yeoman.png',
           backgroundRepeat: 'no-repeat',
           description: 'Yeoman'
@@ -112,7 +112,7 @@ angular.module('gpwebApp')
           backgroundColor: 'auto',
           backgroundImage: 'auto',
           backgroundRepeat: 'auto',
-          border: '1px solid black'
+          border: '1px black solid',
         };
         if (type === 'text') {
           zone.font = 'auto';
