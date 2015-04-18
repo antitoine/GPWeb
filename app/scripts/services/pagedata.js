@@ -11,6 +11,16 @@ angular.module('gpwebApp')
   .factory('pageData', function () {
     // Service logic
     // ...
+    var page = {
+      width: '600px',
+      height: '800px',
+      backgroundColor: 'white',
+      borderWidth: '2px',
+      borderStyle: 'solid',
+      borderColor: 'black',
+      backgroundImage: '',
+      backgroundRepeat: ''
+    };
     var zones = {
       text: [
         {
@@ -23,7 +33,9 @@ angular.module('gpwebApp')
           depth: '5',
           backgroundColor: 'green',
           backgroundImage: 'auto',
-          border: '2px red solid',
+          borderWidth: '2px',
+          borderStyle: 'solid',
+          borderColor: 'red',
           font: 'auto',
           color: 'blue',
           size: '20pt',
@@ -43,7 +55,9 @@ angular.module('gpwebApp')
           depth: '6',
           backgroundColor: 'yellow',
           backgroundImage: 'auto',
-          border: '2px solid purple',
+          borderWidth: '2px',
+          borderStyle: 'solid',
+          borderColor: 'red',
           font: 'auto',
           color: 'blue',
           size: '20pt',
@@ -64,7 +78,9 @@ angular.module('gpwebApp')
           left: '100px',
           depth:'7',
           backgroundColor: 'purple',
-          border: '2px red solid',
+          borderWidth: '2px',
+          borderStyle: 'solid',
+          borderColor: 'red',
           imageFile: 'images/yeoman.png',
           description: 'Yeoman'
         }
@@ -79,7 +95,9 @@ angular.module('gpwebApp')
           left: '100px',
           depth: '9',
           backgroundColor: 'purple',
-          border: '2px red solid',
+          borderWidth: '2px',
+          borderStyle: 'solid',
+          borderColor: 'red',
           backgroundImage: 'images/yeoman.png',
           backgroundRepeat: 'no-repeat',
           description: 'Yeoman'
@@ -87,10 +105,15 @@ angular.module('gpwebApp')
       ]
     };
 
-    var selected = zones.text[1];
+    //TODO à remplacer par la selection
+    var selected = null;
+    selected = zones.text[1];
 
     // Public API here
     return {
+      getPage: function () {
+        return page;
+      },
       getZones: function (type) {
         if (type === 'text') {
           return zones.text;
@@ -112,7 +135,9 @@ angular.module('gpwebApp')
           backgroundColor: 'auto',
           backgroundImage: 'auto',
           backgroundRepeat: 'auto',
-          border: '1px black solid',
+          borderWidth: '1px',
+          borderStyle: 'solid',
+          borderColor: 'black'
         };
         if (type === 'text') {
           zone.font = 'auto';
@@ -138,6 +163,9 @@ angular.module('gpwebApp')
         }
       },
       getSelected: function () {
+        if (selected === null) {
+          selected = page;
+        }
         return selected;
       }
     };

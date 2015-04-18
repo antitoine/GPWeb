@@ -58,89 +58,6 @@ $split-color: #f3f3f3;
   }
 }
 
-#bordureSolid{
-	border-bottom: 3px solid black;
-}
-
-#bordureDotted{
-	border-bottom: 3px dotted black;
-}
-
-#bordureDashed{
-	border-bottom: 3px dashed black;
-}
-
-#bordureDouble{
-	border-bottom: 3px double black;
-}
-
-#bordureGroovee{
-	border-bottom: 3px groove black;
-}
-
-#bordureRidge{
-	border-bottom: 3px ridge black;
-}
-
-#bordureInset{
-	border-bottom: 3px inset black;
-}
-
-#bordureOutset{
-	border-bottom: 3px outset black;
-}
-
-
-#textDecorationInherit{
-	text-decoration: inherit;
-}
-
-#textDecorationUnderline{
-	text-decoration: underline;
-}
-
-#textDecorationOverline{
-	text-decoration: overline;
-}
-
-#textDecorationLine-through{
-	text-decoration: line-through;
-}
-
-#textDecorationBlink{
-	text-decoration: blink;
-}
-
-#alignLeft{
-	text-align: left;
-}
-
-#alignCenter{
-	text-align: center;
-}
-
-#alignRight{
-	text-align: right;
-}
-
-#alignJusify{
-	text-align: justify;
-}
-
-#textStyleObliqueLabel{
-	font-style: oblique;
-	font-weight: normal;
-}
-
-#textStyleItalicLabel{
-	font-style: italic;
-	font-weight: normal;
-}
-
-#textStyleBoldLabel{
-	font-weight: bold;
-}
-
 #footer {
   position: absolute;
   bottom: 1px;
@@ -148,8 +65,9 @@ $split-color: #f3f3f3;
 }
 
 .page {
-  width: 100%;
-  height: 100%;
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .zone {
@@ -158,4 +76,93 @@ $split-color: #f3f3f3;
     max-width: 100%;
     max-height: 100%;
   }
+}
+
+#content {
+  background: url("../images/canevas.png") repeat;
+  width: 100%;
+  height: 100%;
+}
+
+// Configuration - Zone / Page
+.bordureSolid{
+  border-bottom: 3px solid black;
+}
+
+.bordureDotted{
+  border-bottom: 3px dotted black;
+}
+
+.bordureDashed{
+  border-bottom: 3px dashed black;
+}
+
+.bordureDouble{
+  border-bottom: 3px double black;
+}
+
+.bordureGroovee{
+  border-bottom: 3px groove black;
+}
+
+.bordureRidge{
+  border-bottom: 3px ridge black;
+}
+
+.bordureInset{
+  border-bottom: 3px inset black;
+}
+
+.bordureOutset{
+  border-bottom: 3px outset black;
+}
+
+.textDecorationInherit{
+  text-decoration: inherit;
+}
+
+.textDecorationUnderline{
+  text-decoration: underline;
+}
+
+.textDecorationOverline{
+  text-decoration: overline;
+}
+
+.textDecorationLine-through{
+  text-decoration: line-through;
+}
+
+.textDecorationBlink{
+  text-decoration: blink;
+}
+
+.alignLeft{
+  text-align: left;
+}
+
+.alignCenter{
+  text-align: center;
+}
+
+.alignRight{
+  text-align: right;
+}
+
+.alignJusify{
+  text-align: justify;
+}
+
+.textStyleObliqueLabel{
+  font-style: oblique;
+  font-weight: normal;
+}
+
+.textStyleItalicLabel{
+  font-style: italic;
+  font-weight: normal;
+}
+
+.textStyleBoldLabel{
+  font-weight: bold;
 }

@@ -1,4 +1,15 @@
-<div class="page" style="width: 200px; height: 300px; position: relative" data-drop="true" jqyoui-droppable>
+<div class="page"
+     ng-style="{
+      'width': page.page.width,
+      'height': page.page.height,
+      'background-color': page.page.backgroundColor,
+      'background-image': 'url(' + page.page.backgroundImage + ')',
+      'background-repeat': page.page.backgroundRepeat,
+      'border-width': page.page.borderWidth,
+      'border-style': page.page.borderStyle,
+      'border-color': page.page.borderColor
+    }"
+     data-drop="true" jqyoui-droppable>
   <zone-text ng-repeat="zone in page.zones.text" data-drag="true" jqyoui-draggable></zone-text>
   <zone-image ng-repeat="zone in page.zones.image" data-drag="true" jqyoui-draggable></zone-image>
   <zone ng-repeat="zone in page.zones.zone" data-drag="true" jqyoui-draggable></zone>

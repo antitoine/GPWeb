@@ -13,6 +13,7 @@ angular.module('gpwebApp')
       restrict: 'E',
       controller: function () {
         this.zones = pageData.getZones();
+        this.page = pageData.getPage();
       },
       controllerAs: 'page'
     };
