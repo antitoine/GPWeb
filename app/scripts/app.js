@@ -8,7 +8,7 @@
  *
  * Main module of the application.
  */
-var app = angular.module('gpwebApp', ['ui.bootstrap', 'ngAnimate', 'gettext', 'ngDragDrop', 'ui.layout']);
+var app = angular.module('gpwebApp', ['ui.bootstrap', 'ngAnimate', 'gettext', 'ui.layout']);
 app.run(function (gettextCatalog) {
   gettextCatalog.setCurrentLanguage('fr_FR');
 });

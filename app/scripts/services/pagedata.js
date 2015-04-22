@@ -167,6 +167,9 @@ angular.module('gpwebApp')
           selected = page;
         }
         return selected;
+      },
+      setSelected: funcion(zone) {
+        this.selected = zone;
       }
     };
   })
