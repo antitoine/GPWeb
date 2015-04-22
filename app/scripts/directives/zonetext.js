@@ -10,6 +10,10 @@ angular.module('gpwebApp')
   .directive('zoneText', function () {
     return {
       templateUrl: 'views/zonetext.html',
-      restrict: 'E'
+      restrict: 'E',
+      controller: function() {
+
+      },
+      controllerAs: 'zoneText'
     };
   });

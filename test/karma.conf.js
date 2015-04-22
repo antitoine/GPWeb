@@ -27,7 +27,6 @@ module.exports = function(config) {
       'bower_components/angular-animate/angular-animate.js',
       'bower_components/jquery-ui/jquery-ui.js',
       'bower_components/angular-gettext/dist/angular-gettext.js',
-      'bower_components/angular-dragdrop/src/angular-dragdrop.js',
       'bower_components/raf/index.js',
       'bower_components/angular-ui-layout/ui-layout.js',
       'bower_components/angular-mocks/angular-mocks.js',

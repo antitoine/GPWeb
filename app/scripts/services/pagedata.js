@@ -107,7 +107,7 @@ angular.module('gpwebApp')
 
     //TODO à remplacer par la selection
     var selected = null;
-    selected = zones.text[1];
+    selected = zones.image[0];
 
     // Public API here
     return {
@@ -168,8 +168,8 @@ angular.module('gpwebApp')
         }
         return selected;
       },
-      setSelected: funcion(zone) {
-        this.selected = zone;
+      setSelected: function (zone) {
+        selected = zone;
       }
     };
   })

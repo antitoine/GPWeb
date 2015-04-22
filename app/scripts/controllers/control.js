@@ -10,4 +10,7 @@
 angular.module('gpwebApp')
   .controller('ControlCtrl', ['$scope', 'pageData', function ($scope, pageData) {
     $scope.zone = pageData.getSelected();
+    $scope.$watch(pageData.getSelected, function () {
+      $scope.zone = pageData.getSelected();
+    });
   }]);

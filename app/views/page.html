@@ -8,9 +8,8 @@
       'border-width': page.page.borderWidth,
       'border-style': page.page.borderStyle,
       'border-color': page.page.borderColor
-    }"
-     data-drop="true" jqyoui-droppable>
-  <zone-text ng-repeat="zone in page.zones.text"></zone-text>
-  <zone-image ng-repeat="zone in page.zones.image"></zone-image>
-  <zone ng-repeat="zone in page.zones.zone"></zone>
+    }">
+  <zone-text ng-repeat="zone in page.zones.text" ng-click="page.setSelected(zone)"></zone-text>
+  <zone-image ng-repeat="zone in page.zones.image" ng-click="page.setSelected(zone)"></zone-image>
+  <zone ng-repeat="zone in page.zones.zone" ng-click="page.setSelected(zone)"></zone>
 </div>

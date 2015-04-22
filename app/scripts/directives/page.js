@@ -14,6 +14,7 @@ angular.module('gpwebApp')
       controller: function () {
         this.zones = pageData.getZones();
         this.page = pageData.getPage();
+        this.setSelected = pageData.setSelected;
       },
       controllerAs: 'page'
     };
