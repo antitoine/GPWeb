@@ -10,7 +10,8 @@ angular.module('gpwebApp')
   .directive('zone', function () {
     return {
       templateUrl: 'views/zone.html',
-      restrict: 'E'
+      restrict: 'E',
+      replace: true
     };
 
   });

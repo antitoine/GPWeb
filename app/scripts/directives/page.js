@@ -17,6 +17,7 @@ angular.module('gpwebApp')
         this.background = pageData.getBackground();
         this.setSelected = pageData.setSelected;
       },
-      controllerAs: 'page'
+      controllerAs: 'page',
+      replace: true
     };
   }]);
