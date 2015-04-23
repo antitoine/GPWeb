@@ -84,77 +84,68 @@ $split-color: #f3f3f3;
 }
 
 // Configuration - Zone / Page
-.bordureSolid{
+#borderStyleConf option[label=solid] {
   border-bottom: 3px solid black;
 }
 
-.bordureDotted{
+#borderStyleConf option[label=dotted] {
   border-bottom: 3px dotted black;
 }
 
-.bordureDashed{
+#borderStyleConf option[label=dashed] {
   border-bottom: 3px dashed black;
 }
 
-.bordureDouble{
+#borderStyleConf option[label=double] {
   border-bottom: 3px double black;
 }
 
-.bordureGroovee{
+#borderStyleConf option[label=groovee] {
   border-bottom: 3px groove black;
 }
 
-.bordureRidge{
+#borderStyleConf option[label=ridge] {
   border-bottom: 3px ridge black;
 }
 
-.bordureInset{
+#borderStyleConf option[label=inset] {
   border-bottom: 3px inset black;
 }
 
-.bordureOutset{
+#borderStyleConf option[label=outset] {
   border-bottom: 3px outset black;
 }
 
-.textDecorationInherit{
-  text-decoration: inherit;
-}
-
-.textDecorationUnderline{
+#textDecorationConf option[label=underline] {
   text-decoration: underline;
 }
 
-.textDecorationOverline{
+#textDecorationConf option[label=pverline] {
   text-decoration: overline;
 }
 
-.textDecorationLine-through{
+#textDecorationConf option[label=line-through] {
   text-decoration: line-through;
 }
 
-.textDecorationBlink{
+#textDecorationConf option[label=blink] {
   text-decoration: blink;
 }
 
-.alignLeft{
+.alignLeft {
   text-align: left;
 }
 
-.alignCenter{
+.alignCenter {
   text-align: center;
 }
 
-.alignRight{
+.alignRight {
   text-align: right;
 }
 
-.alignJusify{
+.alignJusify {
   text-align: justify;
-}
-
-.textStyleObliqueLabel{
-  font-style: oblique;
-  font-weight: normal;
 }
 
 .textStyleItalicLabel{

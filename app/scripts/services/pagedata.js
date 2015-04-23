@@ -11,22 +11,24 @@ angular.module('gpwebApp')
   .factory('pageData', function () {
     var background = {
       name: 'Background',
-      backgroundColor: '',
+      backgroundColor: 'none',
       backgroundImage: '../images/canevas.png',
       backgroundRepeat: 'repeat',
-      backgroundPosition: '',
-      backgroundSize: ''
+      backgroundPosition: 'center',
+      backgroundSize: 'auto'
     };
     var canevas = {
       width: '600px',
       height: '800px',
       name: 'Canevas',
-      backgroundColor: 'white',
       borderWidth: '2px',
       borderStyle: 'solid',
-      borderColor: 'black',
-      backgroundImage: '',
-      backgroundRepeat: ''
+      borderColor: '#000000',
+      backgroundColor: '#ffffff',
+      backgroundImage: 'none',
+      backgroundRepeat: 'repeat',
+      backgroundPosition: 'center',
+      backgroundSize: 'auto'
     };
     var zones = {
       text: [
@@ -38,17 +40,17 @@ angular.module('gpwebApp')
           top: '100px',
           left: '100px',
           depth: '5',
-          backgroundColor: 'green',
-          backgroundImage: 'auto',
+          backgroundColor: '##23E510',
+          backgroundImage: 'none',
           borderWidth: '2px',
           borderStyle: 'solid',
-          borderColor: 'red',
+          borderColor: '#cccccc',
           font: 'auto',
           color: 'blue',
           size: '20pt',
-          style: 'auto',
-          weight: 'auto',
-          decoration: 'auto',
+          style: 'normal',
+          weight: 'normal',
+          decoration: 'none',
           align: 'center',
           text: 'Hello world !'
         },
@@ -60,17 +62,17 @@ angular.module('gpwebApp')
           top: '200px',
           left: '500px',
           depth: '6',
-          backgroundColor: 'yellow',
-          backgroundImage: 'auto',
+          backgroundColor: '#CAC412',
+          backgroundImage: 'none',
           borderWidth: '2px',
           borderStyle: 'solid',
-          borderColor: 'red',
+          borderColor: '#cccccc',
           font: 'auto',
           color: 'blue',
           size: '20pt',
-          style: 'auto',
-          weight: 'auto',
-          decoration: 'auto',
+          style: 'normal',
+          weight: 'normal',
+          decoration: 'none',
           align: 'center',
           text: 'O'
         }
@@ -84,10 +86,10 @@ angular.module('gpwebApp')
           top: '100px',
           left: '100px',
           depth:'7',
-          backgroundColor: 'purple',
+          backgroundColor: '#C82FA7',
           borderWidth: '2px',
           borderStyle: 'solid',
-          borderColor: 'red',
+          borderColor: '#cccccc',
           imageFile: 'images/yeoman.png',
           description: 'Yeoman'
         }
@@ -101,10 +103,10 @@ angular.module('gpwebApp')
           top: '100px',
           left: '100px',
           depth: '9',
-          backgroundColor: 'purple',
+          backgroundColor: '#C82FA7',
           borderWidth: '2px',
           borderStyle: 'solid',
-          borderColor: 'red',
+          borderColor: '#cccccc',
           backgroundImage: 'images/yeoman.png',
           backgroundRepeat: 'no-repeat',
           description: 'Yeoman'
@@ -133,29 +135,29 @@ angular.module('gpwebApp')
       },
       addZone: function (type, img, desc) {
         var zone = {
-          id: '',
-          name: '',
+          id: (new Date()).getTime(),
+          name: 'New zone',
           width: '100px',
           height: '100px',
           top: '100px',
           left: '100px',
-          depth: 'auto',
-          backgroundColor: 'auto',
-          backgroundImage: 'auto',
-          backgroundRepeat: 'auto',
+          depth: '0',
+          backgroundColor: '#ffffff',
+          backgroundImage: 'none',
+          backgroundRepeat: 'repeat',
           borderWidth: '1px',
           borderStyle: 'solid',
           borderColor: 'black'
         };
         if (type === 'text') {
           zone.font = 'auto';
-          zone.color = 'auto';
-          zone.size = 'auto';
-          zone.style = 'auto';
-          zone.weight = 'auto';
-          zone.decoration = 'auto';
-          zone.align = 'auto';
-          zone.text = '';
+          zone.color = '#000000';
+          zone.size = '1em';
+          zone.style = 'normal';
+          zone.weight = 'normal';
+          zone.decoration = 'none';
+          zone.align = 'left';
+          zone.text = 'Text';
           zones.text.push(zone);
         } else if (type === 'image') {
           zone.imageFile = img;

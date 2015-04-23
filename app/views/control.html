@@ -1,5 +1,5 @@
 <accordion>
-  <accordion-group heading="{{'Pages'|translate}}" is-open="true">
+  <accordion-group heading="{{'Pages'|translate}}">
     <h4 translate>Home</h4>
     <h4 translate>Gallery</h4>
     <h4 translate>Catalog</h4>
@@ -8,140 +8,127 @@
   <accordion-group heading="Configuration" is-disabled="!configurable">
     <div class="container-fluid">
 
-      <div class="row" ng-show="configurable.name">
+      <div class="row" ng-if="isSet(configurable.name)">
         <h4>{{configurable.name}}</h4>
       </div>
 
-      <div class="row" ng-show="configurable.width">
-        <label for="widthInput" translate>Width</label>
-        <input type="text" name="width" id="widthInput" ng-model="configurable.width"/>
+      <div class="row" ng-if="isSet(configurable.width)">
+        <label for="widthConf" translate>Width</label>
+        <input type="text" name="width" id="widthConf" ng-model="configurable.width"/>
         <div class="separator"></div>
       </div>
 
-      <div class="row" ng-show="configurable.height">
-        <label for="heightInput" translate>Height</label>
-        <input type="text" name="height" id="heightInput" ng-model="configurable.height" />
+      <div class="row" ng-if="isSet(configurable.height)">
+        <label for="heightConf" translate>Height</label>
+        <input type="text" name="height" id="heightConf" ng-model="configurable.height" />
         <div class="separator"></div>
       </div>
 
-      <div class="row" ng-show="configurable.left">
-        <label for="leftInput" translate>Left</label>
-        <input type="text" name="left" id="leftInput" ng-model="configurable.left"/>
+      <div class="row" ng-if="isSet(configurable.left)">
+        <label for="leftConf" translate>Left</label>
+        <input type="text" name="left" id="leftConf" ng-model="configurable.left"/>
         <div class="separator"></div>
       </div>
 
-      <div class="row" ng-show="configurable.top">
-        <label for="topInput" translate>Top</label>
-        <input type="text" name="top" id="topInput" ng-model="configurable.top"/>
+      <div class="row" ng-if="isSet(configurable.top)">
+        <label for="topConf" translate>Top</label>
+        <input type="text" name="top" id="topConf" ng-model="configurable.top"/>
         <div class="separator"></div>
       </div>
 
-      <div class="row" ng-show="configurable.depth">
-        <label for="depthInput" translate>Depth</label>
-        <input type="text" name="depth" id="depthInput" ng-model="configurable.depth"/>
+      <div class="row" ng-if="isSet(configurable.depth)">
+        <label for="depthConf" translate>Depth</label>
+        <input type="text" name="depth" id="depthConf" ng-model="configurable.depth"/>
         <div class="separator"></div>
       </div>
 
-      <div class="row" ng-show="configurable.backgroundColor">
-        <label for="backgroundColor" translate>Background Color</label>
-        <input type="color" name="backgroundColor" id="backgroundColor" ng-model="configurable.backgroundColor" />
+      <div class="row" ng-if="isSet(configurable.backgroundColor)">
+        <label for="backgroundColorConf" translate>Background Color</label>
+        <input type="color" name="backgroundColor" id="backgroundColorConf" ng-model="configurable.backgroundColor" value="{{configurable.backgroundColor}}"/>
         <div class="separator"></div>
       </div>
 
-      <div class="row" ng-show="configurable.borderWidth">
-        <label for="borderInput" translate>Border Weight</label>
-        <input type="text" name="border" id="borderInput" ng-model="configurable.borderWidth"/>
+      <div class="row" ng-if="isSet(configurable.borderWidth)">
+        <label for="borderWidthConf" translate>Border Weight</label>
+        <input type="text" name="borderWidth" id="borderWidthConf" ng-model="configurable.borderWidth"/>
         <div class="separator"></div>
       </div>
 
-      <div class="row" ng-show="configurable.borderStyle">
-        <label for="borderStyle" translate>Border Style</label>
-        <select name="border" id="borderStyle" ng-model="configurable.borderStyle" translate>
-          <option value="none" class="bordureNone" >None</option>
-          <option value="solid" class="bordureSolid">Solid</option>
-          <option value="dotted" class="bordureDotted">Dotted</option>
-          <option value="dashed" class="bordureDashed">Dashed</option>
-          <option value="double" class="bordureDouble">Double</option>
-          <option value="groove" class="bordureGroovee">Groove</option>
-          <option value="ridge" class="bordureRidge">Ridge</option>
-          <option value="inset" class="bordureInset">Inset</option>
-          <option value="outset" class="bordureOutset">Outset</option>
-        </select>
+      <div class="row" ng-if="isSet(configurable.borderStyle)">
+        <label for="borderStyleConf" translate>Border Style</label>
+        <select name="borderStyle" id="borderStyleConf" ng-model="configurable.borderStyle" ng-options="opt for opt in borderStyleOptions" translate></select>
         <div class="separator"></div>
       </div>
 
-      <div class="row" ng-show="configurable.borderColor">
+      <div class="row" ng-if="isSet(configurable.borderColor)">
         <label for="borderColor" translate>Border Color</label>
         <input type="color" name="borderColor" id="borderColor" ng-model="configurable.borderColor" />
         <div class="separator"></div>
       </div>
 
-      <div class="row" ng-show="configurable.text">
-        <label for="textInput" translate>Text</label>
-        <input type="text" name="text" id="textInput" ng-model="configurable.text"/>
+      <div class="row" ng-if="isSet(configurable.text)">
+        <label for="textConf" translate>Text</label>
+        <input type="text" name="text" id="textConf" ng-model="configurable.text"/>
         <div class="separator"></div>
       </div>
 
-      <div class="row" ng-show="configurable.size">
-        <label for="textSizeInput" translate>Text Size</label>
-        <input type="text" name="textSize" id="textSizeInput" ng-model="configurable.size"/>
+      <div class="row" ng-if="isSet(configurable.size)">
+        <label for="textSizeConf" translate>Text Size</label>
+        <input type="text" name="textSize" id="textSizeConf" ng-model="configurable.size"/>
         <div class="separator"></div>
       </div>
 
-      <div class="row" ng-show="configurable.color">
-        <label for="textColor" translate>Text Color</label>
-        <input type="color" name="textColor" id="textColor" ng-model="configurable.color" />
+      <div class="row" ng-if="isSet(configurable.color)">
+        <label for="textColorConf" translate>Text Color</label>
+        <input type="color" name="textColor" id="textColorConf" ng-model="configurable.color"/>
         <div class="separator"></div>
       </div>
 
-      <div class="row" ng-show="configurable.style">
-        <label for="textStyleInput" translate>Text Style</label>
-        <div id="textStyleInput">
-          <input type="radio" name="style" value="italic" id="italicStyle" class="italicStyle" ng-model="configurable.style"/>
-          <label for="italicStyle" translate>Italic</label><br/>
-          <input type="radio" name="style" value="oblique" id="obliqueStyle" class="obliqueStyle" ng-model="configurable.style"/>
-          <label for="obliqueStyle" translate>Oblique</label><br/>
-          <input type="radio" name="style" value="normal" id="normalStyle" class="normalStyle" ng-model="configurable.style"/>
-          <label for="normalStyle" translate>Normal</label><br/>
+      <div class="row" ng-if="isSet(configurable.style)">
+        <label for="textStyleConf" translate>Text Style</label>
+        <div id="textStyleConf">
+          <label for="italicStyle" class="italicStyle" translate>
+            <input type="radio" name="style" value="italic" id="italicStyle" ng-model="configurable.style"/>
+            Italic
+          </label><br/>
+          <label for="normalStyle" class="normalStyle" translate>
+            <input type="radio" name="style" value="normal" id="normalStyle" ng-model="configurable.style"/>
+            Normal
+          </label><br/>
+        </div>
+        <div class="separator"></div>
+      </div>
+
+      <div class="row" ng-if="isSet(configurable.weight)">
+        <label for="textWeightConf" translate>Text weight</label>
+        <div id="textWeightConf">
+          <label for="boldWeight" class="boldWeight" translate>
+            <input type="radio" name="weight" value="bold" id="boldWeight" ng-model="configurable.weight"/>
+            Bold
+          </label><br/>
+          <label for="normalWeight" class="normalWeight" translate>
+            <input type="radio" name="weight" value="normal" id="normalWeight" ng-model="configurable.weight"/>
+            Normal
+          </label><br/>
+          <div class="separator"></div>
         </div>
       </div>
 
-      <div class="row" ng-show="configurable.weight">
-        <label for="textWeightInput" translate>Text weight</label>
-        <div id="textWeightInput">
-          <input type="radio" name="weight" value="bold" id="boldWeight" class="boldWeight" ng-model="configurable.weight"/>
-          <label for="boldWeight" translate>Bold</label><br/>
-          <input type="radio" name="weight" value="normal" id="normalWeight" class="normalWeight" ng-model="configurable.weight"/>
-          <label for="normalWeight" translate>Normal</label><br/>
-          <div class="separator"></div>
-        </div>
+      <div class="row" ng-if="isSet(configurable.decoration)">
+        <label for="textDecorationConf" translate>Text Decoration</label>
+        <select name="textDecoration" id="textDecorationConf" ng-model="configurable.decoration" ng-options="opt for opt in textDecorationOptions" translate></select>
+        <div class="separator"></div>
+      </div>
 
-        <div class="row" ng-show="configurable.decoration">
-          <label for="textDecorationInput" translate>Text Decoration</label>
-          <select name="textDecoration" class="selectpicker" id="textDecorationInput" ng-model="configurable.decoration">
-            <option value="none" class="textDecorationNone" translate>None</option>
-            <option value="underline" class="textDecorationUnderline" translate>Underline</option>
-            <option value="line-through" class="textDecorationLine-through" translate>Line-Through</option>
-            <option value="overline" class="textDecorationOverline" translate>Overline</option>
-            <option value="blink" class="textDecorationBlink" translate>Blink</option>
-          </select>
-          <div class="separator"></div>
-        </div>
-
-        <div class="row" ng-show="configurable.align">
-          <label for="alignInput"translate>Align <span class="glyphicons glyphicons-align-{{configurable.align}}"></span></label>
-          <select name="align" id="alignInput" class="selectpicker" ng-model="configurable.align">
-            <option value="left" class="alignLeft" translate>Left</option>
-            <option value="center" class="alignCenter" translate>Center</option>
-            <option value="right" class="alignRight" translate>Right</option>
-            <option value="justify" class="alignJusify" translate>Justify</option>
-          </select>
-          <div class="separator"></div>
-        </div>
+      <div class="row" ng-if="isSet(configurable.align)">
+        <label for="alignConf"translate>Align <span class="glyphicons glyphicons-align-{{configurable.align}}"></span></label>
+        <select name="align" id="alignConf" class="selectpicker" ng-model="configurable.align" ng-options="opt for opt in alignOptions" translate></select>
+        <div class="separator"></div>
+      </div>
 
 
         <!-- manque image file -->
-        <div class="row" ng-show="configurable.image">
+        <div class="row" ng-if="isSet(configurable.image)">
           <label for="descriptionInput" translate>Description</label>
           <input type="text" name="description" id="descriptionInput" ng-click="addDescriptionHandler()" translate/>
         </div>
