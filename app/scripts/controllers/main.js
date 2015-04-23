@@ -9,5 +9,4 @@
  */
 angular.module('gpwebApp')
   .controller('MainCtrl', function ($scope) {
-    $scope.helloworld = "non !";
   });

@@ -9,11 +9,18 @@
  */
 angular.module('gpwebApp')
   .factory('pageData', function () {
-    // Service logic
-    // ...
-    var page = {
+    var background = {
+      name: 'Background',
+      backgroundColor: '',
+      backgroundImage: '../images/canevas.png',
+      backgroundRepeat: 'repeat',
+      backgroundPosition: '',
+      backgroundSize: ''
+    };
+    var canevas = {
       width: '600px',
       height: '800px',
+      name: 'Canevas',
       backgroundColor: 'white',
       borderWidth: '2px',
       borderStyle: 'solid',
@@ -105,14 +112,15 @@ angular.module('gpwebApp')
       ]
     };
 
-    //TODO à remplacer par la selection
     var selected = null;
-    selected = zones.image[0];
 
     // Public API here
     return {
-      getPage: function () {
-        return page;
+      getBackground: function () {
+        return background;
+      },
+      getCanevas: function () {
+        return canevas;
       },
       getZones: function (type) {
         if (type === 'text') {
@@ -164,12 +172,12 @@ angular.module('gpwebApp')
       },
       getSelected: function () {
         if (selected === null) {
-          selected = page;
+          selected = canevas;
         }
         return selected;
       },
-      setSelected: function (zone) {
-        selected = zone;
+      setSelected: function (element) {
+        selected = element;
       }
     };
   })

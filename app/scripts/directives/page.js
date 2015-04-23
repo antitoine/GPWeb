@@ -13,7 +13,8 @@ angular.module('gpwebApp')
       restrict: 'E',
       controller: function () {
         this.zones = pageData.getZones();
-        this.page = pageData.getPage();
+        this.canevas = pageData.getCanevas();
+        this.background = pageData.getBackground();
         this.setSelected = pageData.setSelected;
       },
       controllerAs: 'page'

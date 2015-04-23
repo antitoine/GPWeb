@@ -1,15 +1,24 @@
-<div class="page"
+<div class="background"
+     ng-click="page.setSelected(page.background); $event.stopPropagation();"
      ng-style="{
-      'width': page.page.width,
-      'height': page.page.height,
-      'background-color': page.page.backgroundColor,
-      'background-image': 'url(' + page.page.backgroundImage + ')',
-      'background-repeat': page.page.backgroundRepeat,
-      'border-width': page.page.borderWidth,
-      'border-style': page.page.borderStyle,
-      'border-color': page.page.borderColor
+      'background-color': page.background.backgroundColor,
+      'background-image': 'url(' + page.background.backgroundImage + ')',
+      'background-repeat': page.background.backgroundRepeat
     }">
-  <zone-text ng-repeat="zone in page.zones.text" ng-click="page.setSelected(zone)"></zone-text>
-  <zone-image ng-repeat="zone in page.zones.image" ng-click="page.setSelected(zone)"></zone-image>
-  <zone ng-repeat="zone in page.zones.zone" ng-click="page.setSelected(zone)"></zone>
+  <div class="page"
+       ng-click="page.setSelected(page.canevas); $event.stopPropagation();"
+       ng-style="{
+      'width': page.canevas.width,
+      'height': page.canevas.height,
+      'background-color': page.canevas.backgroundColor,
+      'background-image': 'url(' + page.canevas.backgroundImage + ')',
+      'background-repeat': page.canevas.backgroundRepeat,
+      'border-width': page.canevas.borderWidth,
+      'border-style': page.canevas.borderStyle,
+      'border-color': page.canevas.borderColor
+    }">
+    <zone-text ng-repeat="zone in page.zones.text" ng-click="page.setSelected(zone); $event.stopPropagation();"></zone-text>
+    <zone-image ng-repeat="zone in page.zones.image" ng-click="page.setSelected(zone); $event.stopPropagation();"></zone-image>
+    <zone ng-repeat="zone in page.zones.zone" ng-click="page.setSelected(zone); $event.stopPropagation();"></zone>
+  </div>
 </div>

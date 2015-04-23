@@ -5,58 +5,58 @@
     <h4 translate>Catalog</h4>
     <h4 translate>About</h4>
   </accordion-group>
-  <accordion-group heading="Configuration" is-disabled="!zone">
+  <accordion-group heading="Configuration" is-disabled="!configurable">
     <div class="container-fluid">
 
-      <div class="row" ng-show="zone.name">
-        <h4>{{zone.name}}</h4>
+      <div class="row" ng-show="configurable.name">
+        <h4>{{configurable.name}}</h4>
       </div>
 
-      <div class="row" ng-show="zone.width">
+      <div class="row" ng-show="configurable.width">
         <label for="widthInput" translate>Width</label>
-        <input type="text" name="width" id="widthInput" ng-model="zone.width"/>
+        <input type="text" name="width" id="widthInput" ng-model="configurable.width"/>
+        <div class="separator"></div>
       </div>
-      <div class="separator" ng-show="zone.width"></div>
 
-      <div class="row" ng-show="zone.height">
+      <div class="row" ng-show="configurable.height">
         <label for="heightInput" translate>Height</label>
-        <input type="text" name="height" id="heightInput" ng-model="zone.height" />
+        <input type="text" name="height" id="heightInput" ng-model="configurable.height" />
+        <div class="separator"></div>
       </div>
-      <div class="separator" ng-show="zone.height"></div>
 
-      <div class="row" ng-show="zone.left">
+      <div class="row" ng-show="configurable.left">
         <label for="leftInput" translate>Left</label>
-        <input type="text" name="left" id="leftInput" ng-model="zone.left"/>
+        <input type="text" name="left" id="leftInput" ng-model="configurable.left"/>
+        <div class="separator"></div>
       </div>
-      <div class="separator" ng-show="zone.left"></div>
 
-      <div class="row" ng-show="zone.top">
+      <div class="row" ng-show="configurable.top">
         <label for="topInput" translate>Top</label>
-        <input type="text" name="top" id="topInput" ng-model="zone.top"/>
+        <input type="text" name="top" id="topInput" ng-model="configurable.top"/>
+        <div class="separator"></div>
       </div>
-      <div class="separator" ng-show="zone.top"></div>
 
-      <div class="row" ng-show="zone.depth">
+      <div class="row" ng-show="configurable.depth">
         <label for="depthInput" translate>Depth</label>
-        <input type="text" name="depth" id="depthInput" ng-model="zone.depth"/>
+        <input type="text" name="depth" id="depthInput" ng-model="configurable.depth"/>
+        <div class="separator"></div>
       </div>
-      <div class="separator" ng-show="zone.depth"></div>
 
-      <div class="row" ng-show="zone.backgroundColor">
+      <div class="row" ng-show="configurable.backgroundColor">
         <label for="backgroundColor" translate>Background Color</label>
-        <input type="color" name="backgroundColor" id="backgroundColor" ng-model="zone.backgroundColor" />
+        <input type="color" name="backgroundColor" id="backgroundColor" ng-model="configurable.backgroundColor" />
+        <div class="separator"></div>
       </div>
-      <div class="separator" ng-show="zone.backgroundColor"></div>
 
-      <div class="row" ng-show="zone.borderWidth">
+      <div class="row" ng-show="configurable.borderWidth">
         <label for="borderInput" translate>Border Weight</label>
-        <input type="text" name="border" id="borderInput" ng-model="zone.borderWidth"/>
+        <input type="text" name="border" id="borderInput" ng-model="configurable.borderWidth"/>
+        <div class="separator"></div>
       </div>
-      <div class="separator" ng-show="zone.borderWidth"></div>
 
-      <div class="row" ng-show="zone.borderStyle">
+      <div class="row" ng-show="configurable.borderStyle">
         <label for="borderStyle" translate>Border Style</label>
-        <select name="border" id="borderStyle" ng-model="zone.borderStyle" translate>
+        <select name="border" id="borderStyle" ng-model="configurable.borderStyle" translate>
           <option value="none" class="bordureNone" >None</option>
           <option value="solid" class="bordureSolid">Solid</option>
           <option value="dotted" class="bordureDotted">Dotted</option>
@@ -67,80 +67,81 @@
           <option value="inset" class="bordureInset">Inset</option>
           <option value="outset" class="bordureOutset">Outset</option>
         </select>
+        <div class="separator"></div>
       </div>
-      <div class="separator" ng-show="zone.borderStyle"></div>
 
-      <div class="row" ng-show="zone.borderColor">
+      <div class="row" ng-show="configurable.borderColor">
         <label for="borderColor" translate>Border Color</label>
-        <input type="color" name="borderColor" id="borderColor" ng-model="zone.borderColor" />
+        <input type="color" name="borderColor" id="borderColor" ng-model="configurable.borderColor" />
+        <div class="separator"></div>
       </div>
-      <div class="separator" ng-show="zone.borderColor"></div>
 
-      <div class="row" ng-show="zone.text">
+      <div class="row" ng-show="configurable.text">
         <label for="textInput" translate>Text</label>
-        <input type="text" name="text" id="textInput" ng-model="zone.text"/>
+        <input type="text" name="text" id="textInput" ng-model="configurable.text"/>
+        <div class="separator"></div>
       </div>
-      <div class="separator" ng-show="zone.text"></div>
 
-      <div class="row" ng-show="zone.size">
+      <div class="row" ng-show="configurable.size">
         <label for="textSizeInput" translate>Text Size</label>
-        <input type="text" name="textSize" id="textSizeInput" ng-model="zone.size"/>
+        <input type="text" name="textSize" id="textSizeInput" ng-model="configurable.size"/>
+        <div class="separator"></div>
       </div>
-      <div class="separator" ng-show="zone.size"></div>
 
-      <div class="row" ng-show="zone.color">
+      <div class="row" ng-show="configurable.color">
         <label for="textColor" translate>Text Color</label>
-        <input type="color" name="textColor" id="textColor" ng-model="zone.color" />
+        <input type="color" name="textColor" id="textColor" ng-model="configurable.color" />
+        <div class="separator"></div>
       </div>
-      <div class="separator" ng-show="zone.color"></div>
 
-      <div class="row" ng-show="zone.style">
+      <div class="row" ng-show="configurable.style">
         <label for="textStyleInput" translate>Text Style</label>
         <div id="textStyleInput">
-          <input type="radio" name="style" value="italic" id="italicStyle" class="italicStyle" ng-model="zone.style"/>
+          <input type="radio" name="style" value="italic" id="italicStyle" class="italicStyle" ng-model="configurable.style"/>
           <label for="italicStyle" translate>Italic</label><br/>
-          <input type="radio" name="style" value="oblique" id="obliqueStyle" class="obliqueStyle" ng-model="zone.style"/>
+          <input type="radio" name="style" value="oblique" id="obliqueStyle" class="obliqueStyle" ng-model="configurable.style"/>
           <label for="obliqueStyle" translate>Oblique</label><br/>
-          <input type="radio" name="style" value="normal" id="normalStyle" class="normalStyle" ng-model="zone.style"/>
+          <input type="radio" name="style" value="normal" id="normalStyle" class="normalStyle" ng-model="configurable.style"/>
           <label for="normalStyle" translate>Normal</label><br/>
         </div>
       </div>
 
-      <div class="row" ng-show="zone.weight">
+      <div class="row" ng-show="configurable.weight">
         <label for="textWeightInput" translate>Text weight</label>
         <div id="textWeightInput">
-          <input type="radio" name="weight" value="bold" id="boldWeight" class="boldWeight" ng-model="zone.weight"/>
+          <input type="radio" name="weight" value="bold" id="boldWeight" class="boldWeight" ng-model="configurable.weight"/>
           <label for="boldWeight" translate>Bold</label><br/>
-          <input type="radio" name="weight" value="normal" id="normalWeight" class="normalWeight" ng-model="zone.weight"/>
+          <input type="radio" name="weight" value="normal" id="normalWeight" class="normalWeight" ng-model="configurable.weight"/>
           <label for="normalWeight" translate>Normal</label><br/>
+          <div class="separator"></div>
         </div>
-        <div class="separator" ng-show="zone.weight"></div>
 
-        <div class="row" ng-show="zone.decoration">
+        <div class="row" ng-show="configurable.decoration">
           <label for="textDecorationInput" translate>Text Decoration</label>
-          <select name="textDecoration" class="selectpicker" id="textDecorationInput" ng-model="zone.decoration">
+          <select name="textDecoration" class="selectpicker" id="textDecorationInput" ng-model="configurable.decoration">
             <option value="none" class="textDecorationNone" translate>None</option>
             <option value="underline" class="textDecorationUnderline" translate>Underline</option>
             <option value="line-through" class="textDecorationLine-through" translate>Line-Through</option>
             <option value="overline" class="textDecorationOverline" translate>Overline</option>
             <option value="blink" class="textDecorationBlink" translate>Blink</option>
           </select>
+          <div class="separator"></div>
         </div>
-        <div class="separator" ng-show="zone.decoration"></div>
 
-        <div class="row" ng-show="zone.align">
-          <label for="alignInput"translate>Align <span class="glyphicons glyphicons-align-{{zone.align}}"></span></label>
-          <select name="align" id="alignInput" class="selectpicker" ng-model="zone.align">
+        <div class="row" ng-show="configurable.align">
+          <label for="alignInput"translate>Align <span class="glyphicons glyphicons-align-{{configurable.align}}"></span></label>
+          <select name="align" id="alignInput" class="selectpicker" ng-model="configurable.align">
             <option value="left" class="alignLeft" translate>Left</option>
             <option value="center" class="alignCenter" translate>Center</option>
             <option value="right" class="alignRight" translate>Right</option>
             <option value="justify" class="alignJusify" translate>Justify</option>
           </select>
+          <div class="separator"></div>
         </div>
-        <div class="separator" ng-show="zone.align"></div>
+
 
         <!-- manque image file -->
-        <div class="row" ng-show="zone.image">
+        <div class="row" ng-show="configurable.image">
           <label for="descriptionInput" translate>Description</label>
           <input type="text" name="description" id="descriptionInput" ng-click="addDescriptionHandler()" translate/>
         </div>
