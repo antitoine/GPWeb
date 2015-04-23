@@ -60,7 +60,7 @@ angular.module('gpwebApp')
           width: '100px',
           height: '50px',
           top: '200px',
-          left: '500px',
+          left: '400px',
           depth: '6',
           backgroundColor: '#CAC412',
           backgroundImage: 'none',
