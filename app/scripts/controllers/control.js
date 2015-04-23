@@ -11,7 +11,7 @@ angular.module('gpwebApp')
   .controller('ControlCtrl', ['$scope', 'pageData', function ($scope, pageData) {
     $scope.configurable = pageData.getSelected();
     $scope.isSet = function (variable){
-      if ( typeof(variable) != "undefined" ) {
+      if ( typeof(variable) !== "undefined" ) {
         return true;
       } else {
         return false;

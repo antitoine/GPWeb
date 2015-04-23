@@ -62,6 +62,9 @@ $split-color: #f3f3f3;
   position: fixed;
   bottom: 1px;
   opacity: 0.5;
+  & :hover {
+    opacity: 1;
+  }
 }
 
 #content {
@@ -81,6 +84,16 @@ $split-color: #f3f3f3;
   & .background {
     width: 100%;
     min-height: 100vh;
+  }
+  & .alert-container {
+    position: absolute;
+    width: 100%;
+    z-index: 1000;
+    & .alert {
+      width: 300px;
+      margin-top: 10px;
+      margin-left: 20px;
+    }
   }
 }
 
@@ -162,5 +175,21 @@ $split-color: #f3f3f3;
   }
 }
 
-
-
+// Animation
+.fade {
+  opacity:1;
+}
+.fade.ng-enter {
+  transition:0.1s linear all;
+  opacity:0;
+}
+.fade.ng-enter.ng-enter-active {
+  opacity:1;
+}
+.fade.ng-leave {
+  transition:1s linear all;
+  opacity:1;
+}
+.fade.ng-leave.ng-leave-active {
+  opacity:0;
+}
