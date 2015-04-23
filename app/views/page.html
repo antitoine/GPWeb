@@ -1,11 +1,11 @@
-<div class="background"
+<div id="background"
      ng-click="page.setSelected(page.background); $event.stopPropagation();"
      ng-style="{
       'background-color': page.background.backgroundColor,
       'background-image': 'url(' + page.background.backgroundImage + ')',
       'background-repeat': page.background.backgroundRepeat
     }">
-  <div class="page"
+  <div id="canevas"
        ng-click="page.setSelected(page.canevas); $event.stopPropagation();"
        ng-style="{
       'width': page.canevas.width,

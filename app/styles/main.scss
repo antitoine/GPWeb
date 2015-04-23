@@ -60,33 +60,38 @@ $split-color: #f3f3f3;
 
 #footer {
   position: fixed;
-  bottom: 1px;
-  opacity: 0.5;
-  & :hover {
+  bottom: 10px;
+  & span {
+    opacity: 0.5;
+  }
+  & button {
+    opacity: 0.5;
+  }
+  & button:hover {
     opacity: 1;
   }
 }
 
 #content {
   cursor: pointer;
-  & .page {
+  & #canevas {
     position: relative;
     margin-left: auto;
     margin-right: auto;
   }
   & .zone {
-    cursor: move;
+    //cursor: move;
     &.image img {
       max-width: 100%;
       max-height: 100%;
     }
   }
-  & .background {
+  & #background {
     width: 100%;
     min-height: 100vh;
   }
   & .alert-container {
-    position: absolute;
+    position: fixed;
     width: 100%;
     z-index: 1000;
     & .alert {
@@ -95,6 +100,10 @@ $split-color: #f3f3f3;
       margin-left: 20px;
     }
   }
+}
+
+.modal-backdrop {
+  height: 100%;
 }
 
 // Configuration - Zone / Page
@@ -176,20 +185,20 @@ $split-color: #f3f3f3;
 }
 
 // Animation
-.fade {
+.ng-animate-fade {
   opacity:1;
 }
-.fade.ng-enter {
+.ng-animate-fade.ng-enter {
   transition:0.1s linear all;
   opacity:0;
 }
-.fade.ng-enter.ng-enter-active {
+.ng-animate-fade.ng-enter.ng-enter-active {
   opacity:1;
 }
-.fade.ng-leave {
+.ng-animate-fade.ng-leave {
   transition:1s linear all;
   opacity:1;
 }
-.fade.ng-leave.ng-leave-active {
+.ng-animate-fade.ng-leave.ng-leave-active {
   opacity:0;
 }

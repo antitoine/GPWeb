@@ -1,5 +1,5 @@
 <div
-  class="zone text"
+  class="zone text draggable resizable"
   ng-attr-id="{{zone.id}}"
   ng-attr-title="{{zone.name}}"
   ng-style="{
@@ -15,7 +15,6 @@
     'border-style': zone.borderStyle,
     'border-color': zone.borderColor
   }"
-  ng-click="zoneText.test()"
   >
   <p
     ng-style="{

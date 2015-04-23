@@ -1,14 +1,14 @@
 <div id="content">
   <div class="alert-container">
-    <alert class="fade" ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert()">{{alert.msg}}</alert>
+    <alert class="ng-animate-fade" ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert()">{{alert.msg}}</alert>
   </div>
   <page></page>
 </div>
 
 <div id="footer">
   <div class="container-fluid">
-    <button class="btn btn-default" ng-click="openSettings()"><span class="glyphicon glyphicon-cog"></span> Settings</button>
-    <span class="glyphicon glyphicon-star"></span> GPWeb
+    <button class="btn btn-default" ng-click="openSettings()" tooltip="Settings"><span class='glyphicon glyphicon-cog'></span></button>
+    <span class="gpweb">GPWeb</span>
   </div>
 </div>
 

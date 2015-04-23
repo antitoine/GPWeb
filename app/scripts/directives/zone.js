@@ -10,6 +10,13 @@ angular.module('gpwebApp')
   .directive('zone', function () {
     return {
       templateUrl: 'views/zone.html',
-      restrict: 'E'
+      restrict: 'E',
+      controller: function() {
+        jQuery(document).ready(function() {
+          jQuery('.zone').draggable({ containment: "#canevas", scroll: false });
+          jQuery('.zone').resizable({ containment: "#canevas" });
+        });
+      }
     };
+
   });

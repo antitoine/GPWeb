@@ -10,12 +10,6 @@
  */
 angular.module('gpwebApp')
   .controller('ToolsCtrl', ['$scope', 'pageData', function ($scope, pageData) {
-    angular.element(document).tooltip({
-      position: {
-        my: "left center",
-        at: "right center"
-      }
-    });
     $scope.saveHandler = function () {
       console.log("Save Handler");
       //TODO

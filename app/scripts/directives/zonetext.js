@@ -12,8 +12,10 @@ angular.module('gpwebApp')
       templateUrl: 'views/zonetext.html',
       restrict: 'E',
       controller: function() {
-
-      },
-      controllerAs: 'zoneText'
+        jQuery(document).ready(function() {
+          jQuery('.zone').draggable({ containment: "#canevas", scroll: false });
+          jQuery('.zone').resizable({ containment: "#canevas" });
+        });
+      }
     };
   });
