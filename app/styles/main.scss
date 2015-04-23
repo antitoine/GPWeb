@@ -64,95 +64,103 @@ $split-color: #f3f3f3;
   opacity: 0.5;
 }
 
-.page {
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.zone {
-  cursor: move;
-  &.image img {
-    max-width: 100%;
-    max-height: 100%;
+#content {
+  cursor: pointer;
+  & .page {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  & .zone {
+    cursor: move;
+    &.image img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+  & .background {
+    width: 100%;
+    min-height: 100vh;
   }
 }
 
-#content .background {
-  width: 100%;
-  min-height: 100vh;
-}
-
 // Configuration - Zone / Page
-#borderStyleConf option[label=solid] {
-  border-bottom: 3px solid black;
+#borderStyleConf {
+  & option[label=solid] {
+    border-bottom: 3px solid black;
+  }
+  & option[label=dotted] {
+    border-bottom: 3px dotted black;
+  }
+  & option[label=dashed] {
+    border-bottom: 3px dashed black;
+  }
+  & option[label=double] {
+    border-bottom: 3px double black;
+  }
+  & option[label=groovee] {
+    border-bottom: 3px groove black;
+  }
+  & option[label=ridge] {
+    border-bottom: 3px ridge black;
+  }
+  & option[label=inset] {
+    border-bottom: 3px inset black;
+  }
+  & option[label=outset] {
+    border-bottom: 3px outset black;
+  }
 }
 
-#borderStyleConf option[label=dotted] {
-  border-bottom: 3px dotted black;
+#textDecorationConf {
+  & option[label=underline] {
+    text-decoration: underline;
+  }
+  & option[label=pverline] {
+    text-decoration: overline;
+  }
+  & option[label=line-through] {
+    text-decoration: line-through;
+  }
+  & option[label=blink] {
+    text-decoration: blink;
+  }
 }
 
-#borderStyleConf option[label=dashed] {
-  border-bottom: 3px dashed black;
+#alignConf {
+  & option[label=left] {
+    text-align: left;
+  }
+  & option[label=center] {
+    text-align: center;
+  }
+  & option[label=right] {
+    text-align: right;
+  }
+  & option[label=jusify] {
+    text-align: justify;
+  }
 }
 
-#borderStyleConf option[label=double] {
-  border-bottom: 3px double black;
+#textWeightConf {
+  & .normalWeight {
+    font-weight: normal;
+  }
+  & .boldWeight {
+    font-weight: bold;
+  }
 }
 
-#borderStyleConf option[label=groovee] {
-  border-bottom: 3px groove black;
+#textStyleConf {
+  & .normalStyle {
+    font-style: normal;
+    font-weight: normal;
+  }
+  & .italicStyle {
+    font-style: italic;
+    font-weight: normal;
+  }
 }
 
-#borderStyleConf option[label=ridge] {
-  border-bottom: 3px ridge black;
-}
 
-#borderStyleConf option[label=inset] {
-  border-bottom: 3px inset black;
-}
 
-#borderStyleConf option[label=outset] {
-  border-bottom: 3px outset black;
-}
-
-#textDecorationConf option[label=underline] {
-  text-decoration: underline;
-}
-
-#textDecorationConf option[label=pverline] {
-  text-decoration: overline;
-}
-
-#textDecorationConf option[label=line-through] {
-  text-decoration: line-through;
-}
-
-#textDecorationConf option[label=blink] {
-  text-decoration: blink;
-}
-
-.alignLeft {
-  text-align: left;
-}
-
-.alignCenter {
-  text-align: center;
-}
-
-.alignRight {
-  text-align: right;
-}
-
-.alignJusify {
-  text-align: justify;
-}
-
-.textStyleItalicLabel{
-  font-style: italic;
-  font-weight: normal;
-}
-
-.textStyleBoldLabel{
-  font-weight: bold;
-}
