@@ -1,11 +1,11 @@
 <div
   resizable data-resizable-containment="#canevas"
   draggable data-draggable-containment="#canevas"
+  ng-model="zone"
   class="zone image"
   ng-attr-id="{{zone.id}}"
   ng-attr-title="{{zone.name}}"
   ng-style="{
-    'position': 'relative',
     'width': zone.width,
     'height': zone.height,
     'top': zone.top,

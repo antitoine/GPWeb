@@ -80,7 +80,10 @@ $split-color: #f3f3f3;
     margin-right: auto;
   }
   & .zone {
-    //cursor: move;
+    position: absolute;
+    &.ui-draggable-dragging {
+      cursor: move;
+    }
     &.image img {
       max-width: 100%;
       max-height: 100%;
