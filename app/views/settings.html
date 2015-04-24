@@ -6,6 +6,9 @@
     <input type="checkbox" ng-model="alertsEnabled">
     Enable alerts
   </label>
+  <br/>
+  <label for="languageConf" translate>Langue</label>
+  <select id="languageConf" ng-model="selectedLanguage" ng-options="opt for opt in availableLanguages"></select>
 </div>
 <div class="modal-footer">
   <button class="btn btn-primary" ng-click="ok()">OK</button>

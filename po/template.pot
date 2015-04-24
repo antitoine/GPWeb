@@ -4,74 +4,162 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
 
-#: app/views/tools.html:4
+#: app/views/control.html:90
+msgid ""
+"<input type=\"radio\" name=\"style\" value=\"italic\" id=\"italicStyle\" ng-model=\"configurable.style\">\n"
+"            Italic"
+msgstr ""
+
+#: app/views/control.html:94
+msgid ""
+"<input type=\"radio\" name=\"style\" value=\"normal\" id=\"normalStyle\" ng-model=\"configurable.style\">\n"
+"            Normal"
+msgstr ""
+
+#: app/views/control.html:105
+msgid ""
+"<input type=\"radio\" name=\"weight\" value=\"bold\" id=\"boldWeight\" ng-model=\"configurable.weight\">\n"
+"            Bold"
+msgstr ""
+
+#: app/views/control.html:109
+msgid ""
+"<input type=\"radio\" name=\"weight\" value=\"normal\" id=\"normalWeight\" ng-model=\"configurable.weight\">\n"
+"            Normal"
+msgstr ""
+
+#: app/views/tools.html:3
 msgid "<span class=\"glyphicon glyphicon-floppy-disk\"></span><span class=\"hidden\" translate=\"\">Save</span>"
 msgstr ""
 
-#: app/views/tools.html:24
+#: app/views/tools.html:29
 msgid "<span class=\"glyphicon glyphicon-globe\"></span><span class=\"hidden\" translate=\"\">Add link</span>"
 msgstr ""
 
-#: app/views/tools.html:14
+#: app/views/tools.html:19
 msgid "<span class=\"glyphicon glyphicon-list-alt\"></span><span class=\"hidden\" translate=\"\">Add text zone</span>"
 msgstr ""
 
-#: app/views/tools.html:9
+#: app/views/tools.html:14
 msgid "<span class=\"glyphicon glyphicon-pencil\"></span><span class=\"hidden\" translate=\"\">Add zone</span>"
 msgstr ""
 
-#: app/views/tools.html:19
+#: app/views/tools.html:24
 msgid "<span class=\"glyphicon glyphicon-picture\"></span><span class=\"hidden\" translate=\"\">Add picture</span>"
 msgstr ""
 
-#: app/views/tools.html:29
+#: app/views/tools.html:8
 msgid "<span class=\"glyphicon glyphicon-save\"></span><span class=\"hidden\" translate=\"\">Download</span>"
 msgstr ""
 
-#: app/views/control.html:20
+#: app/views/control.html:6
 msgid "About"
 msgstr ""
 
-#: app/views/tools.html:25
+#: app/views/tools.html:30
 msgid "Add link"
 msgstr ""
 
-#: app/views/tools.html:20
+#: app/views/tools.html:25
 msgid "Add picture"
 msgstr ""
 
-#: app/views/tools.html:15
+#: app/views/tools.html:20
 msgid "Add text zone"
 msgstr ""
 
-#: app/views/tools.html:10
+#: app/views/tools.html:15
 msgid "Add zone"
 msgstr ""
 
-#: app/views/control.html:19
+#: app/views/control.html:124
+msgid "Align <span class=\"glyphicons glyphicons-align-{{configurable.align}}\"></span>"
+msgstr ""
+
+#: app/views/control.html:46
+msgid "Background Color"
+msgstr ""
+
+#: app/views/control.html:64
+msgid "Border Color"
+msgstr ""
+
+#: app/views/control.html:58
+msgid "Border Style"
+msgstr ""
+
+#: app/views/control.html:52
+msgid "Border Weight"
+msgstr ""
+
+#: app/views/control.html:5
 msgid "Catalog"
 msgstr ""
 
-#: app/views/tools.html:30
+#: app/views/control.html:40
+msgid "Depth"
+msgstr ""
+
+#: app/views/control.html:131
+msgid "Description"
+msgstr ""
+
+#: app/views/tools.html:9
 msgid "Download"
 msgstr ""
 
-#: app/views/control.html:18
+#: app/views/control.html:4
 msgid "Gallery"
 msgstr ""
 
-#: app/views/control.html:17
-msgid "Home"
-msgstr ""
-
-#: app/views/control.html:16
-msgid "Pages"
-msgstr ""
-
-#: app/views/tools.html:5
-msgid "Save"
+#: app/views/control.html:22
+msgid "Height"
 msgstr ""
 
 #: app/views/control.html:3
-msgid "close/open"
+msgid "Home"
+msgstr ""
+
+#: app/views/control.html:28
+msgid "Left"
+msgstr ""
+
+#: app/views/control.html:2
+msgid "Pages"
+msgstr ""
+
+#: app/views/tools.html:4
+msgid "Save"
+msgstr ""
+
+#: app/views/control.html:70
+msgid "Text"
+msgstr ""
+
+#: app/views/control.html:82
+msgid "Text Color"
+msgstr ""
+
+#: app/views/control.html:118
+msgid "Text Decoration"
+msgstr ""
+
+#: app/views/control.html:76
+msgid "Text Size"
+msgstr ""
+
+#: app/views/control.html:88
+msgid "Text Style"
+msgstr ""
+
+#: app/views/control.html:103
+msgid "Text weight"
+msgstr ""
+
+#: app/views/control.html:34
+msgid "Top"
+msgstr ""
+
+#: app/views/control.html:16
+msgid "Width"
 msgstr ""

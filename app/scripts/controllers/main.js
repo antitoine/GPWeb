@@ -8,7 +8,7 @@
  * Controller of the gpwebApp
  */
 angular.module('gpwebApp')
-  .controller('MainCtrl', ['$scope', '$timeout', 'pageData', '$modal', function ($scope, $timeout, pageData, $modal) {
+  .controller('MainCtrl', ['$scope', '$timeout', 'pageData', '$modal', 'gettextCatalog', function ($scope, $timeout, pageData, $modal, gettextCatalog) {
     $scope.alerts = [];
     $scope.alertsEnabled = true;
     $scope.addAlert = function(alert) {
@@ -19,11 +19,12 @@ angular.module('gpwebApp')
     $scope.closeAlert = function() {
       $scope.alerts.splice($scope.alerts.indexOf(this), 1);
     };
-
-    $scope.$watch(pageData.getSelected, function () {
-      var alert = { type: 'success', msg: pageData.getSelected().name + ' seleted.' };
+    $scope.addAutoCloseAlert = function(alert, time) {
       $scope.addAlert(alert);
-      $timeout(function(){$scope.alerts.splice($scope.alerts.indexOf(alert), 1);}, 4000);
+      $timeout(function(){$scope.alerts.splice($scope.alerts.indexOf(alert), 1);}, time);
+    };
+    $scope.$watch(pageData.getSelected, function () {
+      $scope.addAutoCloseAlert({ type: 'success', msg: pageData.getSelected().name + ' seleted.' }, 4000);
     });
 
     $scope.openSettings = function () {
@@ -33,11 +34,21 @@ angular.module('gpwebApp')
         resolve: {
           alertsEnabled: function() {
             return $scope.alertsEnabled;
+          },
+          currentLanguage: function() {
+            return gettextCatalog.getCurrentLanguage();
+          },
+          availableLanguages: function () {
+            var languagesList = Object.keys(gettextCatalog.strings);
+            languagesList.push(gettextCatalog.baseLanguage);
+            return languagesList;
           }
         }
       });
-      settingsWindow.result.then(function (alertsEnabled) {
-        $scope.alertsEnabled = alertsEnabled;
+      settingsWindow.result.then(function (result) {
+        $scope.alertsEnabled = result['alert'];
+        gettextCatalog.setCurrentLanguage(result['language']);
+        $scope.addAutoCloseAlert({ type: 'success', msg: 'Settings changed successfully.' }, 4000);
       });
     };
   }]);

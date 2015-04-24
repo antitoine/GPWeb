@@ -2,32 +2,183 @@ msgid ""
 msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Project-Id-Version: \n"
+"Project-Id-Version: 1.0\n"
 "POT-Creation-Date: \n"
 "PO-Revision-Date: \n"
-"Last-Translator: \n"
-"Language-Team: \n"
+"Last-Translator: Antoine CHABERT <chabert.antoine@gmail.com>\n"
+"Language-Team: GPWeb\n"
 "MIME-Version: 1.0\n"
-"X-Generator: Poedit 1.7.4\n"
+"X-Poedit-Language: French\n"
+"X-Poedit-Country: FRANCE\n"
+"X-Poedit-SourceCharset: utf-8\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "Language: fr_FR\n"
 
-#: app/views/control.html:17
+#: app/views/control.html:90
+msgid ""
+"<input type=\"radio\" name=\"style\" value=\"italic\" id=\"italicStyle\" ng-model=\"configurable.style\">\n"
+"            Italic"
+msgstr ""
+"<input type=\"radio\" name=\"style\" value=\"italic\" id=\"italicStyle\" ng-model=\"configurable.style\">\n"
+"            Italique"
+
+#: app/views/control.html:94
+msgid ""
+"<input type=\"radio\" name=\"style\" value=\"normal\" id=\"normalStyle\" ng-model=\"configurable.style\">\n"
+"            Normal"
+msgstr ""
+"<input type=\"radio\" name=\"style\" value=\"normal\" id=\"normalStyle\" ng-model=\"configurable.style\">\n"
+"            Normal"
+
+#: app/views/control.html:105
+msgid ""
+"<input type=\"radio\" name=\"weight\" value=\"bold\" id=\"boldWeight\" ng-model=\"configurable.weight\">\n"
+"            Bold"
+msgstr ""
+"<input type=\"radio\" name=\"weight\" value=\"bold\" id=\"boldWeight\" ng-model=\"configurable.weight\">\n"
+"            Gras"
+
+#: app/views/control.html:109
+msgid ""
+"<input type=\"radio\" name=\"weight\" value=\"normal\" id=\"normalWeight\" ng-model=\"configurable.weight\">\n"
+"            Normal"
+msgstr ""
+"<input type=\"radio\" name=\"weight\" value=\"normal\" id=\"normalWeight\" ng-model=\"configurable.weight\">\n"
+"            Normal"
+
+#: app/views/tools.html:3
+msgid "<span class=\"glyphicon glyphicon-floppy-disk\"></span><span class=\"hidden\" translate=\"\">Save</span>"
+msgstr "<span class=\"glyphicon glyphicon-floppy-disk\"></span><span class=\"hidden\" translate=\"\">Sauvegarder</span>"
+
+#: app/views/tools.html:29
+msgid "<span class=\"glyphicon glyphicon-globe\"></span><span class=\"hidden\" translate=\"\">Add link</span>"
+msgstr "<span class=\"glyphicon glyphicon-globe\"></span><span class=\"hidden\" translate=\"\">Add un lien</span>"
+
+#: app/views/tools.html:19
+msgid "<span class=\"glyphicon glyphicon-list-alt\"></span><span class=\"hidden\" translate=\"\">Add text zone</span>"
+msgstr "<span class=\"glyphicon glyphicon-list-alt\"></span><span class=\"hidden\" translate=\"\">Ajouter une zone de teste</span>"
+
+#: app/views/tools.html:14
+msgid "<span class=\"glyphicon glyphicon-pencil\"></span><span class=\"hidden\" translate=\"\">Add zone</span>"
+msgstr "<span class=\"glyphicon glyphicon-pencil\"></span><span class=\"hidden\" translate=\"\">Ajouter une zone</span>"
+
+#: app/views/tools.html:24
+msgid "<span class=\"glyphicon glyphicon-picture\"></span><span class=\"hidden\" translate=\"\">Add picture</span>"
+msgstr "<span class=\"glyphicon glyphicon-picture\"></span><span class=\"hidden\" translate=\"\">Ajouter une image</span>"
+
+#: app/views/tools.html:8
+msgid "<span class=\"glyphicon glyphicon-save\"></span><span class=\"hidden\" translate=\"\">Download</span>"
+msgstr "<span class=\"glyphicon glyphicon-save\"></span><span class=\"hidden\" translate=\"\">Télécharger</span>"
+
+#: app/views/control.html:6
 msgid "About"
 msgstr "À propos"
 
-#: app/views/control.html:16
+#: app/views/tools.html:30
+msgid "Add link"
+msgstr "Ajouter un lien"
+
+#: app/views/tools.html:25
+msgid "Add picture"
+msgstr "Ajouter une image"
+
+#: app/views/tools.html:20
+msgid "Add text zone"
+msgstr "Ajouter une zone de texte"
+
+#: app/views/tools.html:15
+msgid "Add zone"
+msgstr "Ajouter une zone"
+
+#: app/views/control.html:124
+msgid "Align <span class=\"glyphicons glyphicons-align-{{configurable.align}}\"></span>"
+msgstr "Alignement <span class=\"glyphicons glyphicons-align-{{configurable.align}}\"></span>"
+
+#: app/views/control.html:46
+msgid "Background Color"
+msgstr "Background Color"
+
+#: app/views/control.html:64
+msgid "Border Color"
+msgstr "Border Color"
+
+#: app/views/control.html:58
+msgid "Border Style"
+msgstr "Border Style"
+
+#: app/views/control.html:52
+msgid "Border Weight"
+msgstr "Border Weight"
+
+#: app/views/control.html:5
 msgid "Catalog"
 msgstr "Catalogue"
 
-#: app/views/control.html:15
-msgid "Gallery"
-msgstr "Gallerie"
+#: app/views/control.html:40
+msgid "Depth"
+msgstr "Profondeur"
 
-#: app/views/control.html:14
+#: app/views/control.html:131
+msgid "Description"
+msgstr "Description"
+
+#: app/views/tools.html:9
+msgid "Download"
+msgstr "Télécharger"
+
+#: app/views/control.html:4
+msgid "Gallery"
+msgstr "Galerie"
+
+#: app/views/control.html:22
+msgid "Height"
+msgstr "Hauteur"
+
+#: app/views/control.html:3
 msgid "Home"
 msgstr "Accueil"
 
-#: app/views/control.html:13
+#: app/views/control.html:28
+msgid "Left"
+msgstr "Gauche"
+
+#: app/views/control.html:2
 msgid "Pages"
 msgstr "Pages"
+
+#: app/views/tools.html:4
+msgid "Save"
+msgstr "Sauvegarder"
+
+#: app/views/control.html:70
+msgid "Text"
+msgstr "Texte"
+
+#: app/views/control.html:82
+msgid "Text Color"
+msgstr "Couleur du texte"
+
+#: app/views/control.html:118
+msgid "Text Decoration"
+msgstr "Décoration du texte"
+
+#: app/views/control.html:76
+msgid "Text Size"
+msgstr "Taille du texte"
+
+#: app/views/control.html:88
+msgid "Text Style"
+msgstr "Style du texte"
+
+#: app/views/control.html:103
+msgid "Text weight"
+msgstr "importance	importance	Importance du texte"
+
+#: app/views/control.html:34
+msgid "Top"
+msgstr "Haut"
+
+#: app/views/control.html:16
+msgid "Width"
+msgstr "Largeur"
+
