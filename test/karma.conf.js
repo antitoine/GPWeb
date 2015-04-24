@@ -29,6 +29,7 @@ module.exports = function(config) {
       'bower_components/angular-gettext/dist/angular-gettext.js',
       'bower_components/raf/index.js',
       'bower_components/angular-ui-layout/ui-layout.js',
+      'bower_components/perfect-scrollbar/src/perfect-scrollbar.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

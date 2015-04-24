@@ -1,11 +1,17 @@
 <accordion>
-  <accordion-group heading="{{'Pages'|translate}}">
+  <accordion-group is-open="page.open">
+    <accordion-heading>
+      {{'Pages'|translate}} <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': page.open, 'glyphicon-chevron-right': !page.open}"></i>
+    </accordion-heading>
     <h4 translate>Home</h4>
     <h4 translate>Gallery</h4>
     <h4 translate>Catalog</h4>
     <h4 translate>About</h4>
   </accordion-group>
-  <accordion-group heading="Configuration" is-disabled="!configurable">
+  <accordion-group is-disabled="!configurable"  is-open="configuration.open">
+    <accordion-heading>
+      {{'Configuration'|translate}} <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': configuration.open, 'glyphicon-chevron-right': !configuration.open}"></i>
+    </accordion-heading>
     <div class="container-fluid">
 
       <div class="row" ng-if="isSet(configurable.name)">
