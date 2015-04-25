@@ -10,13 +10,13 @@ angular.module('gpwebApp')
   .directive('draggable', function () {
     return {
       restrict: 'A',
-      link: function (scope, elem, attrs) {
+      link: function (scope, elem) {
         if (elem.data('draggable-containment')) {
           elem.draggable({ containment: elem.data('draggable-containment'), scroll: false });
         } else {
           elem.draggable();
         }
-        elem.on('dragstop', function (evt, ui) {
+        elem.on('dragstop', function () {
           if (scope.zone.top) {
             scope.zone.top = elem.position().top + 'px';
           }

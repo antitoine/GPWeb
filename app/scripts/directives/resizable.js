@@ -10,13 +10,13 @@ angular.module('gpwebApp')
   .directive('resizable', function () {
     return {
       restrict: 'A',
-      link: function (scope, elem, attrs) {
+      link: function (scope, elem) {
         if (elem.data('resizable-containment')) {
           elem.resizable({ containment: elem.data('resizable-containment') });
         } else {
           elem.resizable();
         }
-        elem.on('resizestop', function (evt, ui) {
+        elem.on('resizestop', function () {
           if (scope.zone.width) {
             scope.zone.width = elem.width() + 'px';
           }

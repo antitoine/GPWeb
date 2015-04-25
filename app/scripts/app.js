@@ -11,7 +11,7 @@
 var app = angular.module('gpwebApp', ['ui.bootstrap', 'ngAnimate', 'gettext', 'ui.layout']);
 app.run(function (gettextCatalog) {
   gettextCatalog.setCurrentLanguage('fr_FR');
-  jQuery(document).ready(function () {
-    jQuery('.ui-layout-container').perfectScrollbar();
+  angular.element(document).ready(function () {
+    angular.element('.ui-layout-container').perfectScrollbar();
   });
 });

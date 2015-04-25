@@ -46,8 +46,8 @@ angular.module('gpwebApp')
         }
       });
       settingsWindow.result.then(function (result) {
-        $scope.alertsEnabled = result['alert'];
-        gettextCatalog.setCurrentLanguage(result['language']);
+        $scope.alertsEnabled = result.alert;
+        gettextCatalog.setCurrentLanguage(result.language);
         $scope.addAutoCloseAlert({ type: 'success', msg: 'Settings changed successfully.' }, 4000);
       });
     };

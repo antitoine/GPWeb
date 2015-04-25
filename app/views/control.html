@@ -14,8 +14,9 @@
     </accordion-heading>
     <div class="container-fluid">
 
-      <div class="row" ng-if="isSet(configurable.name)">
-        <h4>{{configurable.name}}</h4>
+      <div id="nameConf" class="row" ng-if="isSet(configurable.name)">
+        <input type="text" ng-model="configurable.name"/>
+        <div class="separator"></div>
       </div>
 
       <div class="row" ng-if="isSet(configurable.width)">
@@ -49,8 +50,8 @@
       </div>
 
       <div class="row" ng-if="isSet(configurable.backgroundColor)">
-        <label for="backgroundColorConf" translate>Background Color</label>
-        <input type="color" name="backgroundColor" id="backgroundColorConf" ng-model="configurable.backgroundColor" value="{{configurable.backgroundColor}}"/>
+        <label><input type="checkbox" ng-model="propertyEnabled.backgroundColor"/> <label for="backgroundColorConf">{{'Background Color'|translate}}</label></label>
+        <input ng-if="propertyEnabled.backgroundColor" type="color" name="backgroundColor" id="backgroundColorConf" ng-model="configurable.backgroundColor" value="{{configurable.backgroundColor}}"/>
         <div class="separator"></div>
       </div>
 
@@ -74,7 +75,7 @@
 
       <div class="row" ng-if="isSet(configurable.text)">
         <label for="textConf" translate>Text</label>
-        <input type="text" name="text" id="textConf" ng-model="configurable.text"/>
+        <textarea name="text" id="textConf" ng-model="configurable.text"></textarea>
         <div class="separator"></div>
       </div>
 
