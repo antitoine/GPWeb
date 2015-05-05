@@ -17,6 +17,9 @@ module.exports = function (grunt) {
 
   grunt.loadNpmTasks('grunt-angular-gettext');
 
+    // Acces our express server
+  grunt.loadNpmTasks('grunt-express-server');
+
   // Configurable paths for the application
   var appConfig = {
     app: require('./bower.json').appPath || 'app',
@@ -301,6 +304,61 @@ module.exports = function (grunt) {
       }
     },
 
+    express: {
+      options: 
+      {
+        // Override the command used to start the server. 
+          // (do not use 'coffee' here, the server will not be able to restart 
+          //  see below at opts for coffee-script support) 
+          cmd: process.argv[0],
+ 
+          // Will turn into: `node OPT1 OPT2 ... OPTN path/to/server.js ARG1 ARG2 ... ARGN` 
+          // (e.g. opts: ['node_modules/coffee-script/bin/coffee'] will correctly parse coffee-script) 
+          opts: [ ],
+        args: [ ],
+ 
+          // Setting to `false` will effectively just run `node path/to/server.js` 
+          background: false,
+          
+          // Called when the spawned server throws errors 
+          fallback: function() {},
+ 
+          // Override node env's PORT 
+          port: 3000,
+ 
+          // Override node env's NODE_ENV 
+          node_env: undefined,
+ 
+          // Enable Node's --harmony flag 
+          harmony: false,
+ 
+          // Consider the server to be "running" after an explicit delay (in milliseconds) 
+          // (e.g. when server has no initial output) 
+          delay: 0,
+ 
+          // Regular expression that matches server output to indicate it is "running" 
+          output: ".+",
+ 
+          // Set --debug (true | false | integer from 1024 to 65535, has precedence over breakOnFirstLine) 
+          debug: false,
+ 
+          // Set --debug-brk (true | false | integer from 1024 to 65535) 
+          breakOnFirstLine: false,
+ 
+          // Object with properties `out` and `err` both will take a path to a log file and   
+          // append the output of the server. Make sure the folders exist. 
+          logs: undefined
+      },
+      dev: 
+      {
+          options: {
+              script: 'server/serverSide/server.js'
+         }
+      }
+    },
+
+
+
     svgmin: {
       dist: {
         files: [{
@@ -438,7 +496,8 @@ module.exports = function (grunt) {
       'concurrent:server',
       'autoprefixer',
       'connect:livereload',
-      'watch'
+      'watch',
+      'express'
     ]);
   });
 
@@ -470,7 +529,8 @@ module.exports = function (grunt) {
     'uglify',
     'filerev',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'express'
   ]);
 
   grunt.registerTask('default', [
@@ -478,4 +538,5 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
+  grunt.registerTask('server', [ 'express:dev', 'watch' ]);
 };
