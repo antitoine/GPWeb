@@ -305,54 +305,54 @@ module.exports = function (grunt) {
     },
 
     express: {
-      options: 
+      options:
       {
-        // Override the command used to start the server. 
-          // (do not use 'coffee' here, the server will not be able to restart 
-          //  see below at opts for coffee-script support) 
+        // Override the command used to start the server.
+          // (do not use 'coffee' here, the server will not be able to restart
+          //  see below at opts for coffee-script support)
           cmd: process.argv[0],
- 
-          // Will turn into: `node OPT1 OPT2 ... OPTN path/to/server.js ARG1 ARG2 ... ARGN` 
-          // (e.g. opts: ['node_modules/coffee-script/bin/coffee'] will correctly parse coffee-script) 
+
+          // Will turn into: `node OPT1 OPT2 ... OPTN path/to/server.js ARG1 ARG2 ... ARGN`
+          // (e.g. opts: ['node_modules/coffee-script/bin/coffee'] will correctly parse coffee-script)
           opts: [ ],
         args: [ ],
- 
-          // Setting to `false` will effectively just run `node path/to/server.js` 
+
+          // Setting to `false` will effectively just run `node path/to/server.js`
           background: false,
-          
-          // Called when the spawned server throws errors 
+
+          // Called when the spawned server throws errors
           fallback: function() {},
- 
-          // Override node env's PORT 
+
+          // Override node env's PORT
           port: 3000,
- 
-          // Override node env's NODE_ENV 
+
+          // Override node env's NODE_ENV
           node_env: undefined,
- 
-          // Enable Node's --harmony flag 
+
+          // Enable Node's --harmony flag
           harmony: false,
- 
-          // Consider the server to be "running" after an explicit delay (in milliseconds) 
-          // (e.g. when server has no initial output) 
+
+          // Consider the server to be "running" after an explicit delay (in milliseconds)
+          // (e.g. when server has no initial output)
           delay: 0,
- 
-          // Regular expression that matches server output to indicate it is "running" 
+
+          // Regular expression that matches server output to indicate it is "running"
           output: ".+",
- 
-          // Set --debug (true | false | integer from 1024 to 65535, has precedence over breakOnFirstLine) 
+
+          // Set --debug (true | false | integer from 1024 to 65535, has precedence over breakOnFirstLine)
           debug: false,
- 
-          // Set --debug-brk (true | false | integer from 1024 to 65535) 
+
+          // Set --debug-brk (true | false | integer from 1024 to 65535)
           breakOnFirstLine: false,
- 
-          // Object with properties `out` and `err` both will take a path to a log file and   
-          // append the output of the server. Make sure the folders exist. 
+
+          // Object with properties `out` and `err` both will take a path to a log file and
+          // append the output of the server. Make sure the folders exist.
           logs: undefined
       },
-      dev: 
+      dev:
       {
           options: {
-              script: 'server/serverSide/server.js'
+              script: 'server/server.js'
          }
       }
     },
@@ -501,11 +501,6 @@ module.exports = function (grunt) {
     ]);
   });
 
-  grunt.registerTask('server', 'DEPRECATED TASK. Use the "serve" task instead', function (target) {
-    grunt.log.warn('The `server` task has been deprecated. Use `grunt serve` to start a server.');
-    grunt.task.run(['serve:' + target]);
-  });
-
   grunt.registerTask('test', [
     'clean:server',
     'wiredep:test',
@@ -538,5 +533,6 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
-  grunt.registerTask('server', [ 'express:dev', 'watch' ]);
+
+  grunt.registerTask('server', ['express:dev', 'watch']);
 };
