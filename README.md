@@ -22,7 +22,9 @@ Clone the git project and run in the root of the project :
 
 ## Build & development
 
-Run `grunt` for building and `grunt serve` for preview.
+Run `grunt` for building and `grunt server` for preview.
+
+For run the static presentation (no service) `grunt static`.
 
 ## Testing
 
