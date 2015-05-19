@@ -7,15 +7,20 @@
  * # page
  */
 angular.module('gpwebApp')
-  .directive('page', ['pageData', function (pageData) {
+  .directive('page', ['pageData',function (pageData) {
     return {
       templateUrl: 'views/page.html',
       restrict: 'E',
+      link: function(scope, element, attrs) {
+        scope.$watch(pageData.getZones, function() {
+          console.log(pageData.getZones());
+          scope.zones = pageData.getZones();
+          scope.canevas = pageData.getCanevas();
+          scope.background = pageData.getBackground();
+        });
+      },
       controller: function () {
-        this.zones = pageData.getZones();
-        this.canevas = pageData.getCanevas();
-        this.background = pageData.getBackground();
-        this.setSelected = pageData.setSelected;
+        pageData.pull();
       },
       controllerAs: 'page',
       replace: true

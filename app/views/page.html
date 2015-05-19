@@ -1,24 +1,24 @@
 <div id="background"
-     ng-click="page.setSelected(page.background); $event.stopPropagation();"
+     ng-click="setSelected(background); $event.stopPropagation();"
      ng-style="{
-      'background-color': page.background.backgroundColor,
-      'background-image': 'url(' + page.background.backgroundImage + ')',
-      'background-repeat': page.background.backgroundRepeat
+      'background-color': background.backgroundColor,
+      'background-image': 'url(' + background.backgroundImage + ')',
+      'background-repeat': background.backgroundRepeat
     }">
   <div id="canevas"
-       ng-click="page.setSelected(page.canevas); $event.stopPropagation();"
+       ng-click="setSelected(canevas); $event.stopPropagation();"
        ng-style="{
-      'width': page.canevas.width,
-      'height': page.canevas.height,
-      'background-color': page.canevas.backgroundColor,
-      'background-image': 'url(' + page.canevas.backgroundImage + ')',
-      'background-repeat': page.canevas.backgroundRepeat,
-      'border-width': page.canevas.borderWidth,
-      'border-style': page.canevas.borderStyle,
-      'border-color': page.canevas.borderColor
+      'width': canevas.width,
+      'height': canevas.height,
+      'background-color': canevas.backgroundColor,
+      'background-image': 'url(' + canevas.backgroundImage + ')',
+      'background-repeat': canevas.backgroundRepeat,
+      'border-width': canevas.borderWidth,
+      'border-style': canevas.borderStyle,
+      'border-color': canevas.borderColor
     }">
-    <zone-text ng-repeat="zone in page.zones.text" ng-click="page.setSelected(zone); $event.stopPropagation();"></zone-text>
-    <zone-image ng-repeat="zone in page.zones.image" ng-click="page.setSelected(zone); $event.stopPropagation();"></zone-image>
-    <zone ng-repeat="zone in page.zones.zone" ng-click="page.setSelected(zone); $event.stopPropagation();"></zone>
+    <zone-text ng-repeat="zone in zones.text" ng-click="setSelected(zone); $event.stopPropagation();"></zone-text>
+    <zone-image ng-repeat="zone in zones.image" ng-click="setSelected(zone); $event.stopPropagation();"></zone-image>
+    <zone ng-repeat="zone in zones.zone" ng-click="setSelected(zone); $event.stopPropagation();"></zone>
   </div>
 </div>

@@ -14,7 +14,7 @@
     </accordion-heading>
     <div class="container-fluid">
 
-      <div id="nameConf" class="row" ng-if="isSet(configurable.name)">
+      <div id="nameConf" class="row" ng-if="configurable && isSet(configurable.name)">
         <input type="text" ng-model="configurable.name"/>
         <div class="separator"></div>
       </div>

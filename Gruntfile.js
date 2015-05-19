@@ -315,7 +315,7 @@ module.exports = function (grunt) {
           // Will turn into: `node OPT1 OPT2 ... OPTN path/to/server.js ARG1 ARG2 ... ARGN`
           // (e.g. opts: ['node_modules/coffee-script/bin/coffee'] will correctly parse coffee-script)
           opts: [ ],
-        args: [ ],
+          args: [ ],
 
           // Setting to `false` will effectively just run `node path/to/server.js`
           background: false,
@@ -534,5 +534,8 @@ module.exports = function (grunt) {
     'build'
   ]);
 
-  grunt.registerTask('server', ['express:dev', 'watch']);
+  grunt.registerTask('server', [
+    'express:dev',
+    'watch'
+  ]);
 };
