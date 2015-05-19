@@ -485,7 +485,7 @@ module.exports = function (grunt) {
   });
 
 
-  grunt.registerTask('serve', 'Compile then start a connect web server', function (target) {
+  grunt.registerTask('static', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
     }
@@ -496,7 +496,19 @@ module.exports = function (grunt) {
       'concurrent:server',
       'autoprefixer',
       'connect:livereload',
-      'watch',
+      'watch'
+    ]);
+  });
+
+  grunt.registerTask('server', 'Compile then start a connect web server and services', function (target) {
+    if (target === 'dist') {
+      return grunt.task.run(['build', 'connect:dist:keepalive']);
+    }
+    grunt.task.run([
+      'clean:server',
+      'wiredep',
+      'concurrent:server',
+      'autoprefixer',
       'express'
     ]);
   });
@@ -524,8 +536,7 @@ module.exports = function (grunt) {
     'uglify',
     'filerev',
     'usemin',
-    'htmlmin',
-    'express'
+    'htmlmin'
   ]);
 
   grunt.registerTask('default', [
@@ -534,5 +545,4 @@ module.exports = function (grunt) {
     'build'
   ]);
 
-  grunt.registerTask('server', ['express:dev', 'watch']);
 };
