@@ -10,8 +10,7 @@
 angular.module('gpwebApp')
   .controller('ToolsCtrl', ['$scope', 'pageData', function ($scope, pageData) {
     $scope.saveHandler = function () {
-      console.log("Save Handler");
-      //TODO
+      pageData.push();
     };
     $scope.addZoneHandler = function () {
       pageData.addZone();

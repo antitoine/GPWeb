@@ -129,6 +129,22 @@ angular.module('gpwebApp')
             console.log('PULL ERROR : '+d);
           });
       },
+      push: function() {
+        var json = JSON.stringify(data);
+        console.log(json);
+        $http({
+          url: '/service/push',
+          method: 'POST',
+          data: json,
+          headers: {'Content-Type': 'application/json'}
+          }).
+          success(function(d) {
+            console.log('PUSH '+d);
+          }).
+          error(function(d) {
+            console.log('PUSH ERROR : '+d);
+          });
+      },
       getBackground: function () {
         return data.canevas;
       },

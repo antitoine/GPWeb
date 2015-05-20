@@ -2,24 +2,19 @@ var express = require('express');
 var app = express();
 var path = require('path');
 var fs = require('fs');
+var bodyParser = require('body-parser')
 
-//app.use(require('json-middleware').middleware());
+app.use(bodyParser.json());
 
 app.all('/service/pull', function (req, res) {
   res.json(fs.readFileSync(path.join(__dirname,'pagetest.json'),{encoding: 'utf-8'}));
 });
 
 app.all('/service/push', function (req, res) {
-  var json = '';
-  req.on('data', function(data) {
-    json += data;
-  });
-  req.on('end', function() {
-    //console.log(json);
-    fs.writeFile('pagetest2.json',json,{encoding: 'utf-8'});
-    res.send('OK');
-  });
-  //res.json(fs.readFileSync(path.join(__dirname,'pagetest.json'),{encoding: 'utf-8'}));
+  var json = JSON.stringify(req.body);
+  //console.log(json);
+  fs.writeFile(path.join(__dirname,'pagetest.json'),json,{encoding: 'utf-8'});
+  res.send('OK');
 });
 
 app.use('/', express.static(path.join(__dirname,'..','dist')));
