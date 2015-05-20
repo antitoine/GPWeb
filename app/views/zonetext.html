@@ -12,7 +12,7 @@
     'left': zone.left,
     'z-index': zone.depth,
     'background-color': zone.backgroundColor,
-    'background-image': url(zone.backgroundImage),
+    'background-image': zone.backgroundImage=='none'?'':('url(' + zone.backgroundImage + ')'),
     'border-width': zone.borderWidth,
     'border-style': zone.borderStyle,
     'border-color': zone.borderColor

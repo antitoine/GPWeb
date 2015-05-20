@@ -2,7 +2,7 @@
      ng-click="setSelected(background); $event.stopPropagation();"
      ng-style="{
       'background-color': background.backgroundColor,
-      'background-image': 'url(' + background.backgroundImage + ')',
+      'background-image': background.backgroundImage=='none'?'':('url(' + background.backgroundImage + ')'),
       'background-repeat': background.backgroundRepeat
     }">
   <div id="canevas"
@@ -11,7 +11,7 @@
       'width': canevas.width,
       'height': canevas.height,
       'background-color': canevas.backgroundColor,
-      'background-image': 'url(' + canevas.backgroundImage + ')',
+      'background-image': canevas.backgroundImage=='none'?'':('url(' + canevas.backgroundImage + ')'),
       'background-repeat': canevas.backgroundRepeat,
       'border-width': canevas.borderWidth,
       'border-style': canevas.borderStyle,

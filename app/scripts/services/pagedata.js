@@ -131,7 +131,7 @@ angular.module('gpwebApp')
       },
       push: function() {
         var json = JSON.stringify(data);
-        console.log(json);
+        //console.log(json);
         $http({
           url: '/service/push',
           method: 'POST',
@@ -139,7 +139,7 @@ angular.module('gpwebApp')
           headers: {'Content-Type': 'application/json'}
           }).
           success(function(d) {
-            console.log('PUSH '+d);
+            //console.log('PUSH '+d);
           }).
           error(function(d) {
             console.log('PUSH ERROR : '+d);
