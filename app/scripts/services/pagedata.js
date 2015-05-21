@@ -124,6 +124,7 @@ angular.module('gpwebApp')
         $http.get('/service/pull').
           success(function(d) {
             data = JSON.parse(d);
+            selected = data.canevas;
           }).
           error(function(d) {
             console.log('PULL ERROR : '+d);

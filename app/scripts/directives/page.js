@@ -13,7 +13,7 @@ angular.module('gpwebApp')
       restrict: 'E',
       link: function(scope, element, attrs) {
         scope.$watch(pageData.getZones, function() {
-          console.log(pageData.getZones());
+          //console.log(pageData.getZones());
           scope.zones = pageData.getZones();
           scope.canevas = pageData.getCanevas();
           scope.background = pageData.getBackground();
