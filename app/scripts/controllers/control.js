@@ -9,7 +9,6 @@
  */
 angular.module('gpwebApp')
   .controller('ControlCtrl', ['$scope', 'pageData', function ($scope, pageData) {
-
     var isSet = function (variable){
       if ( typeof(variable) !== 'undefined' ) {
         return true;
