@@ -50,8 +50,8 @@
       </div>
 
       <div class="row" ng-if="isSet(configurable.backgroundColor)">
-        <label><input type="checkbox" ng-model="propertyEnabled.backgroundColor"/> <label for="backgroundColorConf">{{'Background Color'|translate}}</label></label>
-        <input ng-if="propertyEnabled.backgroundColor" type="color" name="backgroundColor" id="backgroundColorConf" ng-model="configurable.backgroundColor" value="{{configurable.backgroundColor}}"/>
+        <label><input type="checkbox" ng-model="propertyEnabled.backgroundColor"/> <label for="backgroundColorConf" translate>Background Color</label></label>
+        <input ng-if="propertyEnabled.backgroundColor" type="color" name="backgroundColor" id="backgroundColorConf" ng-model="configurable.backgroundColor" ng-value="configurable.backgroundColor"/>
         <div class="separator"></div>
       </div>
 
@@ -141,7 +141,7 @@
 
       <div class="row" ng-if="isSet(configurable.imageFile)">
         <label for="imageFileInput" translate>Image</label>
-        <input type="file" name="imageFile" id="imageFileInput" ng-model="configurable.imageFile" translate/>
+        <input type="file" name="imageFile" id="imageFileInput" file-model="configurable.imageFile" translate/>
       </div>
 
     </div>

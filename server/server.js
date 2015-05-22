@@ -28,7 +28,7 @@ app.post('/service/upload', function (req, res) {
           file_ext = files.image.name.split('.').pop(),
           index = old_path.lastIndexOf('/') + 1,
           file_name = old_path.substr(index),
-          new_path = path.join(__dirname, 'uploads', file_name + '.' + file_ext);
+          new_path = path.join(__dirname, 'projet', 'images',  file_name + '.' + file_ext);
       fs.readFile(old_path, function(err, data) {
           fs.writeFile(new_path, data, function(err) {
               fs.unlink(old_path, function(err) {
@@ -37,7 +37,7 @@ app.post('/service/upload', function (req, res) {
                       res.json({'success': false});
                   } else {
                       res.status(200);
-                      res.json({'success': true});
+                      res.json({'success': true, 'url': '/images/' + file_name + '.' + file_ext});
                   }
               });
           });
@@ -45,6 +45,7 @@ app.post('/service/upload', function (req, res) {
   });
 });
 
+app.use('/images', express.static(path.join(__dirname,'projet','images')));
 app.use('/', express.static(path.join(__dirname,'..','dist')));
 
 var server = app.listen(3000, function () {
