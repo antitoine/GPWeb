@@ -134,9 +134,14 @@
       </div>
 
       <!-- manque image file -->
-      <div class="row" ng-if="isSet(configurable.image)">
+      <div class="row" ng-if="isSet(configurable.description)">
         <label for="descriptionInput" translate>Description</label>
-        <input type="text" name="description" id="descriptionInput" ng-click="addDescriptionHandler()" translate/>
+        <input type="text" name="description" id="descriptionInput" ng-model="configurable.description" translate/>
+      </div>
+
+      <div class="row" ng-if="isSet(configurable.imageFile)">
+        <label for="imageFileInput" translate>Image</label>
+        <input type="file" name="imageFile" id="imageFileInput" ng-model="configurable.imageFile" translate/>
       </div>
 
     </div>
