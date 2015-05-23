@@ -25,7 +25,7 @@ $bg-conf: #3C3F41;
   }
 }
 
-.ui-layout-container {
+.ui-layout-container.stretch {
   z-index: 1020;
   overflow: hidden;
 }
@@ -246,3 +246,5 @@ $bg-conf: #3C3F41;
 .ng-animate-fade.ng-leave.ng-leave-active {
   opacity:0;
 }
+
+
