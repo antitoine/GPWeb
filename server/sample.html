@@ -3,9 +3,14 @@
 <head>
   <meta charset="utf-8">
   <title>{{ title }}</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <style type="text/css">
     body {
       padding: 0;
+      width: {{data.canevas.width}};
+      height: {{data.canevas.height}};
+      border: 1px solid black;
     }
     #canevas {
       position: relative;
@@ -59,10 +64,45 @@
   </div>
 {% endfor %}
 {% for zone in data.zones.image %}
-  zoneImage
+  <div
+    class="zone image"
+    id="{{zone.id}}"
+    title="{{zone.name}}"
+    style="width: {{zone.width}};
+      height: {{zone.height}};
+      top: {{zone.top}};
+      left: {{zone.left}};
+      z-index: {{zone.depth}};
+      background-color: {{zone.backgroundColor}};
+      border-width: {{zone.borderWidth}};
+      border-style: {{zone.borderStyle}};
+      border-color: {{zone.borderColor}};
+    "
+    >
+    <img
+      src="{{zone.imageFile}}"
+      alt="{{zone.description}}"
+    />
+  </div>
 {% endfor %}
 {% for zone in data.zones.zone %}
-  zone
+  <div
+    class="zone text"
+    id="{{zone.id}}"
+    title="{{zone.name}}"
+    style="width: {{zone.width}};
+      height: {{zone.height}};
+      top: {{zone.top}};
+      left: {{zone.left}};
+      z-index: {{zone.depth}};
+      background-color: {{zone.backgroundColor}};
+      background-image: url({{zone.backgroundImage}});
+      border-width: {{zone.borderWidth}};
+      border-style: {{zone.borderStyle}};
+      border-color: {{zone.borderColor}};
+    "
+    >
+  </div>
 {% endfor %}
 </body>
 </html>
