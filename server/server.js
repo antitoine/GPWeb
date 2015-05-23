@@ -3,6 +3,7 @@ var path = require('path');
 var fs = require('fs');
 var bodyParser = require('body-parser');
 var formidable = require('formidable');
+var swig  = require('swig');
 
 var app = express();
 
@@ -76,6 +77,15 @@ app.post('/service/upload', function (req, res) {
   });
 });
 
+app.get('/service/download', function (req, res) {
+  var data = JSON.parse(fs.readFileSync(path.join(__dirname,'projet','index.json'),{encoding: 'utf-8'}));
+  res.send(swig.renderFile(path.join(__dirname, 'sample.html'), {
+    title: 'Accueil',
+    data: data
+  }));
+  res.status(200);
+});
+
 app.use('/images', express.static(path.join(__dirname,'projet','images')));
 app.use('/', express.static(path.join(__dirname,'..','dist')));
 
@@ -84,6 +94,6 @@ var server = app.listen(3000, function () {
   var host = server.address().address;
   var port = server.address().port;
 
-  console.log('Example app listening at http://%s:%s', host, port);
+  console.log('GPWeb listening at http://%s:%s', host, port);
 
 });
