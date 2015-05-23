@@ -8,13 +8,44 @@ var app = express();
 
 app.use(bodyParser.json());
 
+app.get('/service/list', function (req, res) {
+  res.json(fs.readFileSync(path.join(__dirname,'pages.json'),{encoding: 'utf-8'}));
+});
+
+app.post('/service/add', function (req, res) {
+  //console.log(req.body.name);
+  //console.log(req.body.title);
+  var f = fs.openSync(path.join(__dirname,'projet',req.body.name+'.json'), 'wx');
+  if(f instanceof Error) {
+    res.status(500);
+    res.json({'success': false});
+  } else {
+    fs.close(f);
+    fs.readFile(path.join(__dirname, 'sample.json'), function(err, data) {
+      fs.writeFile(path.join(__dirname, 'projet', req.body.name+'.json'), data, function(err) {
+        if(err) {
+          res.status(500);
+          res.json({'success': false});
+        } else {
+          var list = JSON.parse(fs.readFileSync(path.join(__dirname,'pages.json'),{encoding: 'utf-8'}));
+          list.push(req.body);
+          fs.writeFile(path.join(__dirname,'pages.json'),JSON.stringify(list),{encoding: 'utf-8'});
+          res.status(200);
+          res.json({'success': true});
+        }
+      });
+    });
+  }
+});
+
 app.get('/service/pull', function (req, res) {
-  res.json(fs.readFileSync(path.join(__dirname,'pagetest.json'),{encoding: 'utf-8'}));
+  //console.log(req.query.page);
+  res.json(fs.readFileSync(path.join(__dirname,'projet',req.query.page+'.json'),{encoding: 'utf-8'}));
 });
 
 app.post('/service/push', function (req, res) {
   var json = JSON.stringify(req.body);
-  fs.writeFile(path.join(__dirname,'pagetest.json'),json,{encoding: 'utf-8'});
+  fs.writeFile(path.join(__dirname,'projet',req.query.page+'.json'),json,{encoding: 'utf-8'});
   res.status(200);
   res.json({'success': false});
 });

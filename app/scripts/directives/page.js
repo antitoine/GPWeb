@@ -11,16 +11,20 @@ angular.module('gpwebApp')
     return {
       templateUrl: 'views/page.html',
       restrict: 'E',
+      scope: { name: '=?' },
       link: function(scope, element, attrs) {
         scope.$watch(pageData.getZones, function() {
-          //console.log(pageData.getZones());
           scope.zones = pageData.getZones();
           scope.canevas = pageData.getCanevas();
           scope.background = pageData.getBackground();
         });
       },
       controller: function ($scope) {
-        pageData.pull();
+        if($scope.name === undefined) {
+          $scope.name = 'index';
+        }
+        //console.log('name:'+$scope.name);
+        pageData.pull($scope.name);
         $scope.setSelected = pageData.setSelected;
       },
       controllerAs: 'page',

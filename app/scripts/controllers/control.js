@@ -8,7 +8,7 @@
  * Controller of the gpwebApp
  */
 angular.module('gpwebApp')
-  .controller('ControlCtrl', ['$scope', 'pageData', function ($scope, pageData) {
+  .controller('ControlCtrl', ['$scope', '$http', 'pageData', function ($scope, $http, pageData) {
     var isSet = function (variable){
       if ( typeof(variable) !== 'undefined' ) {
         return true;
@@ -17,6 +17,11 @@ angular.module('gpwebApp')
       }
     };
     $scope.isSet = isSet;
+
+    $scope.pull = pageData.pull;
+    $scope.$watch(pageData.listPages, function() {
+      $scope.pages = pageData.listPages();
+    });
 
     $scope.borderStyleOptions = ['none','solid','dotted','dashed','double','groove','ridge','inset','outset'];
     $scope.textDecorationOptions = ['none','underline','line-through','overline','blink'];

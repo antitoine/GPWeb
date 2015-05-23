@@ -3,10 +3,7 @@
     <accordion-heading>
       {{'Pages'|translate}} <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': page.open, 'glyphicon-chevron-right': !page.open}"></i>
     </accordion-heading>
-    <h4 translate>Home</h4>
-    <h4 translate>Gallery</h4>
-    <h4 translate>Catalog</h4>
-    <h4 translate>About</h4>
+    <h4 ng-repeat="page in pages" ng-click="pull(page.name)">{{page.title}}</h4>
   </accordion-group>
   <accordion-group is-disabled="!configurable"  is-open="configuration.open">
     <accordion-heading>

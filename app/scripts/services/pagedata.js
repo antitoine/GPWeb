@@ -9,6 +9,8 @@
  */
 angular.module('gpwebApp')
   .factory('pageData', ['$http', function ($http) {
+    var pages = null;
+    var currentPageName = null;
     var data = {
       background: {
         name: 'Background',
@@ -32,87 +34,9 @@ angular.module('gpwebApp')
         backgroundSize: 'auto'
       },
       zones: {
-        text: [/*
-          {
-            id: '0',
-            name: 'zoneTest',
-            width: '200px',
-            height: '50px',
-            top: '100px',
-            left: '100px',
-            depth: '5',
-            backgroundColor: '##23E510',
-            backgroundImage: 'none',
-            borderWidth: '2px',
-            borderStyle: 'solid',
-            borderColor: '#cccccc',
-            font: 'auto',
-            color: '#dedede',
-            size: '20pt',
-            style: 'normal',
-            weight: 'normal',
-            decoration: 'none',
-            align: 'center',
-            text: 'Hello world !'
-          },
-          {
-            id: '1',
-            name: 'zoneTest2',
-            width: '100px',
-            height: '50px',
-            top: '200px',
-            left: '400px',
-            depth: '6',
-            backgroundColor: '#CAC412',
-            backgroundImage: 'none',
-            borderWidth: '2px',
-            borderStyle: 'solid',
-            borderColor: '#cccccc',
-            font: 'auto',
-            color: '#dedede',
-            size: '20pt',
-            style: 'normal',
-            weight: 'normal',
-            decoration: 'none',
-            align: 'center',
-            text: 'O'
-          }*/
-        ],
-        image: [/*
-          {
-            id: '2',
-            name: 'zoneImageTest',
-            width: '200px',
-            height: '50px',
-            top: '100px',
-            left: '100px',
-            depth:'7',
-            backgroundColor: '#C82FA7',
-            borderWidth: '2px',
-            borderStyle: 'solid',
-            borderColor: '#cccccc',
-            imageFile: 'images/yeoman.png',
-            description: 'Yeoman'
-          }*/
-        ],
-        zone: [/*
-          {
-            id: '3',
-            name: 'zoneTest3',
-            width: '200px',
-            height: '50px',
-            top: '100px',
-            left: '100px',
-            depth: '9',
-            backgroundColor: '#C82FA7',
-            borderWidth: '2px',
-            borderStyle: 'solid',
-            borderColor: '#cccccc',
-            backgroundImage: 'images/yeoman.png',
-            backgroundRepeat: 'no-repeat',
-            description: 'Yeoman'
-          }*/
-        ]
+        text: [],
+        image: [],
+        zone: []
       }
     };
 
@@ -120,30 +44,62 @@ angular.module('gpwebApp')
 
     // Public API here
     return {
-      pull: function() {
-        $http.get('/service/pull').
+      pull: function(name) {
+        //console.log(name);
+        $http.get('/service/pull?page='+name).
           success(function(d) {
             data = JSON.parse(d);
             selected = data.canevas;
+            currentPageName = name;
           }).
           error(function(d) {
             console.log('PULL ERROR : '+d);
           });
       },
       push: function() {
-        var json = JSON.stringify(data);
-        //console.log(json);
+        if(currentPageName !== null) {
+          var json = JSON.stringify(data);
+          $http({
+            url: '/service/push?page='+currentPageName,
+            method: 'POST',
+            data: json,
+            headers: {'Content-Type': 'application/json'}
+            }).
+            success(function(d) {
+              //console.log('PUSH '+d);
+            }).
+            error(function(d) {
+              console.log('PUSH ERROR : '+d);
+            });
+        }
+      },
+      listPages: function () {
+        if(pages === null) {
+          pages = {};
+          $http.get('/service/list').
+            success(function(d) {
+              pages = JSON.parse(d);
+            }).
+            error(function(d) {
+              console.log('LIST ERROR : '+d);
+            });
+        }
+        return pages;
+      },
+      addPage: function(name, title) {
+        var page = {name: name, title: title};
+        var json = JSON.stringify(page);
         $http({
-          url: '/service/push',
+          url: '/service/add',
           method: 'POST',
           data: json,
           headers: {'Content-Type': 'application/json'}
           }).
           success(function(d) {
-            //console.log('PUSH '+d);
+            pages.push(page);
           }).
           error(function(d) {
-            console.log('PUSH ERROR : '+d);
+            console.log('ADD ERROR : '+d);
           });
       },
       getBackground: function () {

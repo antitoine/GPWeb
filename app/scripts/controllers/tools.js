@@ -29,4 +29,10 @@ angular.module('gpwebApp')
       console.log("Download Handler");
       //TODO
     };
+    $scope.addPageHandler = function () {
+      // TODO : plus jolie façon de choisir un nom
+      var title = prompt('Title ?');
+      var name = title.replace(/\W+/g,'').toLowerCase();
+      pageData.addPage(name,title);
+    };
   }]);
