@@ -13,7 +13,7 @@ angular.module('gpwebApp')
       background: {
         name: 'Background',
         backgroundColor: 'none',
-        backgroundImage: '../images/canevas.png',
+        backgroundImage: 'none',
         backgroundRepeat: 'repeat',
         backgroundPosition: 'center',
         backgroundSize: 'auto'
@@ -26,7 +26,7 @@ angular.module('gpwebApp')
         borderStyle: 'solid',
         borderColor: '#000000',
         backgroundColor: '#ffffff',
-        backgroundImage: '../images/canevas.png',
+        backgroundImage: 'none',
         backgroundRepeat: 'repeat',
         backgroundPosition: 'center',
         backgroundSize: 'auto'

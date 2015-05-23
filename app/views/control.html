@@ -55,6 +55,12 @@
         <div class="separator"></div>
       </div>
 
+      <div class="row" ng-if="isSet(configurable.backgroundImage)">
+        <label for="backgroundImageInput" translate>Background Image</label>
+        <input type="file" name="backgroundImage" id="backgroundImageInput" file-model="configurable.backgroundImage"/>
+        <div class="separator"></div>
+      </div>
+
       <div class="row" ng-if="isSet(configurable.borderWidth)">
         <label for="borderWidthConf" translate>Border Weight</label>
         <input type="text" name="borderWidth" id="borderWidthConf" ng-model="configurable.borderWidth"/>
