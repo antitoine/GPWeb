@@ -8,7 +8,7 @@
  * Controller of the gpwebApp
  */
 angular.module('gpwebApp')
-  .controller('ToolsCtrl', ['$scope', 'pageData', function ($scope, pageData) {
+  .controller('ToolsCtrl', ['$scope', '$window', 'pageData', function ($scope, $window, pageData) {
     $scope.saveHandler = function () {
       pageData.push();
     };
@@ -26,8 +26,8 @@ angular.module('gpwebApp')
       //TODO
     };
     $scope.downloadHandler = function () {
-      console.log("Download Handler");
-      //TODO
+      //console.log("Download Handler");
+      $window.location.href = '/service/download';
     };
     $scope.addPageHandler = function () {
       // TODO : plus jolie façon de choisir un nom

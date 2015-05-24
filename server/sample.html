@@ -6,31 +6,45 @@
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <style type="text/css">
-    body {
+    #main {
       padding: 0;
-      width: {{data.canevas.width}};
-      height: {{data.canevas.height}};
-      border: 1px solid black;
-    }
-    #canevas {
       position: relative;
       margin-left: auto;
       margin-right: auto;
+      width: {{data.canevas.width}};
+      height: {{data.canevas.height}};
+      border-width: {{data.canevas.borderWidth}};
+      border-style: {{data.canevas.borderStyle}};
+      border-color: {{data.canevas.borderColor}};
+      background-color: {{data.canevas.backgroundColor}};
+      {% if data.canevas.backgroundImage !== 'none' %}
+      background-image: url({{data.canevas.backgroundImage}});
+      background-repeat: {{data.canevas.backgroundRepeat}};
+      background-position: {{data.canevas.backgroundPosition}};
+      background-size: {{data.canevas.backgroundSize}};
+      {% endif %}
     }
-    .zone {
+    #main .zone {
       position: absolute;
     }
-    .zone.image img {
+    #main .zone.image img {
       max-width: 100%;
       max-height: 100%;
     }
-    #background {
+    body {
       width: 100%;
-      min-height: 100vh;
+      background-color: {{data.background.backgroundColor}};
+      {% if data.background.backgroundImage !== 'none' %}
+      background-image: url({{data.background.backgroundImage}});
+      background-repeat: {{data.background.backgroundRepeat}};
+      background-position: {{data.background.backgroundPosition}};
+      background-size: {{data.background.backgroundSize}};
+      {% endif %}
     }
   </style>
 </head>
 <body>
+<div id="main">
 {% for zone in data.zones.text %}
   <div
     class="zone text"
@@ -42,7 +56,9 @@
       left: {{zone.left}};
       z-index: {{zone.depth}};
       background-color: {{zone.backgroundColor}};
+      {% if zone.backgroundImage !== 'none' %}
       background-image: url({{zone.backgroundImage}});
+      {% endif %}
       border-width: {{zone.borderWidth}};
       border-style: {{zone.borderStyle}};
       border-color: {{zone.borderColor}};
@@ -96,7 +112,9 @@
       left: {{zone.left}};
       z-index: {{zone.depth}};
       background-color: {{zone.backgroundColor}};
+      {% if zone.backgroundImage !== 'none' %}
       background-image: url({{zone.backgroundImage}});
+      {% endif %}
       border-width: {{zone.borderWidth}};
       border-style: {{zone.borderStyle}};
       border-color: {{zone.borderColor}};
@@ -104,5 +122,6 @@
     >
   </div>
 {% endfor %}
+</div>
 </body>
 </html>
