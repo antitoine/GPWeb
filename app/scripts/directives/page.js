@@ -12,7 +12,7 @@ angular.module('gpwebApp')
       templateUrl: 'views/page.html',
       restrict: 'E',
       scope: { name: '=?' },
-      link: function(scope, element, attrs) {
+      link: function(scope) {
         scope.$watch(pageData.getZones, function() {
           scope.zones = pageData.getZones();
           scope.canvas = pageData.getCanvas();

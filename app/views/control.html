@@ -3,7 +3,7 @@
     <accordion-heading>
       {{'Pages'|translate}} <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': page.open, 'glyphicon-chevron-right': !page.open}"></i>
     </accordion-heading>
-    <h4 ng-repeat="page in pages" ng-click="pull(page.name)">{{page.title}}</h4>
+    <a href="#" class="btn" ng-repeat="page in pages" ng-click="event.preventDefault(); pull(page.name)"><span class="glyphicon glyphicon-file"></span> {{page.title}}</a>
   </accordion-group>
   <accordion-group is-disabled="!configurable"  is-open="configuration.open">
     <accordion-heading>

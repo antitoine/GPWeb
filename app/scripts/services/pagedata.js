@@ -65,7 +65,7 @@ angular.module('gpwebApp')
             data: json,
             headers: {'Content-Type': 'application/json'}
             }).
-            success(function(d) {
+            success(function() {
               if (fctSuccess !== null) {
                 fctSuccess();
               }
@@ -98,7 +98,7 @@ angular.module('gpwebApp')
           data: json,
           headers: {'Content-Type': 'application/json'}
           }).
-          success(function(d) {
+          success(function() {
             pages.push(page);
           }).
           error(function(d) {

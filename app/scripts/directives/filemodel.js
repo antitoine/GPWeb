@@ -11,7 +11,7 @@ angular.module('gpwebApp')
     return {
       restrict: 'A',
       scope: {file: "=fileModel"},
-      link: function(scope, element, attrs) {
+      link: function(scope, element) {
         element.bind('change', function() {
           scope.$apply(function() {
             var fd = new FormData();
