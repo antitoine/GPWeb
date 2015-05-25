@@ -134,7 +134,8 @@ angular.module('gpwebApp')
           backgroundRepeat: 'repeat',
           borderWidth: '1px',
           borderStyle: 'solid',
-          borderColor: 'black'
+          borderColor: 'black',
+          link: 'none'
         };
         if (type === 'text') {
           zone.font = 'auto';

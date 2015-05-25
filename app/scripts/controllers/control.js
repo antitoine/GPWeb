@@ -8,7 +8,7 @@
  * Controller of the gpwebApp
  */
 angular.module('gpwebApp')
-  .controller('ControlCtrl', ['$scope', '$http', 'pageData', function ($scope, $http, pageData) {
+  .controller('ControlCtrl', ['$scope', '$http', 'pageData', '$modal', function ($scope, $http, pageData, $modal) {
     var isSet = function (variable){
       if ( typeof(variable) !== 'undefined' ) {
         return true;
@@ -17,6 +17,32 @@ angular.module('gpwebApp')
       }
     };
     $scope.isSet = isSet;
+
+    $scope.selectPageLink = function () {
+      var popupSelectPage = $modal.open({
+        templateUrl: 'views/popuplink.html',
+        controller: function ($scope, $modalInstance, pagesList) {
+          $scope.pagesList = pagesList;
+          $scope.ok = function () {
+            $modalInstance.close({
+              pageSelected: $scope.pageSelected
+            });
+          };
+          $scope.cancel = function () {
+            $modalInstance.dismiss('cancel');
+          };
+        },
+        controllerAs: 'popuplinkCtrl',
+        resolve: {
+          pagesList: function() {
+            return pageData.listPages();
+          }
+        }
+      });
+      popupSelectPage.result.then(function (result) {
+        $scope.configurable.link = result.pageSelected.name+'.html';
+      });
+    };
 
     $scope.pull = pageData.pull;
     $scope.$watch(pageData.listPages, function() {

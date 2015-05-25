@@ -136,15 +136,22 @@
         <div class="separator"></div>
       </div>
 
-      <!-- manque image file -->
       <div class="row" ng-if="isSet(configurable.description)">
         <label for="descriptionInput" translate>Description</label>
         <input type="text" name="description" id="descriptionInput" ng-model="configurable.description" translate/>
+        <div class="separator"></div>
       </div>
 
       <div class="row" ng-if="isSet(configurable.imageFile)">
         <label for="imageFileInput" translate>Image</label>
         <input type="file" name="imageFile" id="imageFileInput" file-model="configurable.imageFile" translate/>
+        <div class="separator"></div>
+      </div>
+
+      <div class="row" ng-if="isSet(configurable.link)">
+        <label><input type="checkbox" ng-model="propertyEnabled.link"/> <label for="linkConf" translate>Link</label></label>
+        <input ng-if="propertyEnabled.link" type="text" name="backgroundColor" id="linkConf" ng-model="configurable.link" ng-value="configurable.link"/>
+        <a href="#" ng-click="event.preventDefault(); selectPageLink()" ng-if="propertyEnabled.link" class="btn btn-default" translate>From my pages</a>
       </div>
 
     </div>

@@ -1,0 +1,11 @@
+<div class="modal-header">
+  <h3 class="modal-title" translate>Link</h3>
+</div>
+<div class="modal-body">
+  <label for="linkPageConf" translate>Link to</label>
+  <select id="linkPageConf" ng-model="pageSelected" ng-options="opt.title for opt in pagesList"></select>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary" ng-click="ok()">OK</button>
+  <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+</div>

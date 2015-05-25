@@ -60,11 +60,11 @@ module.exports = function (grunt) {
       },
       express: {
         files: [ // Uncomment to rebuild all at every change
-          '<%= express.dev.options.script %>'//,
-          //<%= yeoman.app %>/scripts/{,*/}*.js,
-          //'<%= yeoman.app %>/{,*/}*.html',
-          //'.tmp/styles/{,*/}*.css',
-          //'<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+          '<%= express.dev.options.script %>',
+          '<%= yeoman.app %>/scripts/{,*/}*.js',
+          '<%= yeoman.app %>/{,*/}*.html',
+          '.tmp/styles/{,*/}*.css',
+          '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ],
         tasks:  ['build', 'express:dev'],
         options: {

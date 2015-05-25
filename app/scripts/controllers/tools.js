@@ -21,10 +21,6 @@ angular.module('gpwebApp')
     $scope.addPictureHandler = function () {
       pageData.addZone('image','/images/yeoman.png', 'Yeoman');
     };
-    $scope.addLinkHandler = function () {
-      console.log("Add link Handler");
-      //TODO
-    };
     $scope.downloadHandler = function () {
       pageData.push(function() {
         $window.location.href = '/service/download';
@@ -49,6 +45,28 @@ angular.module('gpwebApp')
         var title = result.newPageName;
         var name = title.replace(/\W+/g,'').toLowerCase();
         pageData.addPage(name,title);
+      });
+    };
+    $scope.removePageHandler = function () {
+      var popupConf = $modal.open({
+        templateUrl: 'views/popupconf.html',
+        controller: function ($scope, $modalInstance) {
+          $scope.ok = function () {
+            $modalInstance.close({
+              confirmation: true
+            });
+          };
+          $scope.cancel = function () {
+            $modalInstance.dismiss('cancel');
+          };
+        },
+        controllerAs: 'PopupConfCtrl'
+      });
+      popupConf.result.then(function (result) {
+        if (result.confirmation) {
+          console.log("Remove page Handler");
+          //TODO Faire le taf ici
+        }
       });
     };
   }]);
