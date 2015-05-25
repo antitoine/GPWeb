@@ -11,17 +11,17 @@
       position: relative;
       margin-left: auto;
       margin-right: auto;
-      width: {{data.canevas.width}};
-      height: {{data.canevas.height}};
-      border-width: {{data.canevas.borderWidth}};
-      border-style: {{data.canevas.borderStyle}};
-      border-color: {{data.canevas.borderColor}};
-      background-color: {{data.canevas.backgroundColor}};
-      {% if data.canevas.backgroundImage !== 'none' %}
-      background-image: url({{data.canevas.backgroundImage}});
-      background-repeat: {{data.canevas.backgroundRepeat}};
-      background-position: {{data.canevas.backgroundPosition}};
-      background-size: {{data.canevas.backgroundSize}};
+      width: {{data.canvas.width}};
+      height: {{data.canvas.height}};
+      border-width: {{data.canvas.borderWidth}};
+      border-style: {{data.canvas.borderStyle}};
+      border-color: {{data.canvas.borderColor}};
+      background-color: {{data.canvas.backgroundColor}};
+      {% if data.canvas.backgroundImage !== 'none' %}
+      background-image: url({{data.canvas.backgroundImage}});
+      background-repeat: {{data.canvas.backgroundRepeat}};
+      background-position: {{data.canvas.backgroundPosition}};
+      background-size: {{data.canvas.backgroundSize}};
       {% endif %}
     }
     #main .zone {

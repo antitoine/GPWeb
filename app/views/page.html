@@ -5,17 +5,17 @@
       'background-image': background.backgroundImage=='none'?'':('url(' + background.backgroundImage + ')'),
       'background-repeat': background.backgroundRepeat
     }">
-  <div id="canevas"
-       ng-click="setSelected(canevas); $event.stopPropagation();"
+  <div id="canvas"
+       ng-click="setSelected(canvas); $event.stopPropagation();"
        ng-style="{
-      'width': canevas.width,
-      'height': canevas.height,
-      'background-color': canevas.backgroundColor,
-      'background-image': canevas.backgroundImage=='none'?'':('url(' + canevas.backgroundImage + ')'),
-      'background-repeat': canevas.backgroundRepeat,
-      'border-width': canevas.borderWidth,
-      'border-style': canevas.borderStyle,
-      'border-color': canevas.borderColor
+      'width': canvas.width,
+      'height': canvas.height,
+      'background-color': canvas.backgroundColor,
+      'background-image': canvas.backgroundImage=='none'?'':('url(' + canvas.backgroundImage + ')'),
+      'background-repeat': canvas.backgroundRepeat,
+      'border-width': canvas.borderWidth,
+      'border-style': canvas.borderStyle,
+      'border-color': canvas.borderColor
     }">
     <zone-text ng-repeat="zone in zones.text" ng-click="setSelected(zone); $event.stopPropagation();"></zone-text>
     <zone-image ng-repeat="zone in zones.image" ng-click="setSelected(zone); $event.stopPropagation();"></zone-image>

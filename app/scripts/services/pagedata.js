@@ -20,10 +20,10 @@ angular.module('gpwebApp')
         backgroundPosition: 'center',
         backgroundSize: 'auto'
       },
-      canevas: {
+      canvas: {
         width: '600px',
         height: '800px',
-        name: 'Canevas',
+        name: 'Canvas',
         borderWidth: '2px',
         borderStyle: 'solid',
         borderColor: '#000000',
@@ -49,14 +49,14 @@ angular.module('gpwebApp')
         $http.get('/service/pull?page='+name).
           success(function(d) {
             data = JSON.parse(d);
-            selected = data.canevas;
+            selected = data.canvas;
             currentPageName = name;
           }).
           error(function(d) {
             console.log('PULL ERROR : '+d);
           });
       },
-      push: function() {
+      push: function(fctSuccess) {
         if(currentPageName !== null) {
           var json = JSON.stringify(data);
           $http({
@@ -66,6 +66,9 @@ angular.module('gpwebApp')
             headers: {'Content-Type': 'application/json'}
             }).
             success(function(d) {
+              if (fctSuccess !== null) {
+                fctSuccess();
+              }
               //console.log('PUSH '+d);
             }).
             error(function(d) {
@@ -103,10 +106,10 @@ angular.module('gpwebApp')
           });
       },
       getBackground: function () {
-        return data.canevas;
+        return data.background;
       },
-      getCanevas: function () {
-        return data.canevas;
+      getCanvas: function () {
+        return data.canvas;
       },
       getZones: function (type) {
         if (type === 'text') {
@@ -158,7 +161,7 @@ angular.module('gpwebApp')
       },
       getSelected: function () {
         if (selected === null) {
-          selected = data.canevas;
+          selected = data.canvas;
         }
         return selected;
       },

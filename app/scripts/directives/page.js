@@ -15,7 +15,7 @@ angular.module('gpwebApp')
       link: function(scope, element, attrs) {
         scope.$watch(pageData.getZones, function() {
           scope.zones = pageData.getZones();
-          scope.canevas = pageData.getCanevas();
+          scope.canvas = pageData.getCanvas();
           scope.background = pageData.getBackground();
         });
       },
@@ -23,7 +23,6 @@ angular.module('gpwebApp')
         if($scope.name === undefined) {
           $scope.name = 'index';
         }
-        //console.log('name:'+$scope.name);
         pageData.pull($scope.name);
         $scope.setSelected = pageData.setSelected;
       },

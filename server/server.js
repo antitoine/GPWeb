@@ -106,6 +106,7 @@ app.get('/service/download', function (req, res) {
   zip.directory(path.join(__dirname,'projet','images'), 'images');
   res.status(200);
   zip.finalize();
+  res.attachment('gpweb-my-website.zip');
   /*
   var data = JSON.parse(fs.readFileSync(path.join(__dirname,'projet',req.query.page+'.json'),{encoding: 'utf-8'}));
   res.send(swig.renderFile(path.join(__dirname, 'sample.html'), {

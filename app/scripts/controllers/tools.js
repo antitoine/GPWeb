@@ -8,7 +8,7 @@
  * Controller of the gpwebApp
  */
 angular.module('gpwebApp')
-  .controller('ToolsCtrl', ['$scope', '$window', 'pageData', function ($scope, $window, pageData) {
+  .controller('ToolsCtrl', ['$scope', '$window', 'pageData', '$modal', function ($scope, $window, pageData, $modal) {
     $scope.saveHandler = function () {
       pageData.push();
     };
@@ -26,13 +26,29 @@ angular.module('gpwebApp')
       //TODO
     };
     $scope.downloadHandler = function () {
-      //console.log("Download Handler");
-      $window.location.href = '/service/download';
+      pageData.push(function() {
+        $window.location.href = '/service/download';
+      });
     };
     $scope.addPageHandler = function () {
-      // TODO : plus jolie façon de choisir un nom
-      var title = prompt('Title ?');
-      var name = title.replace(/\W+/g,'').toLowerCase();
-      pageData.addPage(name,title);
+      var popupNewPage = $modal.open({
+        templateUrl: 'views/popupnewpage.html',
+        controller: function ($scope, $modalInstance) {
+          $scope.ok = function () {
+            $modalInstance.close({
+              newPageName: $scope.newPageName
+            });
+          };
+          $scope.cancel = function () {
+            $modalInstance.dismiss('cancel');
+          };
+        },
+        controllerAs: 'popupnewpageCtrl'
+      });
+      popupNewPage.result.then(function (result) {
+        var title = result.newPageName;
+        var name = title.replace(/\W+/g,'').toLowerCase();
+        pageData.addPage(name,title);
+      });
     };
   }]);

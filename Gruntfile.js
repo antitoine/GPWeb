@@ -20,6 +20,8 @@ module.exports = function (grunt) {
     // Acces our express server
   grunt.loadNpmTasks('grunt-express-server');
 
+  grunt.loadNpmTasks('grunt-open');
+
   // Configurable paths for the application
   var appConfig = {
     app: require('./bower.json').appPath || 'app',
@@ -56,6 +58,19 @@ module.exports = function (grunt) {
       gruntfile: {
         files: ['Gruntfile.js']
       },
+      express: {
+        files: [ // Uncomment to rebuild all at every change
+          '<%= express.dev.options.script %>'//,
+          //<%= yeoman.app %>/scripts/{,*/}*.js,
+          //'<%= yeoman.app %>/{,*/}*.html',
+          //'.tmp/styles/{,*/}*.css',
+          //'<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
+        ],
+        tasks:  ['build', 'express:dev'],
+        options: {
+          spawn: false
+        }
+      },
       livereload: {
         options: {
           livereload: '<%= connect.options.livereload %>'
@@ -71,7 +86,7 @@ module.exports = function (grunt) {
     // The actual grunt server settings
     connect: {
       options: {
-        port: 9000,
+        port: 3002,
         // Change this to '0.0.0.0' to access the server from outside.
         hostname: 'localhost',
         livereload: 35729
@@ -93,7 +108,7 @@ module.exports = function (grunt) {
       },
       test: {
         options: {
-          port: 9001,
+          port: 3001,
           middleware: function (connect) {
             return [
               connect.static('.tmp'),
@@ -267,32 +282,6 @@ module.exports = function (grunt) {
       }
     },
 
-    // The following *-min tasks will produce minified files in the dist folder
-    // By default, your `index.html`'s <!-- Usemin block --> will take care of
-    // minification. These next options are pre-configured if you do not wish
-    // to use the Usemin blocks.
-    // cssmin: {
-    //   dist: {
-    //     files: {
-    //       '<%= yeoman.dist %>/styles/main.css': [
-    //         '.tmp/styles/{,*/}*.css'
-    //       ]
-    //     }
-    //   }
-    // },
-    // uglify: {
-    //   dist: {
-    //     files: {
-    //       '<%= yeoman.dist %>/scripts/scripts.js': [
-    //         '<%= yeoman.dist %>/scripts/scripts.js'
-    //       ]
-    //     }
-    //   }
-    // },
-    // concat: {
-    //   dist: {}
-    // },
-
     imagemin: {
       dist: {
         files: [{
@@ -318,7 +307,7 @@ module.exports = function (grunt) {
           args: [ ],
 
           // Setting to `false` will effectively just run `node path/to/server.js`
-          background: false,
+          background: true,
 
           // Called when the spawned server throws errors
           fallback: function() {},
@@ -349,15 +338,18 @@ module.exports = function (grunt) {
           // append the output of the server. Make sure the folders exist.
           logs: undefined
       },
-      dev:
-      {
-          options: {
-              script: 'server/server.js'
-         }
+      dev: {
+        options: {
+          script: 'server/server.js'
+        }
       }
     },
 
-
+    open: {
+      all: {
+        path: 'http://localhost:3000/'
+      }
+    },
 
     svgmin: {
       dist: {
@@ -484,7 +476,6 @@ module.exports = function (grunt) {
     }
   });
 
-
   grunt.registerTask('static', 'Compile then start a connect web server', function (target) {
     if (target === 'dist') {
       return grunt.task.run(['build', 'connect:dist:keepalive']);
@@ -502,15 +493,13 @@ module.exports = function (grunt) {
 
   grunt.registerTask('server', 'Compile then start a connect web server and services', function (target) {
     if (target === 'dist') {
-      return grunt.task.run(['build', 'connect:dist:keepalive']);
+      return grunt.task.run(['build', 'express:dev', 'open']);
     }
     grunt.task.run([
-      'clean:server',
-      'wiredep',
-      'concurrent:server',
-      'autoprefixer',
-      'connect:livereload',
-      'express'
+      'build',
+      'express:dev',
+      'open',
+      'watch'
     ]);
   });
 
