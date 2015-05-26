@@ -8,7 +8,7 @@
  * Controller of the gpwebApp
  */
 angular.module('gpwebApp')
-  .controller('ToolsCtrl', ['$scope', '$window', 'pageData', '$modal', function ($scope, $window, pageData, $modal) {
+  .controller('ToolsCtrl', ['$scope', '$window', 'pageData', '$modal', 'gettextCatalog', function ($scope, $window, pageData, $modal, gettextCatalog) {
     $scope.saveHandler = function () {
       pageData.push();
     };
