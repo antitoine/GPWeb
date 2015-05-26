@@ -138,8 +138,8 @@ msgid "Normal"
 msgstr "Normal"
 
 #: app/scripts/controllers/main.js:27
-msgid "Nothing"
-msgstr "Rien"
+msgid "Nothing selected."
+msgstr "Aucune sélection."
 
 #: app/views/popupconf.html:8 app/views/popuplink.html:9
 #: app/views/popupnewpage.html:9 app/views/settings.html:14
@@ -213,6 +213,9 @@ msgstr "Largeur"
 #: app/scripts/controllers/tools.js:76
 msgid "You can't remove index page !"
 msgstr "Vous ne pouvez pas supprimer la page d’accueil !"
+
+#~ msgid "Nothing"
+#~ msgstr "Rien"
 
 #~ msgid "Remove the current page ? The suppression is permanent!"
 #~ msgstr "Supprimer la page courante ? La suppression est irréversible !"

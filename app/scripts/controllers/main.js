@@ -24,7 +24,7 @@ angular.module('gpwebApp')
       $timeout(function(){$scope.alerts.splice($scope.alerts.indexOf(alert), 1);}, time);
     };
     $scope.$watch(pageData.getSelected, function () {
-      $scope.addAutoCloseAlert({ type: 'success', msg: (pageData.getSelected()?pageData.getSelected().name:gettextCatalog.getString('Nothing')) + gettextCatalog.getString(' selected.') }, 4000);
+      $scope.addAutoCloseAlert({ type: 'success', msg: pageData.getSelected()?(pageData.getSelected().name + gettextCatalog.getString(' selected.')):gettextCatalog.getString('Nothing selected.') }, 4000);
     });
 
     $scope.openSettings = function () {

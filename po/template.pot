@@ -139,7 +139,7 @@ msgid "Normal"
 msgstr ""
 
 #: app/scripts/controllers/main.js:27
-msgid "Nothing"
+msgid "Nothing selected."
 msgstr ""
 
 #: app/views/popupconf.html:8
