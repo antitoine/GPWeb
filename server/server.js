@@ -5,7 +5,6 @@ var bodyParser = require('body-parser');
 var formidable = require('formidable');
 var swig  = require('swig');
 var archiver = require('archiver');
-var glob = require('glob');
 require('array.prototype.find');
 
 var app = express();
@@ -128,17 +127,6 @@ app.get('/service/download', function (req, res) {
   res.status(200);
   zip.finalize();
   res.attachment('gpweb-my-website.zip');
-  /*
-  var data = JSON.parse(fs.readFileSync(path.join(__dirname,'projet',req.query.page+'.json'),{encoding: 'utf-8'}));
-  res.send(swig.renderFile(path.join(__dirname, 'sample.html'), {
-    title: list.find(function(element, index, array) {
-      //console.log(element.name+';'+req.query.page);
-      return element.name === req.query.page;
-    }).title,
-    data: data
-  }));
-  res.status(200);
-  */
 });
 
 app.use('/images', express.static(path.join(__dirname,'projet','images')));
