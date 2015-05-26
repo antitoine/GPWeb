@@ -196,6 +196,30 @@ angular.module('gpwebApp')
       },
       setSelected: function (element) {
         selected = element;
+      },
+      removeSelected: function () {
+        var i;
+        for(i=0;i<data.zones.text.length;i++) {
+          if(data.zones.text[i].id === selected.id) {
+            selected = data.canvas;
+            data.zones.text.splice(i,1);
+            return;
+          }
+        }
+        for(i=0;i<data.zones.image.length;i++) {
+          if(data.zones.image[i].id === selected.id) {
+            selected = data.canvas;
+            data.zones.image.splice(i,1);
+            return;
+          }
+        }
+        for(i=0;i<data.zones.zone.length;i++) {
+          if(data.zones.zone[i].id === selected.id) {
+            selected = data.canvas;
+            data.zones.zone.splice(i,1);
+            return;
+          }
+        }
       }
     };
   }])

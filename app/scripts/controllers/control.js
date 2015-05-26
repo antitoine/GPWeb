@@ -77,4 +77,6 @@ angular.module('gpwebApp')
       }
     }, true);
 
+    $scope.removeZoneHandler = pageData.removeSelected;
+
   }]);
