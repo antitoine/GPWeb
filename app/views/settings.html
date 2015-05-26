@@ -4,13 +4,13 @@
 <div class="modal-body">
   <label>
     <input type="checkbox" ng-model="alertsEnabled">
-    Enable alerts
+    {{'Enable alerts'|translate}}
   </label>
   <br/>
   <label for="languageConf" translate>Langue</label>
   <select id="languageConf" ng-model="selectedLanguage" ng-options="opt for opt in availableLanguages"></select>
 </div>
 <div class="modal-footer">
-  <button class="btn btn-primary" ng-click="ok()">OK</button>
-  <button class="btn btn-default" ng-click="cancel()">Cancel</button>
+  <button class="btn btn-primary" ng-click="ok()" translate>OK</button>
+  <button class="btn btn-default" ng-click="cancel()" translate>Cancel</button>
 </div>

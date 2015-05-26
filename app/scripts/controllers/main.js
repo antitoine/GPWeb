@@ -24,7 +24,7 @@ angular.module('gpwebApp')
       $timeout(function(){$scope.alerts.splice($scope.alerts.indexOf(alert), 1);}, time);
     };
     $scope.$watch(pageData.getSelected, function () {
-      $scope.addAutoCloseAlert({ type: 'success', msg: (pageData.getSelected()?pageData.getSelected().name:'Nothing') + ' selected.' }, 4000);
+      $scope.addAutoCloseAlert({ type: 'success', msg: (pageData.getSelected()?pageData.getSelected().name:gettextCatalog.getString('Nothing')) + gettextCatalog.getString(' selected.') }, 4000);
     });
 
     $scope.openSettings = function () {
@@ -48,7 +48,7 @@ angular.module('gpwebApp')
       settingsWindow.result.then(function (result) {
         $scope.alertsEnabled = result.alert;
         gettextCatalog.setCurrentLanguage(result.language);
-        $scope.addAutoCloseAlert({ type: 'success', msg: 'Settings changed successfully.' }, 4000);
+        $scope.addAutoCloseAlert({ type: 'success', msg: gettextCatalog.getString('Settings changed successfully.') }, 4000);
       });
     };
   }]);

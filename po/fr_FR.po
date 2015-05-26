@@ -1,220 +1,218 @@
 msgid ""
 msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Project-Id-Version: \n"
+"X-Generator: Poedit 1.8\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: app/views/tools.html:30
-#: app/views/tools.html:31
+#: app/views/tools.html:30 app/views/tools.html:31
 msgid "Add page"
-msgstr ""
+msgstr "Ajouter une page"
 
-#: app/views/tools.html:24
-#: app/views/tools.html:25
+#: app/views/tools.html:24 app/views/tools.html:25
 msgid "Add picture"
-msgstr ""
+msgstr "Ajouter une image"
 
-#: app/views/tools.html:19
-#: app/views/tools.html:20
+#: app/views/tools.html:19 app/views/tools.html:20
 msgid "Add text zone"
-msgstr ""
+msgstr "Ajouter une zone de texte"
 
-#: app/views/tools.html:14
-#: app/views/tools.html:15
+#: app/views/tools.html:14 app/views/tools.html:15
 msgid "Add zone"
-msgstr ""
+msgstr "Ajouter une zone"
 
 #: app/views/control.html:74
 msgid "Align"
-msgstr ""
+msgstr "Alignement"
 
 #: app/scripts/services/pagedata.js:16
 msgid "Background"
-msgstr ""
+msgstr "Arrière-plan"
 
 #: app/views/control.html:95
 msgid "Background Color"
-msgstr ""
+msgstr "Couleur d’arrière-plan"
 
 #: app/views/control.html:101
 msgid "Background Image"
-msgstr ""
+msgstr "Image d’arrière-plan"
 
 #: app/views/control.html:59
 msgid "Bold"
-msgstr ""
+msgstr "Gras"
 
 #: app/views/control.html:119
 msgid "Border Color"
-msgstr ""
+msgstr "Couleur de bordure"
 
 #: app/views/control.html:113
 msgid "Border Style"
-msgstr ""
+msgstr "Style de bordure"
 
 #: app/views/control.html:107
 msgid "Border Width"
-msgstr ""
+msgstr "Epaisseur de bordure"
 
-#: app/views/popupconf.html:9
-#: app/views/popuplink.html:10
-#: app/views/popupnewpage.html:10
-#: app/views/settings.html:15
+#: app/views/popupconf.html:9 app/views/popuplink.html:10
+#: app/views/popupnewpage.html:10 app/views/settings.html:15
 msgid "Cancel"
-msgstr ""
+msgstr "Annuler"
 
 #: app/views/control.html:10
 msgid "Configuration"
-msgstr ""
+msgstr "Configuration"
 
 #: app/views/control.html:20
 msgid "Delete"
-msgstr ""
+msgstr "Supprimer"
 
 #: app/views/control.html:132
 msgid "Depth"
-msgstr ""
+msgstr "Profondeur"
 
 #: app/views/control.html:82
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
-#: app/views/tools.html:8
-#: app/views/tools.html:9
+#: app/views/tools.html:8 app/views/tools.html:9
 msgid "Download"
-msgstr ""
+msgstr "Télécharger"
 
 #: app/views/settings.html:7
 msgid "Enable alerts"
-msgstr ""
+msgstr "Activer les notifications"
 
 #: app/views/control.html:127
 msgid "From my pages"
-msgstr ""
+msgstr "Depuis mes pages"
 
 #: app/views/control.html:143
 msgid "Height"
-msgstr ""
+msgstr "Hauteur"
 
 #: app/views/control.html:88
 msgid "Image"
-msgstr ""
+msgstr "Image"
 
 #: app/views/control.html:45
 msgid "Italic"
-msgstr ""
+msgstr "Italique"
 
 #: app/views/settings.html:10
 msgid "Langue"
-msgstr ""
+msgstr "Langue"
 
 #: app/views/control.html:149
 msgid "Left"
-msgstr ""
+msgstr "Gauche"
 
-#: app/views/control.html:125
-#: app/views/popuplink.html:2
+#: app/views/control.html:125 app/views/popuplink.html:2
 msgid "Link"
-msgstr ""
+msgstr "Lien"
 
 #: app/views/popuplink.html:5
 msgid "Link to"
-msgstr ""
+msgstr "Lien vers"
 
 #: app/views/popupnewpage.html:5
 msgid "Name of the new page"
-msgstr ""
+msgstr "Nom de la nouvelle page"
 
 #: app/views/popupnewpage.html:2
 msgid "New page"
-msgstr ""
+msgstr "Nouvelle page"
 
 #: app/scripts/services/pagedata.js:154
 msgid "New zone"
-msgstr ""
+msgstr "Nouvelle zone"
 
-#: app/views/control.html:49
-#: app/views/control.html:63
+#: app/views/control.html:49 app/views/control.html:63
 msgid "Normal"
-msgstr ""
+msgstr "Normal"
 
 #: app/scripts/controllers/main.js:27
 msgid "Nothing"
-msgstr ""
+msgstr "Rien"
 
-#: app/views/popupconf.html:8
-#: app/views/popuplink.html:9
-#: app/views/popupnewpage.html:9
-#: app/views/settings.html:14
+#: app/views/popupconf.html:8 app/views/popuplink.html:9
+#: app/views/popupnewpage.html:9 app/views/settings.html:14
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: app/views/control.html:4
 msgid "Pages"
-msgstr ""
+msgstr "Pages"
 
-#: app/views/tools.html:35
-#: app/views/tools.html:36
+#: app/views/tools.html:35 app/views/tools.html:36
 msgid "Remove page"
-msgstr ""
+msgstr "Supprimer la page"
 
 #: app/views/popupconf.html:5
 msgid "Remove the current page ? The suppression is permanent !"
-msgstr ""
+msgstr "Supprimer la page courante ? La suppression est irréversible !"
 
 #: app/views/popupconf.html:2
 msgid "Remove the page"
-msgstr ""
+msgstr "Supprimer la page"
 
-#: app/views/tools.html:3
-#: app/views/tools.html:4
+#: app/views/tools.html:3 app/views/tools.html:4
 msgid "Save"
-msgstr ""
+msgstr "Enregistrer"
 
 #: app/scripts/controllers/main.js:27
 msgid "selected."
-msgstr ""
+msgstr "sélectionné."
 
 #: app/views/settings.html:2
 msgid "Settings"
-msgstr ""
+msgstr "Paramètres"
 
 #: app/scripts/controllers/main.js:51
 msgid "Settings changed successfully."
-msgstr ""
+msgstr "Les paramètres ont bien été modifiés."
 
 #: app/views/control.html:26
 msgid "Text"
-msgstr ""
+msgstr "Texte"
 
 #: app/views/control.html:36
 msgid "Text Color"
-msgstr ""
+msgstr "Couleur du texte"
 
 #: app/views/control.html:69
 msgid "Text Decoration"
-msgstr ""
+msgstr "Décoration du texte"
 
 #: app/views/control.html:31
 msgid "Text Size"
-msgstr ""
+msgstr "Taille du texte"
 
 #: app/views/control.html:41
 msgid "Text Style"
-msgstr ""
+msgstr "Style de texte"
 
 #: app/views/control.html:55
 msgid "Text weight"
-msgstr ""
+msgstr "Poids du texte"
 
 #: app/views/control.html:154
 msgid "Top"
-msgstr ""
+msgstr "Haut"
 
 #: app/views/control.html:138
 msgid "Width"
-msgstr ""
+msgstr "Largeur"
 
 #: app/scripts/controllers/tools.js:76
 msgid "You can't remove index page !"
-msgstr ""
+msgstr "Vous ne pouvez pas supprimer la page d’accueil !"
+
+#~ msgid "Remove the current page ? The suppression is permanent!"
+#~ msgstr "Supprimer la page courante ? La suppression est irréversible !"

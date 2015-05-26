@@ -19,7 +19,7 @@ angular.module('gpwebApp')
       pageData.addZone('text');
     };
     $scope.addPictureHandler = function () {
-      pageData.addZone('image','/images/yeoman.png', 'Yeoman');
+      pageData.addZone('image','none', '');
     };
     $scope.downloadHandler = function () {
       pageData.push(function() {
@@ -73,7 +73,7 @@ angular.module('gpwebApp')
         });
       } else {
         // TODO : un beau modal !
-        alert('You can\'t remove index page !');
+        alert(gettextCatalog.getString('You can\'t remove index page !'));
       }
     };
   }]);

@@ -40,13 +40,13 @@
       <div class="row" ng-if="isSet(configurable.style)">
         <label for="textStyleConf" translate>Text Style</label>
         <div id="textStyleConf">
-          <label for="italicStyle" class="italicStyle" translate>
+          <label for="italicStyle" class="italicStyle">
             <input type="radio" name="style" value="italic" id="italicStyle" ng-model="configurable.style"/>
-            Italic
+            {{'Italic'|translate}}
           </label><br/>
-          <label for="normalStyle" class="normalStyle" translate>
+          <label for="normalStyle" class="normalStyle">
             <input type="radio" name="style" value="normal" id="normalStyle" ng-model="configurable.style"/>
-            Normal
+            {{'Normal'|translate}}
           </label><br/>
         </div>
       </div>
@@ -54,13 +54,13 @@
       <div class="row" ng-if="isSet(configurable.weight)">
         <label for="textWeightConf" translate>Text weight</label>
         <div id="textWeightConf">
-          <label for="boldWeight" class="boldWeight" translate>
+          <label for="boldWeight" class="boldWeight">
             <input type="radio" name="weight" value="bold" id="boldWeight" ng-model="configurable.weight"/>
-            Bold
+            {{'Bold'|translate}}
           </label><br/>
-          <label for="normalWeight" class="normalWeight" translate>
+          <label for="normalWeight" class="normalWeight">
             <input type="radio" name="weight" value="normal" id="normalWeight" ng-model="configurable.weight"/>
-            Normal
+            {{'Normal'|translate}}
           </label><br/>
         </div>
       </div>
@@ -71,7 +71,7 @@
       </div>
 
       <div class="row" ng-if="isSet(configurable.align)">
-        <label for="alignConf"translate>Align <span class="glyphicons glyphicons-align-{{configurable.align}}"></span></label>
+        <label for="alignConf">{{'Align'|translate}} <span class="glyphicons glyphicons-align-{{configurable.align}}"></span></label>
         <select name="align" id="alignConf" class="selectpicker" ng-model="configurable.align" ng-options="opt for opt in alignOptions" translate></select>
         <div class="separator"></div>
       </div>
@@ -104,7 +104,7 @@
       </div>
 
       <div class="row" ng-if="isSet(configurable.borderWidth)">
-        <label for="borderWidthConf" translate>Border Weight</label>
+        <label for="borderWidthConf" translate>Border Width</label>
         <input type="text" name="borderWidth" id="borderWidthConf" ng-model="configurable.borderWidth"/>
         <div class="separator"></div>
       </div>

@@ -463,7 +463,12 @@ module.exports = function (grunt) {
     nggettext_extract: {
       pot: {
         files: {
-          'po/template.pot': ['app/views/*.html', 'app/controllers/*.js']
+          'po/template.pot': [
+            'app/*.html',
+            'app/views/*.html',
+            'app/scripts/app.js',
+            'app/scripts/*/*.js'
+          ]
         }
       }
     },

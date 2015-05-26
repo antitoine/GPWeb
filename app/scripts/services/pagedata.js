@@ -8,12 +8,12 @@
  * Factory in the gpwebApp.
  */
 angular.module('gpwebApp')
-  .factory('pageData', ['$http', function ($http) {
+  .factory('pageData', ['$http', 'gettextCatalog', function ($http, gettextCatalog) {
     var pages = null;
     var currentPageName = null;
     var data = {
       background: {
-        name: 'Background',
+        name: gettextCatalog.getString('Background'),
         backgroundColor: 'none',
         backgroundImage: 'none',
         backgroundRepeat: 'repeat',
@@ -151,7 +151,7 @@ angular.module('gpwebApp')
       addZone: function (type, img, desc) {
         var zone = {
           id: (new Date()).getTime(),
-          name: 'New zone',
+          name: gettextCatalog.getString('New zone'),
           width: '100px',
           height: '100px',
           top: '100px',
