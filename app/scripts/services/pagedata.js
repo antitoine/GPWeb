@@ -46,6 +46,8 @@ angular.module('gpwebApp')
     return {
       pull: function(name) {
         //console.log(name);
+        if(name === undefined)
+          name = 'index';
         $http.get('/service/pull?page='+name).
           success(function(d) {
             data = JSON.parse(d);
@@ -66,7 +68,7 @@ angular.module('gpwebApp')
             headers: {'Content-Type': 'application/json'}
             }).
             success(function() {
-              if (fctSuccess !== null) {
+              if (fctSuccess !== undefined) {
                 fctSuccess();
               }
               //console.log('PUSH '+d);
@@ -104,6 +106,32 @@ angular.module('gpwebApp')
           error(function(d) {
             console.log('ADD ERROR : '+d);
           });
+      },
+      removePage: function(fctSuccess) {
+        if(currentPageName !== null) {
+          $http({
+            url: '/service/remove?page='+currentPageName,
+            method: 'GET',
+            headers: {'Content-Type': 'application/json'}
+            }).
+            success(function() {
+              for (var i = pages.length - 1; i >= 0; i -= 1) {
+                  if (pages[i].name === currentPageName) {
+                      pages.splice(i, 1);
+                  }
+              }
+              if (fctSuccess !== undefined) {
+                fctSuccess();
+              }
+              //console.log('PUSH '+d);
+            }).
+            error(function(d) {
+              console.log('REMOVE ERROR : '+d);
+            });
+        }
+      },
+      isIndex: function() {
+        return currentPageName === 'index';
       },
       getBackground: function () {
         return data.background;

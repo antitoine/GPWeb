@@ -48,25 +48,32 @@ angular.module('gpwebApp')
       });
     };
     $scope.removePageHandler = function () {
-      var popupConf = $modal.open({
-        templateUrl: 'views/popupconf.html',
-        controller: function ($scope, $modalInstance) {
-          $scope.ok = function () {
-            $modalInstance.close({
-              confirmation: true
-            });
-          };
-          $scope.cancel = function () {
-            $modalInstance.dismiss('cancel');
-          };
-        },
-        controllerAs: 'PopupConfCtrl'
-      });
-      popupConf.result.then(function (result) {
-        if (result.confirmation) {
-          console.log("Remove page Handler");
-          //TODO Faire le taf ici
-        }
-      });
+      if(!pageData.isIndex()) {
+        var popupConf = $modal.open({
+          templateUrl: 'views/popupconf.html',
+          controller: function ($scope, $modalInstance) {
+            $scope.ok = function () {
+              $modalInstance.close({
+                confirmation: true
+              });
+            };
+            $scope.cancel = function () {
+              $modalInstance.dismiss('cancel');
+            };
+          },
+          controllerAs: 'PopupConfCtrl'
+        });
+        popupConf.result.then(function (result) {
+          if (result.confirmation) {
+            //console.log("Remove page Handler");
+            //TODO Faire le taf ici
+            pageData.removePage();
+            pageData.pull();
+          }
+        });
+      } else {
+        // TODO : un beau modal !
+        alert('You can\'t remove index page !');
+      }
     };
   }]);

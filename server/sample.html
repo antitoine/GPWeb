@@ -46,7 +46,7 @@
 <body>
 <div id="main">
 {% for zone in data.zones.text %}
-  {% if zone.link !== none %}<a href="{{zone.link}}">{% endif %}
+  {% if zone.link !== 'none' %}<a href="{{zone.link}}">{% endif %}
   <div
     class="zone text"
     id="{{zone.id}}"
@@ -79,10 +79,10 @@
       {{zone.text}}
     </p>
   </div>
-  {% if zone.link !== none %}</a>{% endif %}
+  {% if zone.link !== 'none' %}</a>{% endif %}
 {% endfor %}
 {% for zone in data.zones.image %}
-  {% if zone.link !== none %}<a href="{{zone.link}}">{% endif %}
+  {% if zone.link !== 'none' %}<a href="{{zone.link}}">{% endif %}
   <div
     class="zone image"
     id="{{zone.id}}"
@@ -103,10 +103,10 @@
       alt="{{zone.description}}"
     />
   </div>
-  {% if zone.link !== none %}</a>{% endif %}
+  {% if zone.link !== 'none' %}</a>{% endif %}
 {% endfor %}
 {% for zone in data.zones.zone %}
-  {% if zone.link !== none %}<a href="{{zone.link}}">{% endif %}
+  {% if zone.link !== 'none' %}<a href="{{zone.link}}">{% endif %}
   <div
     class="zone text"
     id="{{zone.id}}"
@@ -126,7 +126,7 @@
     "
     >
   </div>
-  {% if zone.link !== none %}</a>{% endif %}
+  {% if zone.link !== 'none' %}</a>{% endif %}
 {% endfor %}
 </div>
 </body>

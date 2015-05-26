@@ -51,6 +51,27 @@ app.post('/service/add', function (req, res) {
   }
 });
 
+app.get('/service/remove', function (req, res) {
+  // on supprime le fichier json correspondant
+  var list = JSON.parse(fs.readFileSync(path.join(__dirname,'pages.json'),{encoding: 'utf-8'}));
+  for (var i = list.length - 1; i >= 0; i -= 1) {
+    if (list[i].name === req.query.page) {
+      list.splice(i, 1);
+      fs.unlink(path.join(__dirname,'projet',req.query.page+'.json'), function(err) {
+        if (err) {
+            res.status(500);
+            res.json({'success': false});
+        } else {
+            res.status(200);
+            res.json({'success': true});
+        }
+      });
+      break;
+    }
+  }
+  fs.writeFile(path.join(__dirname,'pages.json'),JSON.stringify(list),{encoding: 'utf-8'});
+});
+
 app.get('/service/pull', function (req, res) {
   // on renvoie le contenu du fichier json demandé
   res.json(fs.readFileSync(path.join(__dirname,'projet',req.query.page+'.json'),{encoding: 'utf-8'}));
